@@ -21,7 +21,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Armaan's World",
   description: "Software Engineer Portfolio",
-    generator: 'v0.dev'
+  icons: "/favicon-rbg.png",
 }
 
 export default function RootLayout({

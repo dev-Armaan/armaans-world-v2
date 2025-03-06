@@ -10,7 +10,7 @@ interface EntryAnimationProps {
 
 export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
   const [text, setText] = useState("")
-  const fullText = "WELCOME TO MY WORLD :]"
+  const fullText = "WELCOME TO ARMAAN'S WORLD"
   const animationCompleteRef = useRef(false)
 
   useEffect(() => {

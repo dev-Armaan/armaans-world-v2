@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: 255, 255, 255;
+  --background: 0, 0, 0;
+  --accent: 212, 175, 55; /* Gold accent color */
+  --accent-secondary: 243, 229, 171; /* Lighter gold for subtle elements */
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-space-grotesk);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  p,
+  span,
+  a,
+  button,
+  input,
+  textarea {
+    font-family: var(--font-dm-sans);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-gold {
+    color: rgb(var(--accent));
+  }
+
+  .border-gold {
+    border-color: rgb(var(--accent));
+  }
+
+  .bg-gold {
+    background-color: rgb(var(--accent));
+  }
+
+  .gold-glow {
+    text-shadow: 0 0 10px rgba(var(--accent), 0.5);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(
+      90deg,
+      rgba(var(--accent), 0) 0%,
+      rgba(var(--accent), 0.3) 50%,
+      rgba(var(--accent), 0) 100%
+    );
+  }
+}
+
+.animate-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-in {
+  transform: translateY(10px);
+  opacity: 0;
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Advanced button animations */
+.button-animation {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.button-animation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(var(--accent), 0.15);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.button-animation:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.button-animation::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(var(--accent), 0.8);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.button-animation:active::after {
+  animation: ripple 0.8s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(100, 100);
+    opacity: 0;
+  }
+}
+
+.gold-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(var(--accent), 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+}
+
+.gold-shine:hover::after {
+  animation: shine 1.5s;
+}
+
+@keyframes shine {
+  100% {
+    left: 150%;
+  }
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(var(--accent), 0), rgba(var(--accent), 0.5), rgba(var(--accent), 0));
+  transform: translateX(-100%);
+  transition: transform 1s ease;
+}
+
+.project-card:hover::before {
+  transform: translateX(100%);
+}
+
+/* Gold highlight animation for active elements */
+.gold-highlight {
+  transition: color 0.3s ease;
+}
+
+.gold-highlight:active {
+  color: rgb(var(--accent));
+}
+
+.magnetic-button {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.magnetic-button:active {
+  transform: scale(0.95);
+}
+

@@ -6,7 +6,6 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { useParams } from "next/navigation"
 
-// Project data - in a real app, this would come from a database or CMS
 const projectsData = {
   "e-commerce": {
     title: "E-commerce Platform",
@@ -119,7 +118,6 @@ export default function ProjectDetail() {
   const { slug } = useParams()
   const projectSlug = Array.isArray(slug) ? slug[0] : slug
 
-  // Get project data based on slug
   const project = projectsData[projectSlug as keyof typeof projectsData]
 
   if (!project) {

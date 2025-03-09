@@ -16,7 +16,7 @@ export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
   useEffect(() => {
     // More pronounced scramble effect
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/"
-    const letterDuration = 175 // 0.175 seconds per letter
+    const letterDuration = 100 // 0.100 seconds per letter
     const finalPause = 1000 // 1 second pause at the end
 
     let currentIndex = 0

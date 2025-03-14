@@ -41,10 +41,10 @@ export default function Home() {
 
   const projects = [
     {
-      title: "E-COMMERCE PLATFORM",
-      description: "A full-stack e-commerce solution with real-time inventory management.",
-      image: "/placeholder.svg?height=600&width=800",
-      year: "2023",
+      title: "PrepPal",
+      description: "An AI-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks.",
+      image: "/preppal4.png",
+      year: "2025",
       link: "/projects/e-commerce",
     },
     {

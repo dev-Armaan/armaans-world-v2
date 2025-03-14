@@ -92,8 +92,8 @@ export default function Home() {
                 />
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mt-6">
-              currently building simple solutions to complex problems one line of code at a time
+            <p className="text-lg md:text-xl font-dm-sans text-white/70 max-w-2xl mt-6">
+            tackling childlike curiosity with machine precision
             </p>
           </div>
 

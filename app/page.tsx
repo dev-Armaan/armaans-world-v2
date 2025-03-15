@@ -41,31 +41,38 @@ export default function Home() {
 
   const projects = [
     {
-      title: "Real-Time Traffic Analysis",
-      description: "CNN model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis.",
-      image: "/vtracker.png",
-      year: "2025",
-      link: "/projects/dashboard",
-    },
-    {
       title: "ASD Prediction Model",
-      description: "ML model that achieved 93% accuracy in diagnosing Autism Spectrum Disorder (ASD), outperforming professional diagnostician teams.",
+      description: "machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams.",
       image: "/asd5.png",
       year: "2025",
       link: "/projects/ai-generator",
     },
     {
+      title: "Real-Time Traffic Analysis",
+      description: "cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis.",
+      image: "/vtracker.png",
+      year: "2025",
+      link: "/projects/dashboard",
+    },
+    {
       title: "PrepPal",
-      description: "AI-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks.",
+      description: "ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks.",
       image: "/preppal4.png",
       year: "2025",
       link: "/projects/e-commerce",
     },
     {
-      title: "MOBILE FITNESS APP",
-      description: "Cross-platform mobile application for tracking workouts and nutrition.",
-      image: "/placeholder.svg?height=600&width=800",
-      year: "2021",
+      title: "FOUNDER @ LANDINGX",
+      description: "developed and optimized responsive web apps using modern frameworks for clients",
+      image: "/landingx2.png",
+      year: "2023-2024",
+      link: "/projects/fitness-app",
+    },
+    {
+      title: "AI INNOVATOR @ TKS",
+      description: "optimized NLP and CV models + personally consulted MasterCard Foundation & CIBC execs on separate occasions",
+      image: "/tks2.png",
+      year: "2022-2023",
       link: "/projects/fitness-app",
     },
   ]
@@ -75,7 +82,7 @@ export default function Home() {
   }
 
   return (
-    <motion.div className="flex flex-col space-y-40" initial="hidden" animate="show" variants={container}>
+    <motion.div className="flex flex-col space-y-20" initial="hidden" animate="show" variants={container}>
       <motion.section className="space-y-6" variants={item}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
@@ -92,10 +99,11 @@ export default function Home() {
                 />
               </span>
             </h1>
-            <p className="text-lg md:text-xl font-dm-sans text-white/70 max-w-2xl mt-6">
-            tackling childlike curiosity with machine precision
+            <p className="text-base md:text-base font-dm-sans text-white max-w-2xl mt-6">
+            ai & software engineer studying  
+            <strong> cs + ai @ uwaterloo</strong>
             <br />
-            cs + ai specialization @ uwaterloo
+            incoming software dev @ <strong>government of canada 🇨🇦</strong>
             </p>
           </div>
 
@@ -119,7 +127,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          FEATURED WORKS
+           5 featured works
         </motion.h2>
 
         <div className="space-y-24">
@@ -139,7 +147,7 @@ export default function Home() {
                     <h2 className="text-2xl md:text-3xl font-bold">{project.title}</h2>
                     <p className="text-white/70">{project.description}</p>
                     <div className="flex items-center space-x-2 text-white/60 group pt-2">
-                      <span className="text-sm uppercase tracking-wider">View Project</span>
+                      <span className="text-sm uppercase tracking-wider">View Experience</span>
                       <motion.div
                         whileHover={{
                           x: 5,

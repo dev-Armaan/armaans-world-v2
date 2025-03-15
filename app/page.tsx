@@ -41,18 +41,18 @@ export default function Home() {
 
   const projects = [
     {
-      title: "PrepPal",
-      description: "AI-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks.",
-      image: "/preppal4.png",
-      year: "2025",
-      link: "/projects/e-commerce",
-    },
-    {
       title: "ASD Prediction Model",
       description: "ML model that achieved 93% accuracy in diagnosing Autism Spectrum Disorder (ASD), outperforming professional diagnostician teams.",
       image: "/asd5.png",
       year: "2025",
       link: "/projects/ai-generator",
+    },
+    {
+      title: "PrepPal",
+      description: "AI-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks.",
+      image: "/preppal4.png",
+      year: "2025",
+      link: "/projects/e-commerce",
     },
     {
       title: "FINANCIAL DASHBOARD",

@@ -41,6 +41,13 @@ export default function Home() {
 
   const projects = [
     {
+      title: "Real-Time Traffic Analysis",
+      description: "CNN model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis.",
+      image: "/vtracker.png",
+      year: "2025",
+      link: "/projects/dashboard",
+    },
+    {
       title: "ASD Prediction Model",
       description: "ML model that achieved 93% accuracy in diagnosing Autism Spectrum Disorder (ASD), outperforming professional diagnostician teams.",
       image: "/asd5.png",
@@ -53,13 +60,6 @@ export default function Home() {
       image: "/preppal4.png",
       year: "2025",
       link: "/projects/e-commerce",
-    },
-    {
-      title: "FINANCIAL DASHBOARD",
-      description: "Interactive dashboard for visualizing financial data with customizable charts.",
-      image: "/placeholder.svg?height=600&width=800",
-      year: "2022",
-      link: "/projects/dashboard",
     },
     {
       title: "MOBILE FITNESS APP",
@@ -94,6 +94,8 @@ export default function Home() {
             </h1>
             <p className="text-lg md:text-xl font-dm-sans text-white/70 max-w-2xl mt-6">
             tackling childlike curiosity with machine precision
+            <br />
+            cs + ai specialization @ uwaterloo
             </p>
           </div>
 

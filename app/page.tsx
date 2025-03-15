@@ -70,7 +70,7 @@ export default function Home() {
     },
     {
       title: "AI INNOVATOR @ TKS",
-      description: "optimized NLP and CV models + personally consulted MasterCard Foundation & CIBC execs on separate occasions",
+      description: "optimized NLP and CV models + personally consulted mastercard foundation & cibc execs on separate occasions",
       image: "/tks2.png",
       year: "2022-2023",
       link: "/projects/fitness-app",
@@ -121,14 +121,22 @@ export default function Home() {
       </motion.section>
 
       <motion.section variants={item} className="space-y-12">
+      <div className="flex justify-center w-full">
         <motion.h2
-          className="text-3xl font-bold text-center"
+          className="text-3xl font-bold text-center relative inline-block"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-           5 featured works
+          featured works
+          <motion.span
+            className="absolute -bottom-2 left-0 w-full h-1 bg-gold"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          />
         </motion.h2>
+      </div>
 
         <div className="space-y-24">
           {projects.map((project, index) => (

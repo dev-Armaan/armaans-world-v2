@@ -42,21 +42,21 @@ export default function Home() {
   const projects = [
     {
       title: "ASD Prediction Model",
-      description: "machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams.",
+      description: "machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams",
       image: "/asd.png",
       year: "2025",
       link: "/projects/ai-generator",
     },
     {
       title: "Real-Time Traffic Analysis",
-      description: "cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis.",
+      description: "cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis",
       image: "/vtracker.png",
       year: "2025",
       link: "/projects/dashboard",
     },
     {
       title: "PrepPal",
-      description: "ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks.",
+      description: "ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks",
       image: "/preppal.png",
       year: "2025",
       link: "/projects/e-commerce",

@@ -5,6 +5,7 @@ import type React from "react"
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { Send, Github, Linkedin, Mail } from "lucide-react"
+import emailjs from "emailjs-com"
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -28,15 +29,27 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      await emailjs.send(
+        "service_njrckq3", // Service ID
+        "template_h7aqgzd", // Template ID
+        {
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        },
+        "MXYvgb2zQcUQGjL4G" // Public Key
+      )
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormState({ name: "", email: "", message: "" })
+      setIsSubmitted(true)
+      setFormState({ name: "", email: "", message: "" })
 
-    // Reset success message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000)
+      setTimeout(() => setIsSubmitted(false), 3000)
+    } catch (error) {
+      console.error("Email sending error:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -51,8 +64,8 @@ export default function Contact() {
             transition={{ delay: 0.5, duration: 1 }}
           />
         </h1>
-        <p className="text-white/70 max-w-2xl text-lg">
-          Feel free to reach out for collaborations or just a friendly hello.
+        <p className="text-white max-w-2xl text-lg">
+          feel free to reach out about opportunities, collaborations, or just to chat
         </p>
       </div>
 
@@ -67,7 +80,7 @@ export default function Contact() {
 
           <div className="space-y-6">
             <motion.a
-              href="mailto:hello@example.com"
+              href="mailto:a585gupt@uwaterloo.ca"
               className="flex items-center space-x-3 text-white/70 hover:text-white transition-all group"
               whileHover={{ x: 5 }}
               whileTap={{
@@ -76,11 +89,11 @@ export default function Contact() {
               }}
             >
               <Mail className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
-              <span>hello@example.com</span>
+              <span>a585gupt@uwaterloo.ca</span>
             </motion.a>
 
             <motion.a
-              href="https://github.com"
+              href="https://github.com/dev-Armaan"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-3 text-white/70 hover:text-white transition-all group"
@@ -91,11 +104,11 @@ export default function Contact() {
               }}
             >
               <Github className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
-              <span>github.com/username</span>
+              <span>github.com/dev-Armaan</span>
             </motion.a>
 
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/gupta-armaan/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-3 text-white/70 hover:text-white transition-all group"
@@ -106,7 +119,7 @@ export default function Contact() {
               }}
             >
               <Linkedin className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
-              <span>linkedin.com/in/username</span>
+              <span>linkedin.com/in/gupta-armaan</span>
             </motion.a>
           </div>
         </motion.div>
@@ -223,25 +236,22 @@ export default function Contact() {
             </motion.button>
 
             {isSubmitted && (
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-gold uppercase text-sm tracking-wider font-ki-bold"
+              <motion.div
+                className="text-center text-gold font-ki-bold"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
               >
-                Message sent successfully!
-              </motion.p>
+                <p>Message Sent!</p>
+              </motion.div>
             )}
           </form>
         </motion.div>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
+      <br /><br /><br /><br /><br />
       <footer className="w-full py-4 text-center text-sm text-white/70 border-t border-white/10">
         © {new Date().getFullYear()} Armaan Gupta. All rights reserved.
       </footer>
     </motion.div>
   )
 }
-

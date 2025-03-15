@@ -16,7 +16,7 @@ export default function Projects() {
         "[internship] incoming may 2025",
       tags: [],
       image: "/gov.png",
-      link: "/projects/dashboard",
+      link: "/projects/govcanada",
       year: 2025,
     },
     {

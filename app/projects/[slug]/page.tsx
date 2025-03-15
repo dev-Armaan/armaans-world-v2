@@ -58,8 +58,8 @@ const projectsData = {
       into their existing workflows and applications.
     `,
   },
-  dashboard: {
-    title: "Financial Dashboard",
+  "dashboard": {
+    title: "gurmukhK ",
     subtitle: "Interactive data visualization platform",
     year: "2022",
     type: "Enterprise Software",
@@ -83,6 +83,32 @@ const projectsData = {
       
       Security and user permissions are built into the core of the application, ensuring that
       sensitive financial information is only accessible to authorized personnel.
+    `,
+  },
+  "govcanada": {
+    title: "Software Dev @ Government of Canada",
+    subtitle: "summer 2025 internship",
+    year: "2025",
+    type: "internship",
+    image: "/gov2.png",
+    contents: [
+      "TBD",
+    ],
+    description: `
+      i will be working as a software developer at the government of canada (eccc division) starting in may 2025
+    `,
+  },
+  "asd": {
+    title: "ASD Prediction Model",
+    subtitle: "machine learning prediction model",
+    year: "2025",
+    type: "project",
+    image: "/asd.png",
+    contents: [
+      "TBD",
+    ],
+    description: `
+      i will be working as a software developer at the government of canada (eccc division) starting in may 2025
     `,
   },
   "fitness-app": {
@@ -130,7 +156,7 @@ export default function ProjectDetail() {
         <div className="space-y-8">
           <Link href="/projects" className="inline-flex items-center text-white/60 hover:text-white transition-colors">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            <span className="text-sm uppercase tracking-wider">Back to Projects</span>
+            <span className="text-sm uppercase tracking-wider">Back to experiences</span>
           </Link>
 
           <div className="space-y-2">
@@ -140,7 +166,8 @@ export default function ProjectDetail() {
 
           <div className="space-y-6">
             <div className="space-y-1">
-              <h2 className="text-white/60 text-sm uppercase tracking-wider">PROJECT INFO</h2>
+              <h2 className="text-white text-sm uppercase tracking-wider">PROJECT INFO</h2>
+              <br />
               <div className="space-y-4">
                 <div>
                   <h3 className="text-white/60 text-sm uppercase">TYPE</h3>

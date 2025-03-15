@@ -105,10 +105,20 @@ const projectsData = {
     type: "project",
     image: "/asd.png",
     contents: [
-      "TBD",
+      "Dataset Tuning","Data Visualization","Supervised Learning", "Hyperparameter Tuning", "Model Evaluation",
     ],
     description: `
-      i will be working as a software developer at the government of canada (eccc division) starting in may 2025
+      more than 75,000,000 people alive today have been diagnosed with autism spectrum disorder (asd). however, according to a recent study by the journal of the american medical association, medical teams could only accurately diagnose asd in children 60-89% of the time. given the sheer scale, this means millions of people are misdiagnosed every year. this is where my model comes in.
+      
+      \n
+
+      
+
+
+
+      The model incorporates data visualization, dataset tuning, hyperparameter optimization, and
+      model evaluation to ensure accuracy and reliability. It has the potential to revolutionize
+      the diagnosis and treatment of ASD, leading to better outcomes for patients and families.
     `,
   },
   "fitness-app": {

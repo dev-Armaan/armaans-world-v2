@@ -101,7 +101,7 @@ export default function Home() {
             </h1>
             <p className="text-base md:text-base font-dm-sans text-white max-w-2xl mt-6">
             ai & software engineer studying  
-            <strong> cs + ai @ uwaterloo</strong>
+            <strong> cs + ai @ uwaterloo 👨‍💻</strong>
             <br />
             incoming software dev @ <strong>government of canada 🇨🇦</strong>
             </p>

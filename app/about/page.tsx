@@ -37,11 +37,11 @@ export default function About() {
 
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">SKILLS</h2>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-3 gap-8">
               <div>
                 <h3 className="text-white/60 text-sm mb-4 uppercase tracking-wider">LANGUAGES</h3>
                 <ul className="space-y-3">
-                  {["JavaScript / TypeScript", "Python", "Rust", "SQL"].map((skill, i) => (
+                  {["python", "java", "c++", "c", "c#", "js/ts", "sql", "html/css", "swift"].map((skill, i) => (
                     <motion.li
                       key={i}
                       initial={{ x: -10, opacity: 0 }}
@@ -58,7 +58,24 @@ export default function About() {
               <div>
                 <h3 className="text-white/60 text-sm mb-4 uppercase tracking-wider">FRAMEWORKS</h3>
                 <ul className="space-y-3">
-                  {["React / Next.js", "Node.js / Express", "TailwindCSS", "GraphQL"].map((skill, i) => (
+                  {["react", "node.js", "next.js", "angular", "flask", "fastapi", "three.js"].map((skill, i) => (
+                    <motion.li
+                      key={i}
+                      initial={{ x: -10, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.1 * i }}
+                      className="flex items-center"
+                    >
+                      <span className="inline-block w-1 h-1 rounded-full bg-white/40 mr-2"></span>
+                      {skill}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-white/60 text-sm mb-4 uppercase tracking-wider">TOOLS</h3>
+                <ul className="space-y-3">
+                  {["git","aws", "npm", "pandas", "numpy", "mongodb", "rest api", "vite", "gcp", "azure", "tailwind", "linux"].map((skill, i) => (
                     <motion.li
                       key={i}
                       initial={{ x: -10, opacity: 0 }}

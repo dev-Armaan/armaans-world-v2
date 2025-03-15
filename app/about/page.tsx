@@ -25,13 +25,10 @@ export default function About() {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">BACKGROUND</h2>
             <p className="text-white/80 leading-relaxed">
-              I've been developing software for over 5 years, with a focus on web technologies and user experiences. My
-              journey began with front-end development, which evolved into a passion for building full-stack
-              applications that are not only functional but also aesthetically pleasing and intuitive to use.
+              i've been building software for 5 years, starting with web development and moving into machine learning. recently, i've been increasingly working on the intersection of ai and humanity's betterment. subsequently, i've built a ml model capable of diagnosing autism correctly 93% of the time, beating industry averages. i've also taken an internship position at eccc (federal agency) to improve environmental prediction models which will help government officials make better ecological decisions in the future.
             </p>
             <p className="text-white/80 leading-relaxed">
-              My approach combines technical expertise with a keen eye for design, ensuring that every project I work on
-              meets both functional requirements and aesthetic standards.
+              we have one planet, and it's our responsibility to take care of it. i'm passionate about using technology to make the world a better place, and i'm excited to continue doing so in the future.
             </p>
           </div>
 
@@ -99,19 +96,29 @@ export default function About() {
             <div className="space-y-8">
               {[
                 {
-                  title: "SENIOR SOFTWARE ENGINEER",
-                  company: "Tech Company",
-                  period: "2021 - Present",
+                  title: "SOFTWARE DEVELOPER",
+                  company: "Government of Canada",
+                  period: "2025 (incoming)",
                 },
                 {
-                  title: "SOFTWARE ENGINEER",
-                  company: "Startup Inc",
-                  period: "2018 - 2021",
+                  title: "Founder & CEO",
+                  company: "LandingX",
+                  period: "2024",
                 },
                 {
-                  title: "JUNIOR DEVELOPER",
-                  company: "Digital Agency",
-                  period: "2016 - 2018",
+                  title: "Sensai & Camp Leader",
+                  company: "Code Ninjas",
+                  period: "2024",
+                },
+                {
+                  title: "AI Innovator",
+                  company: "TKS (The Knowledge Society)",
+                  period: "2023",
+                },
+                {
+                  title: "Cirriculum Developer",
+                  company: "Hippocampus Learning",
+                  period: "2023",
                 },
               ].map((job, index) => (
                 <motion.div

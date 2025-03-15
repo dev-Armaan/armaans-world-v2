@@ -113,6 +113,11 @@ export default function About() {
           </div>
         </div>
       </div>
+      <br />
+      <br />
+      <footer className="w-full py-4 text-center text-sm text-white/70 border-t border-white/10">
+        © {new Date().getFullYear()} Armaan Gupta. All rights reserved.
+      </footer>
     </motion.div>
   )
 }

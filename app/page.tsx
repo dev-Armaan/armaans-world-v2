@@ -43,7 +43,7 @@ export default function Home() {
     {
       title: "ASD Prediction Model",
       description: "machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams.",
-      image: "/asd5.png",
+      image: "/asd.png",
       year: "2025",
       link: "/projects/ai-generator",
     },
@@ -57,21 +57,21 @@ export default function Home() {
     {
       title: "PrepPal",
       description: "ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks.",
-      image: "/preppal4.png",
+      image: "/preppal.png",
       year: "2025",
       link: "/projects/e-commerce",
     },
     {
       title: "FOUNDER @ LANDINGX",
       description: "developed and optimized responsive web apps using modern frameworks for clients",
-      image: "/landingx2.png",
+      image: "/landingx.png",
       year: "2023-2024",
       link: "/projects/fitness-app",
     },
     {
       title: "AI INNOVATOR @ TKS",
       description: "optimized NLP and CV models + personally consulted mastercard foundation & cibc execs on separate occasions",
-      image: "/tks2.png",
+      image: "/tks.png",
       year: "2022-2023",
       link: "/projects/fitness-app",
     },
@@ -187,6 +187,11 @@ export default function Home() {
             </Link>
           ))}
         </div>
+        <br />
+        <br />
+        <footer className="w-full py-4 text-center text-sm text-white/70 border-t border-white/10">
+        © {new Date().getFullYear()} Armaan Gupta. All rights reserved.
+      </footer>
       </motion.section>
     </motion.div>
   )

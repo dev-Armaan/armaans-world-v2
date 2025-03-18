@@ -303,7 +303,7 @@ export default function ProjectDetail() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="space-y-16">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-16">
         <div className="space-y-8">
-          <Link href="/projects" className="inline-flex items-center text-white/60 hover:text-white transition-colors">
+          <Link href="/experiences" className="inline-flex items-center text-white/60 hover:text-white transition-colors">
             <ArrowLeft className="mr-2 h-4 w-4" />
             <span className="text-sm uppercase tracking-wider">Back to experiences</span>
           </Link>

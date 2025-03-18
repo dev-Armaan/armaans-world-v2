@@ -16,7 +16,7 @@ export default function Projects() {
         "[internship] incoming may 2025",
       tags: [],
       image: "/gov.png",
-      link: "/projects/govcanada",
+      link: "/experiences/govcanada",
       year: 2025,
     },
     {
@@ -25,7 +25,7 @@ export default function Projects() {
         "machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams",
       tags: ["pandas", "sklearn", "numpy", "matplotlib", "python"],
       image: "/asd8.png",
-      link: "/projects/e-commerce",
+      link: "/experiences/asd",
       year: 2025,
     },
     {
@@ -34,7 +34,7 @@ export default function Projects() {
         "cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis",
       tags: ["opencv", "ultralytics", "numpy", "supervision", "python"],
       image: "/vtracker.png",
-      link: "/projects/ai-generator",
+      link: "/experiences/ai-generator",
       year: 2025,
     },
     {
@@ -43,7 +43,7 @@ export default function Projects() {
         "ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks",
       tags: ["sql", "react", "flask", "gcp", "mongodb"],
       image: "/preppal.png",
-      link: "/projects/dashboard",
+      link: "/experiences/dashboard",
       year: 2025,
     },
     {
@@ -52,7 +52,7 @@ export default function Projects() {
         "second iteration of my personal website, featuring a new design and improved performance",
       tags: ["react", "next.js", "typescript", "tailwind", "vercel"],
       image: "/aworld.png",
-      link: "/projects/ai-generator",
+      link: "/experiences/ai-generator",
       year: 2025,
     },
     {
@@ -60,7 +60,7 @@ export default function Projects() {
       description: "[job] developed, optimized & shipped responsive web apps using modern frameworks for clients",
       tags: ["npm", "aws", "react", "next.js", "typescript"],
       image: "/landingx.png",
-      link: "/projects/fitness-app",
+      link: "/experiences/fitness-app",
       year: 2024,
     },
     {
@@ -68,7 +68,7 @@ export default function Projects() {
       description: "[job] developed an interactive lua-based curriculum in Roblox Studio",
       tags: ["lua", "scripting apis", "edtech", "game development"],
       image: "/cninjas.png",
-      link: "/projects/fitness-app",
+      link: "/experiences/fitness-app",
       year: 2024,
     },
     {
@@ -76,7 +76,7 @@ export default function Projects() {
       description: "first iteration of my personal website, complete with 3d models and hosted on aws",
       tags: ["3d modelling", "aws", "react", "next.js", "tailwind"],
       image: "/v1aworld.png",
-      link: "/projects/fitness-app",
+      link: "/experiences/fitness-app",
       year: 2024,
     },
     {
@@ -84,7 +84,7 @@ export default function Projects() {
       description: "[program] optimized NLP and CV models + personally consulted mastercard foundation & cibc execs on separate occasions",
       tags: ["neural networks", "nlp", "mobile app development", "git"],
       image: "/tks.png",
-      link: "/projects/fitness-app",
+      link: "/experiences/fitness-app",
       year: 2023,
     },
     {
@@ -92,7 +92,7 @@ export default function Projects() {
       description: "[job] developed programming cirriculum for students in grades 1-8",
       tags: ["scratch", "python", "ms office", "google suite"],
       image: "/hcampus.png",
-      link: "/projects/fitness-app",
+      link: "/experiences/fitness-app",
       year: 2022,
     },
   ]

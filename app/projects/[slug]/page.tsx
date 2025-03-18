@@ -182,7 +182,7 @@ const projectsData: Record<string, Project> = {
     year: "2025",
     type: "project",
     image: "/asd.png",
-    repoUrl: "https://github.com/yourusername/asd-prediction",
+    repoUrl: "https://github.com/dev-Armaan/autism-prediction",
     contents: [
       "Dataset Tuning",
       "Data Visualization",
@@ -194,11 +194,11 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "More than 75,000,000 people alive today have been diagnosed with autism spectrum disorder (asd). however, according to a recent study by the journal of the american medical association, medical teams could only accurately diagnose asd in children 60-89% of the time. given the sheer scale, this means millions of people are misdiagnosed every year. this is where my model comes in.",
+          "more than 75,000,000 people worldwide have been diagnosed with autism spectrum disorder (asd). however, a recent study by the journal of the american medical association found that medical teams could only accurately diagnose asd in children 60-89% of the time. given the sheer scale of the condition, this means millions of people are misdiagnosed every year, leading to delayed interventions and inadequate support. this is where my model comes in.",
       },
       {
         type: "image",
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-17%20at%2021.35.20-ljEN1XYc4H3034GjpNKQVeQ3Z8OW0Q.png",
+        src: "/kdata.png",
         alt: "ASD prediction model correlation heatmap",
         width: 600,
         height: 600,
@@ -207,8 +207,42 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "The model incorporates data visualization, dataset tuning, hyperparameter optimization, and model evaluation to ensure accuracy and reliability. It has the potential to revolutionize the diagnosis and treatment of ASD, leading to better outcomes for patients and families.",
+          "the dataset used for training and testing comes from a kaggle community prediction competition. before building the model, i refined the dataset by removing irrelevant or incomplete columns and normalizing the data to ensure consistency. data visualization techniques, including correlation heatmaps, were used to uncover relationships between different features, helping identify the most influential parameters for prediction.",
       },
+
+      {
+        type: "image",
+        src: "/asd.png",
+        alt: "ASD prediction model correlation heatmap",
+        width: 600,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "this project leverages supervised learning models, specifically the decision tree classifier and random forest classifier, to predict asd likelihood based on approximately 20 related parameters. to enhance model performance, i fine-tuned hyperparameters using grid search and implemented smote (synthetic minority over-sampling technique) to handle class imbalance, ensuring the model didn’t favor the majority class.",
+      },
+
+      {
+        type: "text",
+        content:
+        "to evaluate the model's effectiveness, i used cross-validation, measuring its accuracy across different subsets of the data. the final model achieved a 93% cross-validation accuracy, surpassing the reported medical diagnosis accuracy range."
+      },
+
+      {
+        type: "image",
+        src: "/asd-hyper.png",
+        alt: "ASD prediction model correlation heatmap",
+        width: 600,
+        height: 600,
+        fullWidth: false,
+      },
+
+      {
+        type: "text",
+        content: "by carefully tuning the dataset, applying advanced machine learning techniques, and optimizing hyperparameters, this model aims to improve the early and reliable detection of autism, potentially reducing misdiagnosis rates and aiding in timely support and intervention."
+      }
     ],
   },
   "fitness-app": {

@@ -279,65 +279,77 @@ const projectsData: Record<string, Project> = {
     ],
   },
   v2world: {
-    title: "PrepPal",
-    subtitle: "ai-powered interview prep bot",
+    title: "Armaan's World [v2]",
+    subtitle: "second iteration of my personal website",
     year: "2025",
     type: "project",
-    image: "/preppal.png",
-    repoUrl: "https://github.com/dev-Armaan/ai-interviewer",
-    demoUrl: "https://www.youtube.com/watch?v=0uulnpFgpyc",
+    image: "/aworld.png",
+    repoUrl: "https://github.com/dev-Armaan/armaans-world-v2",
     contents: [
-      "genai questions",
-      "eye tracking",
-      "progress dashboard",
-      "24/7 accessibility",
-      "genai feedback & analytics",
+      "tbd",
     ],
     descriptionBlocks: [
       {
         type: "text",
         content:
-          "preppal is an ai-powered interview preparation assistant designed to help users excel in various interview scenarios, whether technical, behavioral, or industry-specific. the platform simulates realistic mock interview sessions, providing personalized and interactive experiences tailored to each user’s needs. with preppal, candidates can practice anytime, anywhere, gaining valuable insights to improve their responses and boost confidence before the big day.",
+        "coming soon"      },
+    ],
+  },
+  landingx: {
+    title: "Founder @ LandingX",
+    subtitle: "created a web dev company for business and personal purposes",
+    year: "2024",
+    type: "job",
+    image: "/landingx.png",
+    contents: [
+      "app development",
+      "client & team communication",
+      "performance optimization",
+      "cross-device compatability",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+        "as the ceo and founder of landingx, i focused on building modern, responsive web applications that met client needs through tailored, cutting-edge solutions. for each project, i first took the time to understand the specific requirements and objectives of the client, gathering insights into their target audience and business goals. using technologies like react.js and node.js, i created dynamic user interfaces and scalable backends to ensure the applications were not only functional but also aesthetically appealing."      },
+      {
+        type: "text",
+        content: "i used three.js for interactive 3d visuals when the project demanded a more immersive user experience. leveraging tailwind css, i was able to quickly implement customizable styles while ensuring a consistent look and feel across devices, achieving seamless cross-device compatibility. to further ensure quality, i continuously tested applications on various screen sizes and browsers."
+
       },
+
       {
         type: "image",
-        src: "/pfeedback.png",
+        src: "/lxinsta.png",
         alt: "Fitness app interface",
         width: 800,
         height: 800,
         fullWidth: false,
       },
-      {
-        type: "text",
-        content:
-          "the core of preppal lies in its dynamic question-and-answer sessions. it offers users the ability to choose between different question sets, such as technical, behavioral, or domain-specific, ensuring a well-rounded preparation. after each session, the ai provides detailed feedback, highlighting strengths and areas for improvement, helping users to focus their efforts on what matters most. this feedback, combined with the system’s advanced analytics, enables users to track their progress over time, making continuous improvements in their interview skills.",
-      },
-      {
-        type: "text",
-        content:
-          "an added feature includes a progress dashboard, which gives users an overview of their performance across different sessions, showing trends and offering suggestions for further practice. the system also integrates eye tracking using opencv to analyze and provide feedback on non-verbal cues during interviews, offering a comprehensive approach to interview preparation.",
-      },
-      {
-        type: "text",
-        content:
-          "later, preppal integrated the gcp speech-to-text api, which allows users to practice their responses aloud and get instant transcriptions. this feature has significantly boosted user readiness by 40%, as users can review their spoken answers, refine their communication skills, and gain valuable insights into their verbal performance. this integration has been particularly popular, contributing to preppal gaining 100+ active users within just two weeks.",
-      },
 
       {
-        type: "youtube",
-        videoId: "0uulnpFgpyc",
-        title: "preppal demo",
+        type: "text",
+        content: "on the deployment side, i utilized vercel and aws to host applications, optimizing performance through content delivery networks (cdns) and fine-tuning load times by up to 30%. in doing so, i ensured a smooth and fast user experience, even with high traffic."
       },
 
       {
         type: "text",
-        content: "built with a robust tech stack, preppal combines frontend technologies like react.js and tailwind css with a flask-powered backend, integrating apis from openai and cohere for intelligent question generation and feedback. mysql and mongodb handle the data storage needs, while opencv and recharts provide additional functionality and data visualizations for the user interface."
+        content: "my role also involved direct communication with clients, where i translated their needs into technical solutions, ensuring alignment between business objectives and the development process. i worked closely with team members, iterating on designs and implementing features based on feedback. my focus on client satisfaction led to a 95% client retention rate."
+      },
+
+      {
+        type: "image",
+        src: "/lxdemo.png",
+        alt: "Fitness app interface",
+        width: 800,
+        height: 800,
+        fullWidth: false,
       },
 
       {
         type: "text",
-        content: "preppal is available 24/7, offering flexibility to users who can practice at their own pace, whenever it suits them. whether you're preparing for a job interview or just sharpening your skills, preppal is here to help take your interview preparation to the next level."
-      },
+        content:"by managing the full-stack development workflow using vite, npm, and git, i ensured seamless collaboration, version control, and deployment pipelines, which made the development process more efficient and streamlined. this allowed me to scale the business and deliver high-quality web applications to clients."
+      }
     ],
   },
 }

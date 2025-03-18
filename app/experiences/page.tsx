@@ -52,7 +52,7 @@ export default function Projects() {
         "second iteration of my personal website, featuring a new design and improved performance",
       tags: ["react", "next.js", "typescript", "tailwind", "vercel"],
       image: "/aworld.png",
-      link: "/experiences/ai-generator",
+      link: "/experiences/v2world",
       year: 2025,
     },
     {
@@ -60,7 +60,7 @@ export default function Projects() {
       description: "[job] developed, optimized & shipped responsive web apps using modern frameworks for clients",
       tags: ["npm", "aws", "react", "next.js", "typescript"],
       image: "/landingx.png",
-      link: "/experiences/fitness-app",
+      link: "/experiences/landingx",
       year: 2024,
     },
     {

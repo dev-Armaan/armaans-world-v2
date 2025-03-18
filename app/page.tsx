@@ -45,7 +45,7 @@ export default function Home() {
       description: "machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams",
       image: "/asd.png",
       year: "2025",
-      link: "/experiences/ai-generator",
+      link: "/experiences/asd",
     },
     {
       title: "Real-Time Traffic Analysis",
@@ -66,7 +66,7 @@ export default function Home() {
       description: "developed and optimized responsive web apps using modern frameworks for clients",
       image: "/landingx.png",
       year: "2023-2024",
-      link: "/experiences/fitness-app",
+      link: "/experiences/landingx",
     },
     {
       title: "AI INNOVATOR @ TKS",

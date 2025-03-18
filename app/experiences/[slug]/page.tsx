@@ -216,14 +216,14 @@ const projectsData: Record<string, Project> = {
       },
     ],
   },
-  "fitness-app": {
-    title: "Mobile Fitness App",
-    subtitle: "Cross-platform health and fitness tracker",
-    year: "2021",
-    type: "Mobile Application",
-    image: "/placeholder.svg?height=800&width=1200",
-    repoUrl: "https://github.com/yourusername/fitness-app",
-    demoUrl: "https://fitness-app-demo.example.com",
+  preppal: {
+    title: "PrepPal",
+    subtitle: "",
+    year: "2025",
+    type: "project",
+    image: "/preppal.png",
+    repoUrl: "https://github.com/dev-Armaan/ai-interviewer",
+    demoUrl: "https://www.youtube.com/watch?v=0uulnpFgpyc",
     contents: [
       "Workout Tracking",
       "Nutrition Logging",
@@ -267,14 +267,14 @@ export default function ProjectDetail() {
   const project = projectsData[projectSlug as keyof typeof projectsData]
 
   if (!project) {
-    return <div>Project not found</div>
+    return <div>error: haven't built it yet, maybe sometime soon</div>
   }
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="space-y-16">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-16">
         <div className="space-y-8">
-          <Link href="/projects" className="inline-flex items-center text-white/60 hover:text-white transition-colors">
+          <Link href="/experiences" className="inline-flex items-center text-white/60 hover:text-white transition-colors">
             <ArrowLeft className="mr-2 h-4 w-4" />
             <span className="text-sm uppercase tracking-wider">Back to experiences</span>
           </Link>

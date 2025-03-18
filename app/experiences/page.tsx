@@ -34,7 +34,7 @@ export default function Projects() {
         "cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis",
       tags: ["opencv", "ultralytics", "numpy", "supervision", "python"],
       image: "/vtracker.png",
-      link: "/experiences/ai-generator",
+      link: "/experiences/traffic",
       year: 2025,
     },
     {
@@ -43,7 +43,7 @@ export default function Projects() {
         "ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks",
       tags: ["sql", "react", "flask", "gcp", "mongodb"],
       image: "/preppal.png",
-      link: "/experiences/dashboard",
+      link: "/experiences/preppal",
       year: 2025,
     },
     {

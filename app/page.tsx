@@ -52,14 +52,14 @@ export default function Home() {
       description: "cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis",
       image: "/vtracker.png",
       year: "2025",
-      link: "/experiences/dashboard",
+      link: "/experiences/traffic",
     },
     {
       title: "PrepPal",
       description: "ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks",
       image: "/preppal.png",
       year: "2025",
-      link: "/experiences/e-commerce",
+      link: "/experiences/preppal",
     },
     {
       title: "FOUNDER @ LANDINGX",

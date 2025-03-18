@@ -11,7 +11,7 @@ export default function Navigation() {
 
   const links = [
     { path: "/", label: "HOME" },
-    { path: "/projects", label: "EXPERIENCES" },
+    { path: "/experiences", label: "EXPERIENCES" },
     { path: "/about", label: "ABOUT" },
     { path: "/contact", label: "CONTACT" },
   ]

@@ -68,7 +68,7 @@ export default function Projects() {
       description: "[job] developed an interactive lua-based curriculum in Roblox Studio",
       tags: ["lua", "scripting apis", "edtech", "game development"],
       image: "/cninjas.png",
-      link: "/experiences/fitness-app",
+      link: "/experiences/codeninjas",
       year: 2024,
     },
     {
@@ -76,7 +76,7 @@ export default function Projects() {
       description: "first iteration of my personal website, complete with 3d models and hosted on aws",
       tags: ["3d modelling", "aws", "react", "next.js", "tailwind"],
       image: "/v1aworld.png",
-      link: "/experiences/fitness-app",
+      link: "/experiences/v1world",
       year: 2024,
     },
     {

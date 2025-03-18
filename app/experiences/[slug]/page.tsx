@@ -352,6 +352,88 @@ const projectsData: Record<string, Project> = {
       }
     ],
   },
+  codeninjas: {
+    title: "sensai & camp leader @ code ninjas",
+    subtitle: "developed cirriculum & taught students",
+    year: "2024",
+    type: "job",
+    image: "/cninjas2.png",
+    contents: [
+      "curriculum development",
+      "game development",
+      "code reviews",
+      "collaboration with cross-functional teams",
+      "edtech integration",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+        "during my time at code ninjas, i was responsible for developing an engaging programming curriculum for both beginners and intermediate learners. i focused on integrating lua, game development concepts, and computational thinking into the lessons to help students build a strong foundation in coding while keeping them engaged through interactive tutorials and games."      },
+      {
+        type: "text",
+        content: "i designed and optimized educational games using lua and roblox studio, ensuring that students could apply what they learned in real-time through hands-on projects. by leveraging scripting apis, i enhanced game mechanics and interactivity, which increased student engagement and retention by 30%."
+
+      },
+
+      {
+        type: "image",
+        src: "/cninjas3.png",
+        alt: "code ninjas class",
+        width: 800,
+        height: 800,
+        fullWidth: false,
+      },
+
+      {
+        type: "text",
+        content: "working closely with a cross-functional team, including designers and educators, i ensured the curriculum met industry standards and aligned with the latest trends in educational technology (edtech). i also conducted code reviews, providing feedback to learners to improve their coding skills and problem-solving abilities. this experience gave me a strong foundation in edtech integration, game development, and fostering a collaborative environment for effective learning."
+
+      },
+    ],
+  },
+  v1world: {
+    title: "Armaan's World [v1]",
+    subtitle: "first iteration of my personal website",
+    year: "2024",
+    type: "project",
+    image: "/v1aworld2.png",
+    repoUrl: "https://github.com/dev-Armaan/armaans-world",
+    contents: [
+      "interactive 3d models",
+      "modern ui",
+      "vite tool",
+      "email functionality",
+      "aws amplify deployment",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+        "this project is a personal portfolio website built with a clean and modern ui, featuring interactive 3d models that enhance the user experience. leveraging technologies like javascript, html/css, react, node.js, tailwind css, three.js, emailjs, and vite, i created a visually engaging site that showcases my skills, past experiences, and projects. the website includes links to my socials, resume, and a tech stack display, all presented with an intuitive layout."
+       },
+      {
+        type: "text",
+        content: "one of the standout features of the site is the interactive 3d models, such as a customizable pc setup, floating tech stack balls, and a rotating globe, providing a dynamic and engaging browsing experience. the project is deployed using aws amplify, ensuring fast load times and reliable performance across devices."
+
+      },
+
+      {
+        type: "image",
+        src: "/v1aworld.png",
+        alt: "code ninjas class",
+        width: 800,
+        height: 800,
+        fullWidth: false,
+      },
+
+      {
+        type: "text",
+        content: "email functionality was integrated using emailjs, allowing visitors to contact me directly through the website. the use of vite as a build tool ensures fast load times and an efficient development process. this portfolio demonstrates both my front-end development skills and my ability to integrate creative and interactive elements into web design."
+
+      },
+    ],
+  },
 }
 
 export default function ProjectDetail() {

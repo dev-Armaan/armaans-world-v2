@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Github, ExternalLink } from "lucide-react"
 import { useParams } from "next/navigation"
 
 type TextBlock = {
@@ -18,7 +18,7 @@ type ImageBlock = {
   width: number
   height: number
   caption?: string
-  fullWidth?: boolean // New property to control if image takes full width
+  fullWidth?: boolean
 }
 
 type ContentBlock = TextBlock | ImageBlock
@@ -31,6 +31,8 @@ type Project = {
   image: string
   contents: string[]
   descriptionBlocks: ContentBlock[]
+  repoUrl?: string
+  demoUrl?: string
 }
 
 const projectsData: Record<string, Project> = {
@@ -40,6 +42,8 @@ const projectsData: Record<string, Project> = {
     year: "2023",
     type: "Web Application",
     image: "/placeholder.svg?height=800&width=1200",
+    repoUrl: "https://github.com/yourusername/e-commerce",
+    demoUrl: "https://e-commerce-demo.example.com",
     contents: [
       "User Authentication",
       "Product Management",
@@ -80,6 +84,7 @@ const projectsData: Record<string, Project> = {
     year: "2022",
     type: "SaaS Product",
     image: "/placeholder.svg?height=800&width=1200",
+    repoUrl: "https://github.com/yourusername/ai-generator",
     contents: [
       "Text Generation",
       "Image Creation",
@@ -120,6 +125,8 @@ const projectsData: Record<string, Project> = {
     year: "2022",
     type: "Enterprise Software",
     image: "/placeholder.svg?height=800&width=1200",
+    repoUrl: "https://github.com/yourusername/dashboard",
+    demoUrl: "https://dashboard-demo.example.com",
     contents: [
       "Real-time Data",
       "Custom Charts",
@@ -175,6 +182,7 @@ const projectsData: Record<string, Project> = {
     year: "2025",
     type: "project",
     image: "/asd.png",
+    repoUrl: "https://github.com/yourusername/asd-prediction",
     contents: [
       "Dataset Tuning",
       "Data Visualization",
@@ -190,10 +198,10 @@ const projectsData: Record<string, Project> = {
       },
       {
         type: "image",
-        src: "/asd.png",
+        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-17%20at%2021.35.20-ljEN1XYc4H3034GjpNKQVeQ3Z8OW0Q.png",
         alt: "ASD prediction model correlation heatmap",
-        width: 200,
-        height: 800,
+        width: 600,
+        height: 600,
         fullWidth: false,
       },
       {
@@ -209,6 +217,8 @@ const projectsData: Record<string, Project> = {
     year: "2021",
     type: "Mobile Application",
     image: "/placeholder.svg?height=800&width=1200",
+    repoUrl: "https://github.com/yourusername/fitness-app",
+    demoUrl: "https://fitness-app-demo.example.com",
     contents: [
       "Workout Tracking",
       "Nutrition Logging",
@@ -269,6 +279,24 @@ export default function ProjectDetail() {
             <p className="text-white/70">{project.subtitle}</p>
           </div>
 
+          {/* Repo link */}
+          {project.repoUrl && (
+            <motion.a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 space-x-2 bg-transparent border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 rounded-md button-animation"
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 15px rgba(var(--accent), 0.4)",
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Github className="h-5 w-5" />
+              <span className="font-medium">view repo</span>
+            </motion.a>
+          )}
+
           <div className="space-y-6">
             <div className="space-y-1">
               <h2 className="text-white text-sm uppercase tracking-wider">PROJECT INFO</h2>
@@ -282,6 +310,24 @@ export default function ProjectDetail() {
                   <h3 className="text-white/60 text-sm uppercase">YEAR</h3>
                   <p>{project.year}</p>
                 </div>
+
+                {/* Demo Link */}
+                {project.demoUrl && (
+                  <div className="space-y-2 pt-2">
+                    <h3 className="text-white/60 text-sm uppercase">DEMO</h3>
+                    <motion.a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-white/70 hover:text-gold transition-colors group"
+                      whileHover={{ x: 3 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <ExternalLink className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                      <span>Live Demo</span>
+                    </motion.a>
+                  </div>
+                )}
               </div>
             </div>
 

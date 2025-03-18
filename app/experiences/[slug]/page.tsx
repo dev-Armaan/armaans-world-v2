@@ -286,13 +286,37 @@ const projectsData: Record<string, Project> = {
     image: "/aworld.png",
     repoUrl: "https://github.com/dev-Armaan/armaans-world-v2",
     contents: [
-      "tbd",
+      "modern & responsive ui",
+      "optimized performance",
+      "integrated email functionality",
+      "cross-device compatibility",
     ],
     descriptionBlocks: [
       {
         type: "text",
         content:
-        "coming soon"      },
+        "this is the second iteration of my personal portfolio website, designed with a sleek, modern, and fully responsive user interface. built using typescript, react, next.js, and tailwind css, the site provides a seamless experience across all devices while maintaining optimized performance. it serves as a central hub to showcase my skills, past experiences, projects, and more, offering an interactive and intuitive browsing experience."  
+      },
+      {
+        type: "text",
+        content:
+        "leveraging next.js for server-side rendering and vite for fast builds, the website is designed for speed and efficiency. integrated email functionality via emailjs allows visitors to contact me directly, ensuring seamless communication. deployed on vercel, the site benefits from automatic optimizations and a globally distributed network for minimal load times."  
+      },
+
+      {
+        type: "image",
+        src: "/aworld3.png",
+        alt: "Armaan's world v2 screenshot",
+        width: 800,
+        height: 800,
+        fullWidth: false,
+      },
+
+      {
+        type: "text",
+        content:
+        "beyond aesthetics, this portfolio emphasizes functionality and accessibility, ensuring a smooth experience whether viewed on a desktop, tablet, or mobile device. with a focus on performance, responsiveness, and a refined ui, this iteration of my portfolio represents a polished, professional, and interactive showcase of my work."  
+      },
     ],
   },
   landingx: {

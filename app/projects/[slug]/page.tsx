@@ -6,7 +6,34 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { useParams } from "next/navigation"
 
-const projectsData = {
+type TextBlock = {
+  type: "text"
+  content: string
+}
+
+type ImageBlock = {
+  type: "image"
+  src: string
+  alt: string
+  width: number
+  height: number
+  caption?: string
+  fullWidth?: boolean // New property to control if image takes full width
+}
+
+type ContentBlock = TextBlock | ImageBlock
+
+type Project = {
+  title: string
+  subtitle: string
+  year: string
+  type: string
+  image: string
+  contents: string[]
+  descriptionBlocks: ContentBlock[]
+}
+
+const projectsData: Record<string, Project> = {
   "e-commerce": {
     title: "E-commerce Platform",
     subtitle: "A full-stack e-commerce solution",
@@ -21,16 +48,31 @@ const projectsData = {
       "Order Management",
       "Analytics Dashboard",
     ],
-    description: `
-      This e-commerce platform is a comprehensive solution for online retail businesses. 
-      It features a modern, responsive design with a focus on user experience and performance.
-      
-      The platform connects customers with products through an intuitive interface, while providing
-      merchants with powerful tools to manage their inventory, process orders, and analyze sales data.
-      
-      Built with scalability in mind, the architecture can handle high traffic volumes and integrates
-      seamlessly with various payment processors and shipping providers.
-    `,
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "This e-commerce platform is a comprehensive solution for online retail businesses. It features a modern, responsive design with a focus on user experience and performance.",
+      },
+      {
+        type: "text",
+        content:
+          "The platform connects customers with products through an intuitive interface, while providing merchants with powerful tools to manage their inventory, process orders, and analyze sales data.",
+      },
+      {
+        type: "image",
+        src: "/placeholder.svg?height=800&width=1200",
+        alt: "E-commerce dashboard interface",
+        width: 1200,
+        height: 800,
+        fullWidth: true,
+      },
+      {
+        type: "text",
+        content:
+          "Built with scalability in mind, the architecture can handle high traffic volumes and integrates seamlessly with various payment processors and shipping providers.",
+      },
+    ],
   },
   "ai-generator": {
     title: "AI Content Generator",
@@ -46,20 +88,34 @@ const projectsData = {
       "User Management",
       "API Integration",
     ],
-    description: `
-      The AI Content Generator is a powerful tool that leverages artificial intelligence to create
-      high-quality content for marketing, social media, and other digital platforms.
-      
-      Users can generate blog posts, social media captions, product descriptions, and more with
-      just a few clicks. The application also includes image generation capabilities, allowing
-      users to create custom visuals to accompany their text.
-      
-      The platform includes a robust API that allows businesses to integrate content generation
-      into their existing workflows and applications.
-    `,
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "The AI Content Generator is a powerful tool that leverages artificial intelligence to create high-quality content for marketing, social media, and other digital platforms.",
+      },
+      {
+        type: "image",
+        src: "/placeholder.svg?height=800&width=1200",
+        alt: "AI Generator interface",
+        width: 1200,
+        height: 800,
+        fullWidth: true,
+      },
+      {
+        type: "text",
+        content:
+          "Users can generate blog posts, social media captions, product descriptions, and more with just a few clicks. The application also includes image generation capabilities, allowing users to create custom visuals to accompany their text.",
+      },
+      {
+        type: "text",
+        content:
+          "The platform includes a robust API that allows businesses to integrate content generation into their existing workflows and applications.",
+      },
+    ],
   },
-  "dashboard": {
-    title: "gurmukhK ",
+  dashboard: {
+    title: "gurmukhK",
     subtitle: "Interactive data visualization platform",
     year: "2022",
     type: "Enterprise Software",
@@ -72,54 +128,80 @@ const projectsData = {
       "User Permissions",
       "Alerts & Notifications",
     ],
-    description: `
-      The Financial Dashboard is a sophisticated data visualization platform designed for financial
-      analysts and business executives. It transforms complex financial data into intuitive,
-      interactive visualizations that make it easy to identify trends and make informed decisions.
-      
-      The dashboard features real-time data updates, customizable charts and graphs, and
-      comprehensive reporting tools. Users can drill down into specific metrics, compare performance
-      across different time periods, and export data for further analysis.
-      
-      Security and user permissions are built into the core of the application, ensuring that
-      sensitive financial information is only accessible to authorized personnel.
-    `,
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "The Financial Dashboard is a sophisticated data visualization platform designed for financial analysts and business executives. It transforms complex financial data into intuitive, interactive visualizations that make it easy to identify trends and make informed decisions.",
+      },
+      {
+        type: "text",
+        content:
+          "The dashboard features real-time data updates, customizable charts and graphs, and comprehensive reporting tools. Users can drill down into specific metrics, compare performance across different time periods, and export data for further analysis.",
+      },
+      {
+        type: "image",
+        src: "/placeholder.svg?height=800&width=1200",
+        alt: "Dashboard interface",
+        width: 1200,
+        height: 800,
+        fullWidth: true,
+      },
+      {
+        type: "text",
+        content:
+          "Security and user permissions are built into the core of the application, ensuring that sensitive financial information is only accessible to authorized personnel.",
+      },
+    ],
   },
-  "govcanada": {
+  govcanada: {
     title: "Software Dev @ Government of Canada",
     subtitle: "summer 2025 internship",
     year: "2025",
     type: "internship",
     image: "/gov2.png",
-    contents: [
-      "TBD",
+    contents: ["TBD"],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "I will be working as a software developer at the government of canada (eccc division) starting in may 2025",
+      },
     ],
-    description: `
-      i will be working as a software developer at the government of canada (eccc division) starting in may 2025
-    `,
   },
-  "asd": {
+  asd: {
     title: "ASD Prediction Model",
     subtitle: "machine learning prediction model",
     year: "2025",
     type: "project",
     image: "/asd.png",
     contents: [
-      "Dataset Tuning","Data Visualization","Supervised Learning", "Hyperparameter Tuning", "Model Evaluation",
+      "Dataset Tuning",
+      "Data Visualization",
+      "Supervised Learning",
+      "Hyperparameter Tuning",
+      "Model Evaluation",
     ],
-    description: `
-      more than 75,000,000 people alive today have been diagnosed with autism spectrum disorder (asd). however, according to a recent study by the journal of the american medical association, medical teams could only accurately diagnose asd in children 60-89% of the time. given the sheer scale, this means millions of people are misdiagnosed every year. this is where my model comes in.
-      
-      \n
-
-      
-
-
-
-      The model incorporates data visualization, dataset tuning, hyperparameter optimization, and
-      model evaluation to ensure accuracy and reliability. It has the potential to revolutionize
-      the diagnosis and treatment of ASD, leading to better outcomes for patients and families.
-    `,
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "More than 75,000,000 people alive today have been diagnosed with autism spectrum disorder (asd). however, according to a recent study by the journal of the american medical association, medical teams could only accurately diagnose asd in children 60-89% of the time. given the sheer scale, this means millions of people are misdiagnosed every year. this is where my model comes in.",
+      },
+      {
+        type: "image",
+        src: "/asd.png",
+        alt: "ASD prediction model correlation heatmap",
+        width: 200,
+        height: 800,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "The model incorporates data visualization, dataset tuning, hyperparameter optimization, and model evaluation to ensure accuracy and reliability. It has the potential to revolutionize the diagnosis and treatment of ASD, leading to better outcomes for patients and families.",
+      },
+    ],
   },
   "fitness-app": {
     title: "Mobile Fitness App",
@@ -135,18 +217,31 @@ const projectsData = {
       "Personalized Plans",
       "Health Integrations",
     ],
-    description: `
-      The Mobile Fitness App is a comprehensive health and fitness tracking solution available
-      on iOS and Android. It helps users track their workouts, monitor nutrition, and analyze
-      their progress over time.
-      
-      The app includes a library of exercises with video demonstrations, customizable workout
-      plans, and a nutrition database for easy meal logging. Users can set goals, track their
-      progress, and share their achievements with friends.
-      
-      Integration with health platforms like Apple Health and Google Fit allows for a holistic
-      view of the user's health data, including steps, heart rate, and sleep patterns.
-    `,
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "The Mobile Fitness App is a comprehensive health and fitness tracking solution available on iOS and Android. It helps users track their workouts, monitor nutrition, and analyze their progress over time.",
+      },
+      {
+        type: "image",
+        src: "/placeholder.svg?height=800&width=1200",
+        alt: "Fitness app interface",
+        width: 1200,
+        height: 800,
+        fullWidth: true,
+      },
+      {
+        type: "text",
+        content:
+          "The app includes a library of exercises with video demonstrations, customizable workout plans, and a nutrition database for easy meal logging. Users can set goals, track their progress, and share their achievements with friends.",
+      },
+      {
+        type: "text",
+        content:
+          "Integration with health platforms like Apple Health and Google Fit allows for a holistic view of the user's health data, including steps, heart rate, and sleep patterns.",
+      },
+    ],
   },
 }
 
@@ -213,10 +308,28 @@ export default function ProjectDetail() {
           {project.title.split(" ")[0]} {project.title.split(" ")[1] || ""}
         </h2>
 
-        <div className="text-white/80 space-y-4 leading-relaxed">
-          {project.description.split("\n\n").map((paragraph, index) => (
-            <p key={index}>{paragraph.trim()}</p>
-          ))}
+        <div className="text-white/80 space-y-8 leading-relaxed">
+          {project.descriptionBlocks.map((block, index) => {
+            if (block.type === "text") {
+              return <p key={index}>{block.content}</p>
+            } else if (block.type === "image") {
+              return (
+                <div key={index} className="my-12 flex justify-center">
+                  <div className={block.fullWidth ? "w-full" : ""}>
+                    <Image
+                      src={block.src || "/placeholder.svg"}
+                      alt={block.alt}
+                      width={block.width}
+                      height={block.height}
+                      className="rounded-lg object-contain"
+                    />
+                    {block.caption && <p className="text-sm text-white/60 text-center mt-2">{block.caption}</p>}
+                  </div>
+                </div>
+              )
+            }
+            return null
+          })}
         </div>
       </div>
     </motion.div>

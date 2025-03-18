@@ -1,33 +1,32 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Space_Grotesk, DM_Sans } from "next/font/google"
-import "./globals.css"
-import Navigation from "@/components/navigation"
+import type React from "react";
+import type { Metadata } from "next";
+import { Space_Grotesk, DM_Sans } from "next/font/google";
+import "./globals.css";
+import Navigation from "@/components/navigation";
+import { Analytics } from "@vercel/analytics/react";
 
-// Load Space Grotesk font for headers (replacing Ki Bold)
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["700"],
   variable: "--font-space-grotesk",
-})
+});
 
-// Load DM Sans for body text (replacing PP Neue Montreal)
 const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-dm-sans",
-})
+});
 
 export const metadata: Metadata = {
   title: "Armaan's World",
   description: "Software Engineer Portfolio",
   icons: "/favicon-rbg.png",
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -36,11 +35,8 @@ export default function RootLayout({
           <Navigation />
           <main className="pt-24 pb-20">{children}</main>
         </div>
+        <Analytics />
       </body>
     </html>
-  )
+  );
 }
-
-
-
-import './globals.css'

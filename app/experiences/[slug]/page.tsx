@@ -218,43 +218,125 @@ const projectsData: Record<string, Project> = {
   },
   preppal: {
     title: "PrepPal",
-    subtitle: "",
+    subtitle: "ai-powered interview prep bot",
     year: "2025",
     type: "project",
     image: "/preppal.png",
     repoUrl: "https://github.com/dev-Armaan/ai-interviewer",
     demoUrl: "https://www.youtube.com/watch?v=0uulnpFgpyc",
     contents: [
-      "Workout Tracking",
-      "Nutrition Logging",
-      "Progress Analytics",
-      "Social Features",
-      "Personalized Plans",
-      "Health Integrations",
+      "genai questions",
+      "eye tracking",
+      "progress dashboard",
+      "24/7 accessibility",
+      "genai feedback & analytics",
     ],
     descriptionBlocks: [
       {
         type: "text",
         content:
-          "The Mobile Fitness App is a comprehensive health and fitness tracking solution available on iOS and Android. It helps users track their workouts, monitor nutrition, and analyze their progress over time.",
+          "preppal is an ai-powered interview preparation assistant designed to help users excel in various interview scenarios, whether technical, behavioral, or industry-specific. the platform simulates realistic mock interview sessions, providing personalized and interactive experiences tailored to each user’s needs. with preppal, candidates can practice anytime, anywhere, gaining valuable insights to improve their responses and boost confidence before the big day.",
       },
       {
         type: "image",
-        src: "/placeholder.svg?height=800&width=1200",
+        src: "/pfeedback.png",
         alt: "Fitness app interface",
-        width: 1200,
+        width: 800,
         height: 800,
-        fullWidth: true,
+        fullWidth: false,
       },
       {
         type: "text",
         content:
-          "The app includes a library of exercises with video demonstrations, customizable workout plans, and a nutrition database for easy meal logging. Users can set goals, track their progress, and share their achievements with friends.",
+          "the core of preppal lies in its dynamic question-and-answer sessions. it offers users the ability to choose between different question sets, such as technical, behavioral, or domain-specific, ensuring a well-rounded preparation. after each session, the ai provides detailed feedback, highlighting strengths and areas for improvement, helping users to focus their efforts on what matters most. this feedback, combined with the system’s advanced analytics, enables users to track their progress over time, making continuous improvements in their interview skills.",
       },
       {
         type: "text",
         content:
-          "Integration with health platforms like Apple Health and Google Fit allows for a holistic view of the user's health data, including steps, heart rate, and sleep patterns.",
+          "an added feature includes a progress dashboard, which gives users an overview of their performance across different sessions, showing trends and offering suggestions for further practice. the system also integrates eye tracking using opencv to analyze and provide feedback on non-verbal cues during interviews, offering a comprehensive approach to interview preparation.",
+      },
+      {
+        type: "text",
+        content:
+          "later, preppal integrated the gcp speech-to-text api, which allows users to practice their responses aloud and get instant transcriptions. this feature has significantly boosted user readiness by 40%, as users can review their spoken answers, refine their communication skills, and gain valuable insights into their verbal performance. this integration has been particularly popular, contributing to preppal gaining 100+ active users within just two weeks.",
+      },
+
+      {
+        type: "youtube",
+        videoId: "0uulnpFgpyc",
+        title: "preppal demo",
+      },
+
+      {
+        type: "text",
+        content: "built with a robust tech stack, preppal combines frontend technologies like react.js and tailwind css with a flask-powered backend, integrating apis from openai and cohere for intelligent question generation and feedback. mysql and mongodb handle the data storage needs, while opencv and recharts provide additional functionality and data visualizations for the user interface."
+      },
+
+      {
+        type: "text",
+        content: "preppal is available 24/7, offering flexibility to users who can practice at their own pace, whenever it suits them. whether you're preparing for a job interview or just sharpening your skills, preppal is here to help take your interview preparation to the next level."
+      },
+    ],
+  },
+  v2world: {
+    title: "PrepPal",
+    subtitle: "ai-powered interview prep bot",
+    year: "2025",
+    type: "project",
+    image: "/preppal.png",
+    repoUrl: "https://github.com/dev-Armaan/ai-interviewer",
+    demoUrl: "https://www.youtube.com/watch?v=0uulnpFgpyc",
+    contents: [
+      "genai questions",
+      "eye tracking",
+      "progress dashboard",
+      "24/7 accessibility",
+      "genai feedback & analytics",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "preppal is an ai-powered interview preparation assistant designed to help users excel in various interview scenarios, whether technical, behavioral, or industry-specific. the platform simulates realistic mock interview sessions, providing personalized and interactive experiences tailored to each user’s needs. with preppal, candidates can practice anytime, anywhere, gaining valuable insights to improve their responses and boost confidence before the big day.",
+      },
+      {
+        type: "image",
+        src: "/pfeedback.png",
+        alt: "Fitness app interface",
+        width: 800,
+        height: 800,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "the core of preppal lies in its dynamic question-and-answer sessions. it offers users the ability to choose between different question sets, such as technical, behavioral, or domain-specific, ensuring a well-rounded preparation. after each session, the ai provides detailed feedback, highlighting strengths and areas for improvement, helping users to focus their efforts on what matters most. this feedback, combined with the system’s advanced analytics, enables users to track their progress over time, making continuous improvements in their interview skills.",
+      },
+      {
+        type: "text",
+        content:
+          "an added feature includes a progress dashboard, which gives users an overview of their performance across different sessions, showing trends and offering suggestions for further practice. the system also integrates eye tracking using opencv to analyze and provide feedback on non-verbal cues during interviews, offering a comprehensive approach to interview preparation.",
+      },
+      {
+        type: "text",
+        content:
+          "later, preppal integrated the gcp speech-to-text api, which allows users to practice their responses aloud and get instant transcriptions. this feature has significantly boosted user readiness by 40%, as users can review their spoken answers, refine their communication skills, and gain valuable insights into their verbal performance. this integration has been particularly popular, contributing to preppal gaining 100+ active users within just two weeks.",
+      },
+
+      {
+        type: "youtube",
+        videoId: "0uulnpFgpyc",
+        title: "preppal demo",
+      },
+
+      {
+        type: "text",
+        content: "built with a robust tech stack, preppal combines frontend technologies like react.js and tailwind css with a flask-powered backend, integrating apis from openai and cohere for intelligent question generation and feedback. mysql and mongodb handle the data storage needs, while opencv and recharts provide additional functionality and data visualizations for the user interface."
+      },
+
+      {
+        type: "text",
+        content: "preppal is available 24/7, offering flexibility to users who can practice at their own pace, whenever it suits them. whether you're preparing for a job interview or just sharpening your skills, preppal is here to help take your interview preparation to the next level."
       },
     ],
   },
@@ -304,7 +386,7 @@ export default function ProjectDetail() {
 
           <div className="space-y-6">
             <div className="space-y-1">
-              <h2 className="text-white text-sm uppercase tracking-wider">PROJECT INFO</h2>
+              <h2 className="text-white text-sm uppercase tracking-wider">experience info</h2>
               <br />
               <div className="space-y-4">
                 <div>

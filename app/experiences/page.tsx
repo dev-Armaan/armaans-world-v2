@@ -91,8 +91,8 @@ export default function Projects() {
       title: "cirriculum dev @ hippocampus",
       description: "[job] developed programming cirriculum for students in grades 1-8",
       tags: ["scratch", "python", "ms office", "google suite"],
-      image: "/hcampus.png",
-      link: "/experiences/fitness-app",
+      image: "/hcampus2.jpg",
+      link: "/experiences/hippocampus",
       year: 2022,
     },
   ]

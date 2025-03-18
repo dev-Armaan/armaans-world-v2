@@ -486,6 +486,56 @@ const projectsData: Record<string, Project> = {
       },
     ],
   },
+  hippocampus: {
+    title: "cirriculum dev @ hippocampus",
+    subtitle: "developed programming cirriculum",
+    year: "2022",
+    type: "job",
+    image: "/hcampus2.jpg",
+    contents: [
+      "interactive learning",
+      "consumer-focused modules",
+      "cross-team collaboration",
+      "code reviews",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+        "at hippocampus learning, i played a key role in developing engaging, educational programming curriculums for beginner and intermediate students. collaborating closely with a cross-functional team, i helped create summer camp modules that balanced learning outcomes with fun, interactive content. using block-based programming platforms and robotics applications, i designed lesson plans that were both accessible and challenging, ensuring students developed key computational thinking skills while staying engaged."
+       },
+
+       {
+        type: "image",
+        src: "/hcampus5.jpg",
+        alt: "hippocampus class",
+        width: 600,
+        height: 800,
+        fullWidth: false,
+      },
+
+      {
+        type: "text",
+        content: "through regular communication with my superiors and team members, i ensured that each module aligned with the needs of the learners, while also pushing their boundaries in terms of programming concepts and problem-solving. one of my main responsibilities was to assess the educational materials and adapt them as needed to make sure they resonated with the students."
+
+      },
+
+      {
+        type: "image",
+        src: "/hcampus4.jpg",
+        alt: "hippocampus student",
+        width: 600,
+        height: 800,
+        fullWidth: false,
+      },
+
+      {
+        type: "text",
+        content: "i also participated in code reviews, providing constructive feedback to young programmers on how they could improve their code, learn new techniques, and deepen their understanding of programming concepts. this experience helped me foster an environment of continuous learning, where students felt motivated to improve and were encouraged to take risks in their coding journey. overall, my work at hippocampus learning was a fulfilling opportunity to contribute to the next generation of coders while refining my skills in curriculum development, interactive learning, and teamwork."
+
+      },
+    ],
+  },
 }
 
 export default function ProjectDetail() {

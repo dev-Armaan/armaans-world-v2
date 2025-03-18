@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export default function About() {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="space-y-16">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="space-y-8">
       <div className="space-y-6">
         <h1 className="text-5xl md:text-6xl font-bold relative inline-block">
           ABOUT
@@ -20,7 +20,7 @@ export default function About() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-12">
         <div className="space-y-12">
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">BACKGROUND</h2>

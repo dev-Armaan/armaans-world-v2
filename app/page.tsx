@@ -73,7 +73,7 @@ export default function Home() {
       description: "optimized NLP and CV models + personally consulted mastercard foundation & cibc execs on separate occasions",
       image: "/tks.png",
       year: "2022-2023",
-      link: "/experiences/fitness-app",
+      link: "/experiences/tks",
     },
   ]
 

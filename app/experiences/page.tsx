@@ -84,7 +84,7 @@ export default function Projects() {
       description: "[program] optimized NLP and CV models + personally consulted mastercard foundation & cibc execs on separate occasions",
       tags: ["neural networks", "nlp", "mobile app development", "git"],
       image: "/tks.png",
-      link: "/experiences/fitness-app",
+      link: "/experiences/tks",
       year: 2023,
     },
     {

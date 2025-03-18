@@ -131,12 +131,12 @@ const projectsData: Record<string, Project> = {
     year: "2025",
     type: "internship",
     image: "/gov2.png",
-    contents: ["TBD"],
+    contents: ["tbd"],
     descriptionBlocks: [
       {
         type: "text",
         content:
-          "I will be working as a software developer at the government of canada (eccc division) starting in may 2025",
+          "i will be working as a software developer at the government of canada (eccc division) starting in may 2025.",
       },
     ],
   },
@@ -430,6 +430,58 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content: "email functionality was integrated using emailjs, allowing visitors to contact me directly through the website. the use of vite as a build tool ensures fast load times and an efficient development process. this portfolio demonstrates both my front-end development skills and my ability to integrate creative and interactive elements into web design."
+
+      },
+    ],
+  },
+  tks: {
+    title: "AI INNOVATOR @ TKS",
+    subtitle: "9-month human accelerator program",
+    year: "2024",
+    type: "program",
+    image: "/tks.png",
+    repoUrl: "https://tks.life/profile/armaan.gupta#portfolio",
+    contents: [
+      "deep learning research",
+      "cnn development & optimization",
+      "technical competitions",
+      "cibc & mastercard consulting",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+        "during my time at tks, i had the opportunity to work on some exciting, cutting-edge ai projects with a focus on leveraging machine learning to address real-world business challenges. one of the key projects i led was a comprehensive 8-year strategy for cibc to attract and retain genz customers. this strategy involved extensive research into customer behavior and preferences, and i used this data to design a mobile app prototype that integrated react, node.js, and aws for a scalable, efficient backend. the app included automation features to streamline the user experience and enhance personalization for genz users. this work required me to balance technical considerations with business needs, ensuring the solution aligned with cibc’s long-term goals."
+       },
+
+
+       {
+        type: "image",
+        src: "/mnist.png",
+        alt: "code ninjas class",
+        width: 400,
+        height: 800,
+        fullWidth: false,
+      },
+
+      {
+        type: "text",
+        content: "in addition to my work with cibc, i dedicated significant time to advancing my knowledge of deep learning, particularly in the areas of natural language processing (nlp) and computer vision (cv). my r&d work focused on optimizing cnn architectures, which led to breakthroughs like improving a text recognition model to 99.5% accuracy, while also enhancing its speed by 27%. i also applied these improvements to other classification tasks, boosting their performance by 15%. these results were a direct outcome of my experimentation with new techniques, such as incorporating attention mechanisms into the cnn, as well as my implementation of advanced data augmentation methods to address overfitting."
+
+      },
+
+      {
+        type: "image",
+        src: "/tksmc.png",
+        alt: "code ninjas class",
+        width: 800,
+        height: 800,
+        fullWidth: false,
+      },
+
+      {
+        type: "text",
+        content: "my efforts were recognized when i won separate technical competitions hosted by the mastercard foundation and cibc, which further cemented my understanding of how emerging technologies can be integrated into business operations. these wins opened doors for me to consult directly with executives at both organizations, where i provided insights into the future integration of ai and machine learning into their systems. through these consultations, i gained invaluable experience working with senior leaders to translate technical ideas into actionable business strategies, ensuring the seamless adoption of new technologies that drive innovation and competitive advantage."
 
       },
     ],

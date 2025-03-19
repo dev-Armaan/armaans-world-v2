@@ -223,7 +223,7 @@ const projectsData: Record<string, Project> = {
     type: "project",
     image: "/preppal.png",
     repoUrl: "https://github.com/dev-Armaan/ai-interviewer",
-    demoUrl: "https://www.youtube.com/watch?v=0uulnpFgpyc",
+    demoUrl: "https://preppal.work",
     contents: [
       "genai questions",
       "eye tracking",
@@ -631,7 +631,7 @@ export default function ProjectDetail() {
                       whileTap={{ scale: 0.98 }}
                     >
                       <ExternalLink className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                      <span>view video</span>
+                      <span>view link</span>
                     </motion.a>
                   </div>
                 )}

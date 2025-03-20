@@ -31,7 +31,7 @@ export default function Contact() {
     try {
       console.log("Sending email with EmailJS...")
       await emailjs.send(
-        "service_mtvk7f6",
+        "service_u2j99t7",
         "template_h7aqgzd", 
         {
           name: formState.name,

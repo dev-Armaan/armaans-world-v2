@@ -19,8 +19,31 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "Armaan's World",
-  description: "Software Engineer Portfolio",
-  icons: "/favicon-rbg.png",
+  description: "Armaan Gupta - AI & Software Engineering Portfolio",
+  icons: {
+    icon: "/favicon-rbg.png",
+  },
+  openGraph: {
+    title: "Armaan's World",
+    description: "Armaan Gupta - AI & Software Engineering Portfolio",
+    url: "https://www.armaan.world",
+    siteName: "Armaan's World",
+    images: [
+      {
+        url: "/favicon-rbg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Armaan's World - AI & Software Engineering Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Armaan's World",
+    description: "Armaan Gupta - AI & Software Engineering Portfolio",
+    images: ["favicon-rbg.jpg"],
+  },
 };
 
 export default function RootLayout({

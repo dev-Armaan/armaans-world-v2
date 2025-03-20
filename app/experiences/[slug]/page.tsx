@@ -284,7 +284,6 @@ const projectsData: Record<string, Project> = {
     year: "2025",
     type: "project",
     image: "/aworld.png",
-    repoUrl: "https://github.com/dev-Armaan/armaans-world-v2",
     contents: [
       "modern & responsive ui",
       "optimized performance",
@@ -295,7 +294,7 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-        "this is the second iteration of my personal portfolio website, designed with a sleek, modern, and fully responsive user interface. built using typescript, react, next.js, and tailwind css, the site provides a seamless experience across all devices while maintaining optimized performance. it serves as a central hub to showcase my skills, past experiences, projects, and more, offering an interactive and intuitive browsing experience."  
+        "you're on it right now! this is the second iteration of my personal portfolio website, designed with a sleek, modern, and fully responsive user interface. built using typescript, react, next.js, and tailwind css, the site provides a seamless experience across all devices while maintaining optimized performance. it serves as a central hub to showcase my skills, past experiences, projects, and more, offering an interactive and intuitive browsing experience."  
       },
       {
         type: "text",

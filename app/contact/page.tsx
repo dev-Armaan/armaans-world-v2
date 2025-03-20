@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { Send, Github, Linkedin, Mail } from "lucide-react"
@@ -30,23 +29,25 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
+      console.log("Sending email with EmailJS...")
       await emailjs.send(
-        "service_njrckq3", // Service ID
-        "template_h7aqgzd", // Template ID
+        "service_mtvk7f6",
+        "template_h7aqgzd", 
         {
           name: formState.name,
           email: formState.email,
           message: formState.message,
         },
-        "MXYvgb2zQcUQGjL4G" // Public Key
+        "MXYvgb2zQcUQGjL4G"
       )
 
+      console.log("✅ Email sent successfully!")
       setIsSubmitted(true)
       setFormState({ name: "", email: "", message: "" })
 
       setTimeout(() => setIsSubmitted(false), 3000)
     } catch (error) {
-      console.error("Email sending error:", error)
+      console.error("❌ Email sending error:", error)
     } finally {
       setIsSubmitting(false)
     }
@@ -65,7 +66,7 @@ export default function Contact() {
           />
         </h1>
         <p className="text-white max-w-2xl text-lg">
-          feel free to reach out about opportunities, collaborations, or just to chat
+          Feel free to reach out about opportunities, collaborations, or just to chat.
         </p>
       </div>
 
@@ -83,10 +84,7 @@ export default function Contact() {
               href="mailto:a585gupt@uwaterloo.ca"
               className="flex items-center space-x-3 text-white/70 hover:text-white transition-all group"
               whileHover={{ x: 5 }}
-              whileTap={{
-                scale: 0.95,
-                transition: { duration: 0.1 },
-              }}
+              whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
             >
               <Mail className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
               <span>a585gupt@uwaterloo.ca</span>
@@ -98,10 +96,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="flex items-center space-x-3 text-white/70 hover:text-white transition-all group"
               whileHover={{ x: 5 }}
-              whileTap={{
-                scale: 0.95,
-                transition: { duration: 0.1 },
-              }}
+              whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
             >
               <Github className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
               <span>github.com/dev-Armaan</span>
@@ -113,10 +108,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="flex items-center space-x-3 text-white/70 hover:text-white transition-all group"
               whileHover={{ x: 5 }}
-              whileTap={{
-                scale: 0.95,
-                transition: { duration: 0.1 },
-              }}
+              whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
             >
               <Linkedin className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
               <span>linkedin.com/in/gupta-armaan</span>
@@ -127,117 +119,62 @@ export default function Contact() {
         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <label htmlFor="name" className="block text-sm text-white/70 uppercase tracking-wider font-ki-bold">
+              <label htmlFor="name" className="block text-sm text-white/70 uppercase tracking-wider font-bold">
                 Name
               </label>
-              <motion.div
-                className={`relative border ${activeInput === "name" ? "border-gold" : "border-white/20"} transition-colors duration-300`}
-              >
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formState.name}
-                  onChange={handleChange}
-                  onFocus={() => setActiveInput("name")}
-                  onBlur={() => setActiveInput(null)}
-                  required
-                  className="w-full bg-transparent border-0 px-4 py-2 focus:outline-none"
-                />
-                {activeInput === "name" && (
-                  <motion.span
-                    layoutId="form-highlight"
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gold"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    exit={{ scaleX: 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                )}
-              </motion.div>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formState.name}
+                onChange={handleChange}
+                required
+                className="w-full bg-transparent border border-white/20 px-4 py-2 focus:outline-none"
+              />
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="email" className="block text-sm text-white/70 uppercase tracking-wider font-ki-bold">
+              <label htmlFor="email" className="block text-sm text-white/70 uppercase tracking-wider font-bold">
                 Email
               </label>
-              <motion.div
-                className={`relative border ${activeInput === "email" ? "border-gold" : "border-white/20"} transition-colors duration-300`}
-              >
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                  onFocus={() => setActiveInput("email")}
-                  onBlur={() => setActiveInput(null)}
-                  required
-                  className="w-full bg-transparent border-0 px-4 py-2 focus:outline-none"
-                />
-                {activeInput === "email" && (
-                  <motion.span
-                    layoutId="form-highlight"
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gold"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    exit={{ scaleX: 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                )}
-              </motion.div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formState.email}
+                onChange={handleChange}
+                required
+                className="w-full bg-transparent border border-white/20 px-4 py-2 focus:outline-none"
+              />
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="message" className="block text-sm text-white/70 uppercase tracking-wider font-ki-bold">
+              <label htmlFor="message" className="block text-sm text-white/70 uppercase tracking-wider font-bold">
                 Message
               </label>
-              <motion.div
-                className={`relative border ${activeInput === "message" ? "border-gold" : "border-white/20"} transition-colors duration-300`}
-              >
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formState.message}
-                  onChange={handleChange}
-                  onFocus={() => setActiveInput("message")}
-                  onBlur={() => setActiveInput(null)}
-                  required
-                  rows={5}
-                  className="w-full bg-transparent border-0 px-4 py-2 focus:outline-none resize-none"
-                />
-                {activeInput === "message" && (
-                  <motion.span
-                    layoutId="form-highlight"
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gold"
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    exit={{ scaleX: 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                )}
-              </motion.div>
+              <textarea
+                id="message"
+                name="message"
+                value={formState.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                className="w-full bg-transparent border border-white/20 px-4 py-2 focus:outline-none resize-none"
+              />
             </div>
 
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="button-animation magnetic-button font-ki-bold flex items-center space-x-2 px-6 py-3 border border-gold text-gold hover:text-black hover:bg-gold transition-all duration-300 disabled:opacity-50 disabled:hover:text-gold disabled:hover:bg-transparent"
-              whileHover={{
-                boxShadow: "0 0 15px rgba(var(--accent), 0.4)",
-              }}
-              whileTap={{
-                scale: 0.95,
-                boxShadow: "0 0 5px rgba(var(--accent), 0.7)",
-              }}
+              className="flex items-center space-x-2 px-6 py-3 border border-gold text-gold hover:text-black hover:bg-gold transition-all duration-300 disabled:opacity-50"
             >
-              <span className="uppercase text-sm tracking-wider">{isSubmitting ? "SENDING..." : "SEND MESSAGE"}</span>
+              <span>{isSubmitting ? "SENDING..." : "SEND MESSAGE"}</span>
               <Send className="h-4 w-4" />
             </motion.button>
 
             {isSubmitted && (
               <motion.div
-                className="text-center text-gold font-ki-bold"
+                className="text-center text-gold font-bold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
@@ -248,7 +185,7 @@ export default function Contact() {
           </form>
         </motion.div>
       </div>
-      <br /><br /><br /><br /><br />
+
       <footer className="w-full py-4 text-center text-sm text-white/70 border-t border-white/10">
         © {new Date().getFullYear()} Armaan Gupta. All rights reserved.
       </footer>

@@ -16,7 +16,7 @@ export default function About() {
           />
         </h1>
         <p className="text-white/70 max-w-2xl text-lg">
-          an 18 y/o software engineer trying to change the world one line of code at a time
+          born in sauga, raised in brampton, school in waterloo, work in toronto
         </p>
       </div>
 

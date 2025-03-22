@@ -121,8 +121,9 @@ const projectsData: Record<string, Project> = {
 
       {
         type: "text",
-        content:"this approach allows the system to work across different camera angles because the transformation matrix is adjustable. by defining a new source-target mapping specific to each camera setup, the model can adapt to various perspectives while maintaining accurate speed estimation. additionally, because vehicle classification is handled by yolo’s object detection network, it remains robust to changes in lighting, background, and road conditions, ensuring reliable classification of different vehicle types in diverse environments."
-      }
+        content:
+          "this approach allows the system to work across different camera angles because the transformation matrix is adjustable. by defining a new source-target mapping specific to each camera setup, the model can adapt to various perspectives while maintaining accurate speed estimation. additionally, because vehicle classification is handled by yolo’s object detection network, it remains robust to changes in lighting, background, and road conditions, ensuring reliable classification of different vehicle types in diverse environments.",
+      },
     ],
   },
   govcanada: {
@@ -269,12 +270,14 @@ const projectsData: Record<string, Project> = {
 
       {
         type: "text",
-        content: "built with a robust tech stack, preppal combines frontend technologies like react.js and tailwind css with a flask-powered backend, integrating apis from openai and cohere for intelligent question generation and feedback. mysql and mongodb handle the data storage needs, while opencv and recharts provide additional functionality and data visualizations for the user interface."
+        content:
+          "built with a robust tech stack, preppal combines frontend technologies like react.js and tailwind css with a flask-powered backend, integrating apis from openai and cohere for intelligent question generation and feedback. mysql and mongodb handle the data storage needs, while opencv and recharts provide additional functionality and data visualizations for the user interface.",
       },
 
       {
         type: "text",
-        content: "preppal is available 24/7, offering flexibility to users who can practice at their own pace, whenever it suits them. whether you're preparing for a job interview or just sharpening your skills, preppal is here to help take your interview preparation to the next level."
+        content:
+          "preppal is available 24/7, offering flexibility to users who can practice at their own pace, whenever it suits them. whether you're preparing for a job interview or just sharpening your skills, preppal is here to help take your interview preparation to the next level.",
       },
     ],
   },
@@ -294,12 +297,12 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-        "you're on it right now! this is the second iteration of my personal portfolio website, designed with a sleek, modern, and fully responsive user interface. built using typescript, react, next.js, and tailwind css, the site provides a seamless experience across all devices while maintaining optimized performance. it serves as a central hub to showcase my skills, past experiences, projects, and more, offering an interactive and intuitive browsing experience."  
+          "you're on it right now! this is the second iteration of my personal portfolio website, designed with a sleek, modern, and fully responsive user interface. built using typescript, react, next.js, and tailwind css, the site provides a seamless experience across all devices while maintaining optimized performance. it serves as a central hub to showcase my skills, past experiences, projects, and more, offering an interactive and intuitive browsing experience.",
       },
       {
         type: "text",
         content:
-        "leveraging next.js for server-side rendering and vite for fast builds, the website is designed for speed and efficiency. integrated email functionality via emailjs allows visitors to contact me directly, ensuring seamless communication. deployed on vercel, the site benefits from automatic optimizations and a globally distributed network for minimal load times."  
+          "leveraging next.js for server-side rendering and vite for fast builds, the website is designed for speed and efficiency. integrated email functionality via emailjs allows visitors to contact me directly, ensuring seamless communication. deployed on vercel, the site benefits from automatic optimizations and a globally distributed network for minimal load times.",
       },
 
       {
@@ -314,7 +317,7 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-        "beyond aesthetics, this portfolio emphasizes functionality and accessibility, ensuring a smooth experience whether viewed on a desktop, tablet, or mobile device. with a focus on performance, responsiveness, and a refined ui, this iteration of my portfolio represents a polished, professional, and interactive showcase of my work."  
+          "beyond aesthetics, this portfolio emphasizes functionality and accessibility, ensuring a smooth experience whether viewed on a desktop, tablet, or mobile device. with a focus on performance, responsiveness, and a refined ui, this iteration of my portfolio represents a polished, professional, and interactive showcase of my work.",
       },
     ],
   },
@@ -334,11 +337,12 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-        "as the ceo and founder of landingx, i focused on building modern, responsive web applications that met client needs through tailored, cutting-edge solutions. for each project, i first took the time to understand the specific requirements and objectives of the client, gathering insights into their target audience and business goals. using technologies like react.js and node.js, i created dynamic user interfaces and scalable backends to ensure the applications were not only functional but also aesthetically appealing."      },
+          "as the ceo and founder of landingx, i focused on building modern, responsive web applications that met client needs through tailored, cutting-edge solutions. for each project, i first took the time to understand the specific requirements and objectives of the client, gathering insights into their target audience and business goals. using technologies like react.js and node.js, i created dynamic user interfaces and scalable backends to ensure the applications were not only functional but also aesthetically appealing.",
+      },
       {
         type: "text",
-        content: "i used three.js for interactive 3d visuals when the project demanded a more immersive user experience. leveraging tailwind css, i was able to quickly implement customizable styles while ensuring a consistent look and feel across devices, achieving seamless cross-device compatibility. to further ensure quality, i continuously tested applications on various screen sizes and browsers."
-
+        content:
+          "i used three.js for interactive 3d visuals when the project demanded a more immersive user experience. leveraging tailwind css, i was able to quickly implement customizable styles while ensuring a consistent look and feel across devices, achieving seamless cross-device compatibility. to further ensure quality, i continuously tested applications on various screen sizes and browsers.",
       },
 
       {
@@ -352,12 +356,14 @@ const projectsData: Record<string, Project> = {
 
       {
         type: "text",
-        content: "on the deployment side, i utilized vercel and aws to host applications, optimizing performance through content delivery networks (cdns) and fine-tuning load times by up to 30%. in doing so, i ensured a smooth and fast user experience, even with high traffic."
+        content:
+          "on the deployment side, i utilized vercel and aws to host applications, optimizing performance through content delivery networks (cdns) and fine-tuning load times by up to 30%. in doing so, i ensured a smooth and fast user experience, even with high traffic.",
       },
 
       {
         type: "text",
-        content: "my role also involved direct communication with clients, where i translated their needs into technical solutions, ensuring alignment between business objectives and the development process. i worked closely with team members, iterating on designs and implementing features based on feedback. my focus on client satisfaction led to a 95% client retention rate."
+        content:
+          "my role also involved direct communication with clients, where i translated their needs into technical solutions, ensuring alignment between business objectives and the development process. i worked closely with team members, iterating on designs and implementing features based on feedback. my focus on client satisfaction led to a 95% client retention rate.",
       },
 
       {
@@ -371,8 +377,9 @@ const projectsData: Record<string, Project> = {
 
       {
         type: "text",
-        content:"by managing the full-stack development workflow using vite, npm, and git, i ensured seamless collaboration, version control, and deployment pipelines, which made the development process more efficient and streamlined. this allowed me to scale the business and deliver high-quality web applications to clients."
-      }
+        content:
+          "by managing the full-stack development workflow using vite, npm, and git, i ensured seamless collaboration, version control, and deployment pipelines, which made the development process more efficient and streamlined. this allowed me to scale the business and deliver high-quality web applications to clients.",
+      },
     ],
   },
   codeninjas: {
@@ -392,11 +399,12 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-        "during my time at code ninjas, i was responsible for developing an engaging programming curriculum for both beginners and intermediate learners. i focused on integrating lua, game development concepts, and computational thinking into the lessons to help students build a strong foundation in coding while keeping them engaged through interactive tutorials and games."      },
+          "during my time at code ninjas, i was responsible for developing an engaging programming curriculum for both beginners and intermediate learners. i focused on integrating lua, game development concepts, and computational thinking into the lessons to help students build a strong foundation in coding while keeping them engaged through interactive tutorials and games.",
+      },
       {
         type: "text",
-        content: "i designed and optimized educational games using lua and roblox studio, ensuring that students could apply what they learned in real-time through hands-on projects. by leveraging scripting apis, i enhanced game mechanics and interactivity, which increased student engagement and retention by 30%."
-
+        content:
+          "i designed and optimized educational games using lua and roblox studio, ensuring that students could apply what they learned in real-time through hands-on projects. by leveraging scripting apis, i enhanced game mechanics and interactivity, which increased student engagement and retention by 30%.",
       },
 
       {
@@ -410,8 +418,8 @@ const projectsData: Record<string, Project> = {
 
       {
         type: "text",
-        content: "working closely with a cross-functional team, including designers and educators, i ensured the curriculum met industry standards and aligned with the latest trends in educational technology (edtech). i also conducted code reviews, providing feedback to learners to improve their coding skills and problem-solving abilities. this experience gave me a strong foundation in edtech integration, game development, and fostering a collaborative environment for effective learning."
-
+        content:
+          "working closely with a cross-functional team, including designers and educators, i ensured the curriculum met industry standards and aligned with the latest trends in educational technology (edtech). i also conducted code reviews, providing feedback to learners to improve their coding skills and problem-solving abilities. this experience gave me a strong foundation in edtech integration, game development, and fostering a collaborative environment for effective learning.",
       },
     ],
   },
@@ -422,23 +430,17 @@ const projectsData: Record<string, Project> = {
     type: "project",
     image: "/v1aworld2.png",
     repoUrl: "https://github.com/dev-Armaan/armaans-world",
-    contents: [
-      "interactive 3d models",
-      "modern ui",
-      "vite tool",
-      "email functionality",
-      "aws amplify deployment",
-    ],
+    contents: ["interactive 3d models", "modern ui", "vite tool", "email functionality", "aws amplify deployment"],
     descriptionBlocks: [
       {
         type: "text",
         content:
-        "this project is a personal portfolio website built with a clean and modern ui, featuring interactive 3d models that enhance the user experience. leveraging technologies like javascript, html/css, react, node.js, tailwind css, three.js, emailjs, and vite, i created a visually engaging site that showcases my skills, past experiences, and projects. the website includes links to my socials, resume, and a tech stack display, all presented with an intuitive layout."
-       },
+          "this project is a personal portfolio website built with a clean and modern ui, featuring interactive 3d models that enhance the user experience. leveraging technologies like javascript, html/css, react, node.js, tailwind css, three.js, emailjs, and vite, i created a visually engaging site that showcases my skills, past experiences, and projects. the website includes links to my socials, resume, and a tech stack display, all presented with an intuitive layout.",
+      },
       {
         type: "text",
-        content: "one of the standout features of the site is the interactive 3d models, such as a customizable pc setup, floating tech stack balls, and a rotating globe, providing a dynamic and engaging browsing experience. the project is deployed using aws amplify, ensuring fast load times and reliable performance across devices."
-
+        content:
+          "one of the standout features of the site is the interactive 3d models, such as a customizable pc setup, floating tech stack balls, and a rotating globe, providing a dynamic and engaging browsing experience. the project is deployed using aws amplify, ensuring fast load times and reliable performance across devices.",
       },
 
       {
@@ -452,8 +454,8 @@ const projectsData: Record<string, Project> = {
 
       {
         type: "text",
-        content: "email functionality was integrated using emailjs, allowing visitors to contact me directly through the website. the use of vite as a build tool ensures fast load times and an efficient development process. this portfolio demonstrates both my front-end development skills and my ability to integrate creative and interactive elements into web design."
-
+        content:
+          "email functionality was integrated using emailjs, allowing visitors to contact me directly through the website. the use of vite as a build tool ensures fast load times and an efficient development process. this portfolio demonstrates both my front-end development skills and my ability to integrate creative and interactive elements into web design.",
       },
     ],
   },
@@ -474,11 +476,10 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-        "during my time at tks, i had the opportunity to work on some exciting, cutting-edge ai projects with a focus on leveraging machine learning to address real-world business challenges. one of the key projects i led was a comprehensive 8-year strategy for cibc to attract and retain genz customers. this strategy involved extensive research into customer behavior and preferences, and i used this data to design a mobile app prototype that integrated react, node.js, and aws for a scalable, efficient backend. the app included automation features to streamline the user experience and enhance personalization for genz users. this work required me to balance technical considerations with business needs, ensuring the solution aligned with cibc’s long-term goals."
-       },
+          "during my time at tks, i had the opportunity to work on some exciting, cutting-edge ai projects with a focus on leveraging machine learning to address real-world business challenges. one of the key projects i led was a comprehensive 8-year strategy for cibc to attract and retain genz customers. this strategy involved extensive research into customer behavior and preferences, and i used this data to design a mobile app prototype that integrated react, node.js, and aws for a scalable, efficient backend. the app included automation features to streamline the user experience and enhance personalization for genz users. this work required me to balance technical considerations with business needs, ensuring the solution aligned with cibc’s long-term goals.",
+      },
 
-
-       {
+      {
         type: "image",
         src: "/mnist.png",
         alt: "code ninjas class",
@@ -489,8 +490,8 @@ const projectsData: Record<string, Project> = {
 
       {
         type: "text",
-        content: "in addition to my work with cibc, i dedicated significant time to advancing my knowledge of deep learning, particularly in the areas of natural language processing (nlp) and computer vision (cv). my r&d work focused on optimizing cnn architectures, which led to breakthroughs like improving a text recognition model to 99.5% accuracy, while also enhancing its speed by 27%. i also applied these improvements to other classification tasks, boosting their performance by 15%. these results were a direct outcome of my experimentation with new techniques, such as incorporating attention mechanisms into the cnn, as well as my implementation of advanced data augmentation methods to address overfitting."
-
+        content:
+          "in addition to my work with cibc, i dedicated significant time to advancing my knowledge of deep learning, particularly in the areas of natural language processing (nlp) and computer vision (cv). my r&d work focused on optimizing cnn architectures, which led to breakthroughs like improving a text recognition model to 99.5% accuracy, while also enhancing its speed by 27%. i also applied these improvements to other classification tasks, boosting their performance by 15%. these results were a direct outcome of my experimentation with new techniques, such as incorporating attention mechanisms into the cnn, as well as my implementation of advanced data augmentation methods to address overfitting.",
       },
 
       {
@@ -504,8 +505,8 @@ const projectsData: Record<string, Project> = {
 
       {
         type: "text",
-        content: "my efforts were recognized when i won separate technical competitions hosted by the mastercard foundation and cibc, which further cemented my understanding of how emerging technologies can be integrated into business operations. these wins opened doors for me to consult directly with executives at both organizations, where i provided insights into the future integration of ai and machine learning into their systems. through these consultations, i gained invaluable experience working with senior leaders to translate technical ideas into actionable business strategies, ensuring the seamless adoption of new technologies that drive innovation and competitive advantage."
-
+        content:
+          "my efforts were recognized when i won separate technical competitions hosted by the mastercard foundation and cibc, which further cemented my understanding of how emerging technologies can be integrated into business operations. these wins opened doors for me to consult directly with executives at both organizations, where i provided insights into the future integration of ai and machine learning into their systems. through these consultations, i gained invaluable experience working with senior leaders to translate technical ideas into actionable business strategies, ensuring the seamless adoption of new technologies that drive innovation and competitive advantage.",
       },
     ],
   },
@@ -515,20 +516,15 @@ const projectsData: Record<string, Project> = {
     year: "2022",
     type: "job",
     image: "/hcampus2.jpg",
-    contents: [
-      "interactive learning",
-      "consumer-focused modules",
-      "cross-team collaboration",
-      "code reviews",
-    ],
+    contents: ["interactive learning", "consumer-focused modules", "cross-team collaboration", "code reviews"],
     descriptionBlocks: [
       {
         type: "text",
         content:
-        "at hippocampus learning, i played a key role in developing engaging, educational programming curriculums for beginner and intermediate students. collaborating closely with a cross-functional team, i helped create summer camp modules that balanced learning outcomes with fun, interactive content. using block-based programming platforms and robotics applications, i designed lesson plans that were both accessible and challenging, ensuring students developed key computational thinking skills while staying engaged."
-       },
+          "at hippocampus learning, i played a key role in developing engaging, educational programming curriculums for beginner and intermediate students. collaborating closely with a cross-functional team, i helped create summer camp modules that balanced learning outcomes with fun, interactive content. using block-based programming platforms and robotics applications, i designed lesson plans that were both accessible and challenging, ensuring students developed key computational thinking skills while staying engaged.",
+      },
 
-       {
+      {
         type: "image",
         src: "/hcampus5.jpg",
         alt: "hippocampus class",
@@ -539,8 +535,8 @@ const projectsData: Record<string, Project> = {
 
       {
         type: "text",
-        content: "through regular communication with my superiors and team members, i ensured that each module aligned with the needs of the learners, while also pushing their boundaries in terms of programming concepts and problem-solving. one of my main responsibilities was to assess the educational materials and adapt them as needed to make sure they resonated with the students."
-
+        content:
+          "through regular communication with my superiors and team members, i ensured that each module aligned with the needs of the learners, while also pushing their boundaries in terms of programming concepts and problem-solving. one of my main responsibilities was to assess the educational materials and adapt them as needed to make sure they resonated with the students.",
       },
 
       {
@@ -554,8 +550,8 @@ const projectsData: Record<string, Project> = {
 
       {
         type: "text",
-        content: "i also participated in code reviews, providing constructive feedback to young programmers on how they could improve their code, learn new techniques, and deepen their understanding of programming concepts. this experience helped me foster an environment of continuous learning, where students felt motivated to improve and were encouraged to take risks in their coding journey. overall, my work at hippocampus learning was a fulfilling opportunity to contribute to the next generation of coders while refining my skills in curriculum development, interactive learning, and teamwork."
-
+        content:
+          "i also participated in code reviews, providing constructive feedback to young programmers on how they could improve their code, learn new techniques, and deepen their understanding of programming concepts. this experience helped me foster an environment of continuous learning, where students felt motivated to improve and were encouraged to take risks in their coding journey. overall, my work at hippocampus learning was a fulfilling opportunity to contribute to the next generation of coders while refining my skills in curriculum development, interactive learning, and teamwork.",
       },
     ],
   },
@@ -575,7 +571,10 @@ export default function ProjectDetail() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="space-y-16">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-16">
         <div className="space-y-8">
-          <Link href="/experiences" className="inline-flex items-center text-white/60 hover:text-white transition-colors">
+          <Link
+            href="/experiences"
+            className="inline-flex items-center text-white/60 hover:text-white transition-colors"
+          >
             <ArrowLeft className="mr-2 h-4 w-4" />
             <span className="text-sm uppercase tracking-wider">Back to experiences</span>
           </Link>
@@ -683,7 +682,14 @@ export default function ProjectDetail() {
             return null
           })}
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
+      <footer className="w-full py-4 text-center text-sm text-white/70 border-t border-white/10 mt-16">
+        © {new Date().getFullYear()} armaan gupta. all rights reserved.
+      </footer>
     </motion.div>
   )
 }

@@ -286,6 +286,7 @@ const projectsData: Record<string, Project> = {
     subtitle: "second iteration of my personal website",
     year: "2025",
     type: "project",
+    repoUrl: "https://github.com/dev-Armaan/armaans-world-v2",
     image: "/aworld.png",
     contents: [
       "modern & responsive ui",

@@ -11,7 +11,7 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Software Dev @ Government of Canada",
+      title: "Software Dev @ environment canada",
       description:
         "[internship] incoming may 2025",
       tags: [],

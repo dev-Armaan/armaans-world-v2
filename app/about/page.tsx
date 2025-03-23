@@ -147,27 +147,27 @@ export default function About() {
               {[
                 {
                   title: "SOFTWARE DEVELOPER",
-                  company: "Government of Canada",
+                  company: "environment canada",
                   period: "2025 (incoming)",
                 },
                 {
                   title: "Founder & CEO",
-                  company: "LandingX",
+                  company: "landingx",
                   period: "2024",
                 },
                 {
                   title: "Sensai & Camp Leader",
-                  company: "Code Ninjas",
+                  company: "code ninjas",
                   period: "2024",
                 },
                 {
                   title: "AI Innovator",
-                  company: "TKS (The Knowledge Society)",
+                  company: "tks (the knowledge society)",
                   period: "2023",
                 },
                 {
                   title: "Cirriculum Developer",
-                  company: "Hippocampus Learning",
+                  company: "hippocampus learning",
                   period: "2023",
                 },
               ].map((job, index) => (

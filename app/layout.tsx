@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Armaan's World",
     description: "Armaan Gupta - AI & Software Engineering Portfolio",
-    images: ["favicon-rbg.jpg"],
+    images: ["/favicon-rbg.jpg"],
   },
 };
 
@@ -53,6 +53,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Armaan's World</title>
+        <meta name="title" content="Armaan's World" />
+        <meta property="og:site_name" content="Armaan's World" />
+      </head>
       <body className={`${spaceGrotesk.variable} ${dmSans.variable} font-dm-sans bg-black text-white antialiased`}>
         <div className="min-h-screen max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24">
           <Navigation />

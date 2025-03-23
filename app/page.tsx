@@ -103,7 +103,7 @@ export default function Home() {
             ai & software engineer studying  
             <strong> cs + ai @ uwaterloo 👨‍💻</strong>
             <br />
-            incoming software dev @ <strong>environment of canada 🇨🇦</strong>
+            incoming software dev @ <strong>environment canada 🇨🇦</strong>
             </p>
           </div>
 

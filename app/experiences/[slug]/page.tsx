@@ -127,7 +127,7 @@ const projectsData: Record<string, Project> = {
     ],
   },
   govcanada: {
-    title: "Software Dev @ Government of Canada",
+    title: "Software Dev @ environment Canada",
     subtitle: "summer 2025 internship",
     year: "2025",
     type: "internship",

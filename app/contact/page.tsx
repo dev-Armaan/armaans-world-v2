@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail, ArrowRight } from "lucide-react"
 
 export default function Contact() {
   return (
@@ -32,36 +32,45 @@ export default function Contact() {
           <div className="space-y-6 flex flex-col">
             <motion.a
               href="mailto:a585gupt@uwaterloo.ca"
-              className="flex items-center space-x-3 text-white/70 hover:text-white transition-all group text-lg"
+              className="flex items-center space-x-3 text-white/80 hover:text-white transition-all group text-lg bg-white/5 hover:bg-white/10 p-4 rounded-lg border border-transparent hover:border-gold/30"
               whileHover={{ x: 5 }}
-              whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
+              whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
             >
-              <Mail className="h-6 w-6 text-gold group-hover:scale-110 transition-transform" />
-              <span>a585gupt@uwaterloo.ca</span>
+              <div className="bg-gold/20 p-2 rounded-full">
+                <Mail className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
+              </div>
+              <span className="flex-1">a585gupt@uwaterloo.ca</span>
+              <ArrowRight className="h-4 w-4 text-gold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all" />
             </motion.a>
 
             <motion.a
               href="https://github.com/dev-Armaan"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-3 text-white/70 hover:text-white transition-all group text-lg"
+              className="flex items-center space-x-3 text-white/80 hover:text-white transition-all group text-lg bg-white/5 hover:bg-white/10 p-4 rounded-lg border border-transparent hover:border-gold/30"
               whileHover={{ x: 5 }}
-              whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
+              whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
             >
-              <Github className="h-6 w-6 text-gold group-hover:scale-110 transition-transform" />
-              <span>github.com/dev-Armaan</span>
+              <div className="bg-gold/20 p-2 rounded-full">
+                <Github className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
+              </div>
+              <span className="flex-1">github.com/dev-Armaan</span>
+              <ArrowRight className="h-4 w-4 text-gold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all" />
             </motion.a>
 
             <motion.a
               href="https://www.linkedin.com/in/gupta-armaan/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-3 text-white/70 hover:text-white transition-all group text-lg"
+              className="flex items-center space-x-3 text-white/80 hover:text-white transition-all group text-lg bg-white/5 hover:bg-white/10 p-4 rounded-lg border border-transparent hover:border-gold/30"
               whileHover={{ x: 5 }}
-              whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
+              whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
             >
-              <Linkedin className="h-6 w-6 text-gold group-hover:scale-110 transition-transform" />
-              <span>linkedin.com/in/gupta-armaan</span>
+              <div className="bg-gold/20 p-2 rounded-full">
+                <Linkedin className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
+              </div>
+              <span className="flex-1">linkedin.com/in/gupta-armaan</span>
+              <ArrowRight className="h-4 w-4 text-gold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all" />
             </motion.a>
           </div>
         </motion.div>
@@ -75,7 +84,6 @@ export default function Contact() {
           <div className="relative w-full max-w-md overflow-hidden rounded-lg">
             <img src="/spinglobe.gif" alt="Contact animation" className="w-full h-auto" />
           </div>
-          
         </motion.div>
         <br />
         <br />
@@ -86,4 +94,3 @@ export default function Contact() {
     </motion.div>
   )
 }
-

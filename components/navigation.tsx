@@ -26,6 +26,7 @@ export default function Navigation() {
     }
   }, [])
 
+  // Close mobile menu when path changes
   useEffect(() => {
     setIsMenuOpen(false)
   }, [pathname])
@@ -70,27 +71,42 @@ export default function Navigation() {
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center space-x-8">
           {links.map(({ path, label }) => (
-            <Link
-              key={path}
-              href={path}
-              className="relative py-1.5 px-1 text-sm tracking-wider font-space-grotesk"
-              onMouseEnter={() => setHoveredPath(path)}
-              onMouseLeave={() => setHoveredPath(pathname)}
-            >
-              <span className={`relative z-10 gold-highlight ${pathname === path ? "text-white" : "text-white/60"}`}>
-                {label}
-              </span>
+            <motion.div key={path} whileHover={{ y: -2 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href={path}
+                className="relative py-1.5 px-3 text-sm tracking-wider font-space-grotesk rounded-md transition-all duration-200"
+                onMouseEnter={() => setHoveredPath(path)}
+                onMouseLeave={() => setHoveredPath(pathname)}
+              >
+                <span
+                  className={`relative z-10 gold-highlight ${
+                    pathname === path ? "text-white font-semibold" : "text-white/70 hover:text-white"
+                  }`}
+                >
+                  {label}
+                </span>
 
-              {hoveredPath === path && (
-                <motion.div
-                  className="absolute bottom-0 left-0 h-[1px] bg-gold w-full"
-                  layoutId="navbar-underline"
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                />
-              )}
-            </Link>
+                {hoveredPath === path && (
+                  <motion.div
+                    className="absolute inset-0 bg-gold/10 rounded-md -z-10"
+                    layoutId="navbar-highlight"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                  />
+                )}
+
+                {pathname === path && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-[2px] bg-gold w-full"
+                    layoutId="navbar-underline"
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                  />
+                )}
+              </Link>
+            </motion.div>
           ))}
         </div>
 
@@ -103,28 +119,35 @@ export default function Navigation() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="flex flex-col items-center py-6 space-y-6">
-              {links.map(({ path, label }) => (
-                <Link
+            <div className="flex flex-col items-center py-6 space-y-4">
+              {links.map(({ path, label }, index) => (
+                <motion.div
                   key={path}
-                  href={path}
-                  className="relative py-2 px-4 w-full text-center text-sm tracking-wider font-space-grotesk"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * index }}
+                  className="w-4/5"
                 >
-                  <span
-                    className={`relative z-10 gold-highlight ${pathname === path ? "text-white" : "text-white/60"}`}
+                  <Link
+                    href={path}
+                    className={`relative py-3 px-4 w-full flex justify-center items-center text-center text-sm tracking-wider font-space-grotesk rounded-md ${
+                      pathname === path
+                        ? "bg-gold/20 text-white"
+                        : "bg-white/5 hover:bg-white/10 text-white/70 hover:text-white"
+                    } transition-all duration-200`}
                   >
-                    {label}
-                  </span>
+                    <span className="relative z-10 gold-highlight font-medium">{label}</span>
 
-                  {pathname === path && (
-                    <motion.div
-                      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-[1px] bg-gold"
-                      initial={{ width: 0 }}
-                      animate={{ width: "30%" }}
-                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                    />
-                  )}
-                </Link>
+                    {pathname === path && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 h-[2px] bg-gold w-full"
+                        initial={{ width: 0 }}
+                        animate={{ width: "100%" }}
+                        transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </motion.div>

@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, ArrowRight } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 
 export default function Contact() {
   return (
@@ -27,50 +27,50 @@ export default function Contact() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h2 className="text-2xl font-bold text-gold">GET IN TOUCH</h2>
+          <h2 className="text-2xl font-bold text-white/90">GET IN TOUCH</h2>
 
           <div className="space-y-6 flex flex-col">
             <motion.a
               href="mailto:a585gupt@uwaterloo.ca"
-              className="flex items-center space-x-3 text-white/80 hover:text-white transition-all group text-lg bg-white/5 hover:bg-white/10 p-4 rounded-lg border border-transparent hover:border-gold/30"
-              whileHover={{ x: 5 }}
-              whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
+              className="inline-flex items-center px-4 py-2 space-x-2 bg-transparent border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 rounded-md button-animation"
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 15px rgba(var(--accent), 0.4)",
+              }}
+              whileTap={{ scale: 0.98 }}
             >
-              <div className="bg-gold/20 p-2 rounded-full">
-                <Mail className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
-              </div>
-              <span className="flex-1">a585gupt@uwaterloo.ca</span>
-              <ArrowRight className="h-4 w-4 text-gold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all" />
+              <Mail className="h-5 w-5" />
+              <span className="font-medium">a585gupt@uwaterloo.ca</span>
             </motion.a>
 
             <motion.a
               href="https://github.com/dev-Armaan"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-3 text-white/80 hover:text-white transition-all group text-lg bg-white/5 hover:bg-white/10 p-4 rounded-lg border border-transparent hover:border-gold/30"
-              whileHover={{ x: 5 }}
-              whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
+              className="inline-flex items-center px-4 py-2 space-x-2 bg-transparent border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 rounded-md button-animation"
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 15px rgba(var(--accent), 0.4)",
+              }}
+              whileTap={{ scale: 0.98 }}
             >
-              <div className="bg-gold/20 p-2 rounded-full">
-                <Github className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
-              </div>
-              <span className="flex-1">github.com/dev-Armaan</span>
-              <ArrowRight className="h-4 w-4 text-gold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all" />
+              <Github className="h-5 w-5" />
+              <span className="font-medium">github.com/dev-Armaan</span>
             </motion.a>
 
             <motion.a
               href="https://www.linkedin.com/in/gupta-armaan/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-3 text-white/80 hover:text-white transition-all group text-lg bg-white/5 hover:bg-white/10 p-4 rounded-lg border border-transparent hover:border-gold/30"
-              whileHover={{ x: 5 }}
-              whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
+              className="inline-flex items-center px-4 py-2 space-x-2 bg-transparent border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 rounded-md button-animation"
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 0 15px rgba(var(--accent), 0.4)",
+              }}
+              whileTap={{ scale: 0.98 }}
             >
-              <div className="bg-gold/20 p-2 rounded-full">
-                <Linkedin className="h-5 w-5 text-gold group-hover:scale-110 transition-transform" />
-              </div>
-              <span className="flex-1">linkedin.com/in/gupta-armaan</span>
-              <ArrowRight className="h-4 w-4 text-gold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all" />
+              <Linkedin className="h-5 w-5" />
+              <span className="font-medium">linkedin.com/in/gupta-armaan</span>
             </motion.a>
           </div>
         </motion.div>
@@ -94,3 +94,4 @@ export default function Contact() {
     </motion.div>
   )
 }
+

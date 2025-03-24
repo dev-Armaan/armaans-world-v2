@@ -24,7 +24,7 @@ export default function Projects() {
       description:
         "machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams",
       tags: ["pandas", "sklearn", "numpy", "matplotlib", "python"],
-      image: "/asd8.png",
+      image: "/asd2.png",
       link: "/experiences/asd",
       year: 2025,
     },

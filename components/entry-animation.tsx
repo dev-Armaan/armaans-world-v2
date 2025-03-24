@@ -42,33 +42,25 @@ export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
       const iterationsPerLetter = 15
       let iteration = 0
 
-      // Interval for scrambling the current letter
       const interval = setInterval(() => {
         iteration++
 
-        // Generate scrambled text
         let scrambledText = ""
 
-        // For each character in the full text
         for (let i = 0; i < fullText.length; i++) {
-          // Characters before current index are already revealed
           if (i < currentIndex) {
             scrambledText += fullText[i]
           }
-          // Current character being scrambled
           else if (i === currentIndex) {
-            // On last iteration, reveal the actual letter
             if (iteration === iterationsPerLetter) {
               scrambledText += fullText[i]
             }
-            // Otherwise show a random character (unless it's a space)
             else if (fullText[i] === " ") {
               scrambledText += " "
             } else {
               scrambledText += chars[Math.floor(Math.random() * chars.length)]
             }
           }
-          // Characters after current index show spaces if they are spaces, otherwise nothing
           else if (fullText[i] === " ") {
             scrambledText += " "
           } else {
@@ -78,11 +70,9 @@ export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
 
         setText(scrambledText)
 
-        // When we've completed all iterations for this letter
         if (iteration >= iterationsPerLetter) {
           clearInterval(interval)
           currentIndex++
-          // Move to the next letter
           scrambleLetter()
         }
       }, letterDuration / iterationsPerLetter)
@@ -108,7 +98,7 @@ export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
       <div className="flex flex-col items-center space-y-8">
         <div className="relative w-64 h-64">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2c5ce3685b849230f1f843d868f74271-Bsu05KuYj7wLSRHsBUzmFuGZPTqa8m.gif"
+            src="/spinglobe.gif"
             alt="Digital Globe Animation"
             fill
             className="object-contain"

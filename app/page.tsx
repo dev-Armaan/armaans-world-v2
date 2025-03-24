@@ -110,7 +110,7 @@ export default function Home() {
           <div className="flex justify-center">
             <div className="relative w-64 h-64">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2c5ce3685b849230f1f843d868f74271-Bsu05KuYj7wLSRHsBUzmFuGZPTqa8m.gif"
+                src="/spinglobe.gif"
                 alt="Digital Globe Animation"
                 fill
                 className="object-contain"

@@ -73,7 +73,7 @@ export default function Contact() {
           className="flex items-center justify-center"
         >
           <div className="relative w-full max-w-md overflow-hidden rounded-lg">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2c5ce3685b849230f1f843d868f74271-Bsu05KuYj7wLSRHsBUzmFuGZPTqa8m.gif" alt="Contact animation" className="w-full h-auto" />
+            <img src="/spinglobe.gif" alt="Contact animation" className="w-full h-auto" />
           </div>
           
         </motion.div>

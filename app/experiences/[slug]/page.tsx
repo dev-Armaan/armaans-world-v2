@@ -137,7 +137,7 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "i will be working as a software developer at the government of canada (eccc division) starting in may 2025.",
+          "i have started working as a software developer in the numerical terestrial environment prediction section of eccc this may. this section will be updated upon completion of the internship.",
       },
     ],
   },

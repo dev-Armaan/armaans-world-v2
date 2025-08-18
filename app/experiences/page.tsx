@@ -13,7 +13,7 @@ export default function Projects() {
     {
       title: "Software Dev @ environment canada",
       description:
-        "[internship] incoming may 2025",
+        "[internship] y 2025",
       tags: [],
       image: "/gov.png",
       link: "/experiences/govcanada",

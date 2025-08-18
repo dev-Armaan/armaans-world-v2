@@ -14,8 +14,8 @@ export default function Projects() {
       title: "Software Engineer @ WATonomous",
       description: "[internship] worked on cloud computing and infra",
       tags: [],
-      image: "/tks.png",
-      link: "/experiences/tks",
+      image: "/wato.png",
+      link: "/experiences/watonomous",
       year: 2025,
     },
     {

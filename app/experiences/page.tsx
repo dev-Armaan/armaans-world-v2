@@ -11,9 +11,17 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Software Dev @ environment canada",
+      title: "Software Engineer @ WATonomous",
+      description: "[internship] worked on cloud computing and infra",
+      tags: [],
+      image: "/tks.png",
+      link: "/experiences/tks",
+      year: 2025,
+    },
+    {
+      title: "Software Engineer @ environment canada",
       description:
-        "[internship] y 2025",
+        "[internship] worked on climate reanalysis models, and visualization tools",
       tags: [],
       image: "/gov.png",
       link: "/experiences/govcanada",
@@ -22,7 +30,7 @@ export default function Projects() {
     {
       title: "ASD Prediction Model",
       description:
-        "machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams",
+        "[project] machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams",
       tags: ["pandas", "sklearn", "numpy", "matplotlib", "python"],
       image: "/asd2.png",
       link: "/experiences/asd",
@@ -31,7 +39,7 @@ export default function Projects() {
     {
       title: "Real-Time Traffic Analysis",
       description:
-        "cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis",
+        "[project] cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis",
       tags: ["opencv", "ultralytics", "numpy", "supervision", "python"],
       image: "/vtracker.png",
       link: "/experiences/traffic",
@@ -40,7 +48,7 @@ export default function Projects() {
     {
       title: "PrepPal",
       description:
-        "ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks",
+        "[project] ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks",
       tags: ["sql", "react", "flask", "gcp", "mongodb"],
       image: "/preppal.png",
       link: "/experiences/preppal",
@@ -49,7 +57,7 @@ export default function Projects() {
     {
       title: "Armaan's World [v2]",
       description:
-        "second iteration of my personal website, featuring a new design and improved performance",
+        "[project] second iteration of my personal website, featuring a new design and improved performance",
       tags: ["react", "next.js", "typescript", "tailwind", "vercel"],
       image: "/aworld.png",
       link: "/experiences/v2world",
@@ -73,7 +81,7 @@ export default function Projects() {
     },
     {
       title: "Armaan's World [v1]",
-      description: "first iteration of my personal website, complete with 3d models and hosted on aws",
+      description: "[project] first iteration of my personal website, complete with 3d models and hosted on aws",
       tags: ["3d modelling", "aws", "react", "next.js", "tailwind"],
       image: "/v1aworld.png",
       link: "/experiences/v1world",

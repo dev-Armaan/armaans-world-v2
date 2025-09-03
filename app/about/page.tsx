@@ -146,9 +146,14 @@ export default function About() {
             <div className="space-y-8">
               {[
                 {
-                  title: "SOFTWARE DEVELOPER",
+                  title: "SOFTWARE ENGINEER",
+                  company: "watonomous",
+                  period: "2025",
+                },
+                {
+                  title: "SOFTWARE ENGINEER",
                   company: "environment canada",
-                  period: "2025 (incoming)",
+                  period: "2025",
                 },
                 {
                   title: "Founder & CEO",

@@ -100,10 +100,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-base md:text-base font-dm-sans text-white max-w-2xl mt-6">
-            ml & software engineer studying  
-            <strong> cs + ai @ uwaterloo 👨‍💻</strong>
-            <br />
-            swe @ <strong>environment canada 🇨🇦</strong>
+            studying cs + ai @ <strong> uwaterloo 👨‍💻</strong>
             <br />
             swe @ <strong>watonomous ☁️</strong>
             </p>

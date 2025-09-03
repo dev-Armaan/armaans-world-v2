@@ -126,8 +126,28 @@ const projectsData: Record<string, Project> = {
       },
     ],
   },
+  watonomous: {
+    title: "Software Engineer @ WATonomous",
+    subtitle: "cloud computing & infrastructure internship",
+    year: "2025",
+    type: "internship",
+    image: "/wato.png",
+    contents: ["cloud infrastructure", "kubernetes orchestration", "ci/cd pipelines", "distributed systems"],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "currently working as a software engineer at watonomous, university of waterloo's autonomous vehicle research team. focused on developing and maintaining cloud infrastructure and computing solutions to support autonomous vehicle development and testing.",
+      },
+      {
+        type: "text",
+        content:
+          "my work involves designing and implementing scalable cloud infrastructure solutions, managing kubernetes clusters for container orchestration, and building robust ci/cd pipelines to streamline development workflows. this position allows me to contribute to cutting-edge autonomous vehicle technology while gaining hands-on experience with modern cloud computing technologies.",
+      },
+    ],
+  },
   govcanada: {
-    title: "Software Dev @ environment Canada",
+    title: "Software engineer @ environment Canada",
     subtitle: "summer 2025 internship",
     year: "2025",
     type: "internship",

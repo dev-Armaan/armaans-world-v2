@@ -11,17 +11,17 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Software Engineer @ WATonomous",
-      description: "[internship] worked on cloud computing and infra",
+      title: "swe @ WATonomous",
+      description: "[internship] working on infra & cloud computing",
       tags: [],
       image: "/wato.png",
       link: "/experiences/watonomous",
       year: 2025,
     },
     {
-      title: "Software Engineer @ environment canada",
+      title: "swe @ environment canada",
       description:
-        "[internship] worked on climate reanalysis models, and visualization tools",
+        "[internship] worked on climate reanalysis models and visualization tools",
       tags: [],
       image: "/gov.png",
       link: "/experiences/govcanada",

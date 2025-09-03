@@ -132,32 +132,111 @@ const projectsData: Record<string, Project> = {
     year: "2025",
     type: "internship",
     image: "/wato.png",
-    contents: ["cloud infrastructure", "kubernetes orchestration", "ci/cd pipelines", "distributed systems"],
+    contents: [
+      "automated power outage notification system",
+      "cloud-native apis & automation scripts",
+      "slurm & kubernetes integration",
+      "containerized microservices",
+      "hpc cluster deployment",
+    ],
     descriptionBlocks: [
       {
         type: "text",
         content:
-          "currently working as a software engineer at watonomous, university of waterloo's autonomous vehicle research team. focused on developing and maintaining cloud infrastructure and computing solutions to support autonomous vehicle development and testing.",
+          "currently working as a software engineer at watonomous, university of waterloo's autonomous vehicle research team. i am focused on developing and maintaining cloud infrastructure and computing solutions to support autonomous vehicle development and testing, with a particular emphasis on building robust, scalable systems that enhance operational efficiency.",
       },
       {
         type: "text",
         content:
-          "my work involves designing and implementing scalable cloud infrastructure solutions, managing kubernetes clusters for container orchestration, and building robust ci/cd pipelines to streamline development workflows. this position allows me to contribute to cutting-edge autonomous vehicle technology while gaining hands-on experience with modern cloud computing technologies.",
+          "one of my key achievements is building an automated power outage notification system that leverages cloud-based services and containerized microservices with docker. this system has reduced manual reporting delays by 80%, significantly improving response times and operational reliability for the autonomous vehicle testing infrastructure.",
+      },
+      {
+        type: "image",
+        src: "/wato.png",
+        alt: "WATonomous cloud infrastructure architecture",
+        width: 800,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "i am developing cloud-native apis and automation scripts to integrate with slurm and kubernetes, enabling parallel execution of simulation jobs and increasing throughput by 300%. this integration allows for efficient resource management and job scheduling across distributed computing environments, supporting the complex computational requirements of autonomous vehicle simulation and testing.",
+      },
+      {
+        type: "text",
+        content:
+          "my work involves developing and containerizing backend services with docker, deploying them to both cloud and hpc clusters via kubernetes. this approach ensures consistent deployment environments, improved scalability, and enhanced resource utilization across different computing platforms. the containerized architecture enables seamless scaling and management of services as the team's computational needs grow.",
+      },
+      {
+        type: "image",
+        src: "/wato.png",
+        alt: "WATonomous microservices architecture",
+        width: 800,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "working at watonomous is providing me with invaluable experience in cloud computing, containerization, and distributed systems while contributing to cutting-edge autonomous vehicle research. this role is strengthening my skills in cloud infrastructure, devops practices, and high-performance computing while supporting innovative research that advances autonomous vehicle technology.",
       },
     ],
   },
   govcanada: {
     title: "Software engineer @ environment Canada",
-    subtitle: "summer 2025 internship",
+    subtitle: "climate reanalysis & data visualization",
     year: "2025",
     type: "internship",
     image: "/gov2.png",
-    contents: ["tbd"],
+    contents: [
+      "climate reanalysis model pipeline",
+      "ml-based interpolation techniques",
+      "interactive web tool development",
+      "data visualization & exploration",
+      "automated deployments & ci/cd",
+    ],
     descriptionBlocks: [
       {
         type: "text",
         content:
-          "i have started working as a software developer in the numerical terestrial environment prediction section of eccc this may. this section will be updated upon completion of the internship.",
+          "as a software engineer at environment and climate change canada (eccc), i worked in the numerical terrestrial environment prediction section, focusing on developing innovative solutions for climate data analysis and visualization. my role involved building robust systems that helped canadians access and understand decades of environmental data through cutting-edge technology.",
+      },
+      {
+        type: "text",
+        content:
+          "one of my key contributions was developing a comprehensive climate reanalysis model pipeline that integrated machine learning-based interpolation techniques using scikit-learn and pytorch. this system significantly improved the spatial resolution of missing environmental data by 35%, enabling more accurate climate modeling and analysis. the pipeline processed vast amounts of historical climate data, filling gaps and enhancing data quality for researchers and policymakers.",
+      },
+      {
+        type: "image",
+        src: "/gov.png",
+        alt: "Environment Canada climate data visualization",
+        width: 800,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "to make this valuable data accessible to the public, i built an interactive web tool that allowed users to explore over 40 years of climate data across 50+ weather stations and 16 different datasets. the tool was developed using python, pandas for data processing, and d3.js for dynamic visualizations, providing canadians with unprecedented access to novel reanalysis datasets. this democratization of climate data helped researchers, students, and the general public better understand environmental trends and changes.",
+      },
+      {
+        type: "text",
+        content:
+          "throughout my internship, i implemented robust software engineering practices by automating deployments and establishing comprehensive version control using git, docker, and ci/cd internal practices across multiple projects. this ensured reliable, scalable, and maintainable systems that could handle the complex requirements of climate data processing and visualization.",
+      },
+      {
+        type: "image",
+        src: "/gov2.png",
+        alt: "Environment Canada data pipeline architecture",
+        width: 800,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "working at environment canada provided me with invaluable experience in applying machine learning to real-world environmental challenges, developing user-friendly data visualization tools, and implementing enterprise-level software engineering practices. this role strengthened my skills in data science, web development, and cloud infrastructure while contributing to important climate research that benefited all canadians.",
       },
     ],
   },

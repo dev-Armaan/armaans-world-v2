@@ -41,18 +41,25 @@ export default function Home() {
 
   const projects = [
     {
+      title: "swe @ WATonomous",
+      description: "building automated power outage notification systems and cloud-native apis, reducing manual reporting delays by 80% and increasing simulation throughput by 300%",
+      image: "/wato.png",
+      year: "2025",
+      link: "/experiences/watonomous",
+    },
+    {
+      title: "swe @ environment canada",
+      description: "developed climate reanalysis model pipeline with ml-based interpolation, improving spatial resolution by 35% and built interactive web tool for 40+ years of climate data",
+      image: "/gov.png",
+      year: "2025",
+      link: "/experiences/govcanada",
+    },
+    {
       title: "ASD Prediction Model",
       description: "machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams",
       image: "/asd.png",
       year: "2025",
       link: "/experiences/asd",
-    },
-    {
-      title: "Real-Time Traffic Analysis",
-      description: "cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis",
-      image: "/vtracker.png",
-      year: "2025",
-      link: "/experiences/traffic",
     },
     {
       title: "PrepPal",
@@ -67,13 +74,6 @@ export default function Home() {
       image: "/landingx.png",
       year: "2023-2024",
       link: "/experiences/landingx",
-    },
-    {
-      title: "AI INNOVATOR @ TKS",
-      description: "optimized NLP and CV models + personally consulted mastercard foundation & cibc execs on separate occasions",
-      image: "/tks.png",
-      year: "2022-2023",
-      link: "/experiences/tks",
     },
   ]
 
@@ -103,6 +103,10 @@ export default function Home() {
             studying cs + ai @ <strong> uwaterloo 👨‍💻</strong>
             <br />
             swe @ <strong>watonomous ☁️</strong>
+            <br />
+            ex @ <strong>environment canada 🇨🇦</strong>
+            <br />
+            looking for <strong>winter/summer 2026</strong> internships 🚀
             </p>
           </div>
 
@@ -177,7 +181,7 @@ export default function Home() {
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105" // Faster animation
+                    className={`${project.image === "/gov.png" ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`} // Faster animation
                   />
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-r from-black via-gold to-black transition-opacity duration-300"></div>{" "}
                   {/* Faster animation */}

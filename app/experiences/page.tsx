@@ -13,7 +13,7 @@ export default function Projects() {
     {
       title: "swe @ WATonomous",
       description: "[internship] working on infra & cloud computing",
-      tags: [],
+      tags: ["docker", "kubernetes", "slurm", "cloud-native apis", "microservices", "hpc", "automation scripts"],
       image: "/wato.png",
       link: "/experiences/watonomous",
       year: 2025,
@@ -22,7 +22,7 @@ export default function Projects() {
       title: "swe @ environment canada",
       description:
         "[internship] worked on climate reanalysis models and visualization tools",
-      tags: [],
+      tags: ["python", "pytorch", "scikit-learn", "pandas", "d3.js", "docker", "git", "ci/cd"],
       image: "/gov.png",
       link: "/experiences/govcanada",
       year: 2025,

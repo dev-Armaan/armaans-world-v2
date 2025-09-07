@@ -170,8 +170,8 @@ const projectsData: Record<string, Project> = {
       },
       {
         type: "image",
-        src: "/wato.png",
-        alt: "WATonomous microservices architecture",
+        src: "/watcloud_cluster.jpg",
+        alt: "WATcloud cluster",
         width: 800,
         height: 600,
         fullWidth: false,
@@ -209,8 +209,8 @@ const projectsData: Record<string, Project> = {
       },
       {
         type: "image",
-        src: "/gov.png",
-        alt: "Environment Canada climate data visualization",
+        src: "/govcan_pipeline.png",
+        alt: "Environment Canada data pipeline architecture",
         width: 800,
         height: 600,
         fullWidth: false,
@@ -227,8 +227,8 @@ const projectsData: Record<string, Project> = {
       },
       {
         type: "image",
-        src: "/gov2.png",
-        alt: "Environment Canada data pipeline architecture",
+        src: "/govcan_weather.jpeg",
+        alt: "Climate change extremes",
         width: 800,
         height: 600,
         fullWidth: false,

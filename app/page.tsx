@@ -42,14 +42,14 @@ export default function Home() {
   const projects = [
     {
       title: "swe @ WATonomous",
-      description: "building automated power outage notification systems and cloud-native apis, reducing manual reporting delays by 80% and increasing simulation throughput by 300%",
+      description: "working on cloud infrastructure and computing solutions to support autonomous vehicle development and testing",
       image: "/wato.png",
       year: "2025",
       link: "/experiences/watonomous",
     },
     {
       title: "swe @ environment canada",
-      description: "developed climate reanalysis model pipeline with ml-based interpolation, improving spatial resolution by 35% and built interactive web tool for 40+ years of climate data",
+      description: "working on climate reanalysis model pipeline and interactive web tool for 40+ years of climate data",
       image: "/gov.png",
       year: "2025",
       link: "/experiences/govcanada",

@@ -152,7 +152,7 @@ const projectsData: Record<string, Project> = {
       },
       {
         type: "image",
-        src: "/wato.png",
+        src: "/watcloud_machines.png",
         alt: "WATonomous cloud infrastructure architecture",
         width: 800,
         height: 600,

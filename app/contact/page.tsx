@@ -29,48 +29,63 @@ export default function Contact() {
         >
           <h2 className="text-2xl font-bold text-white/90">GET IN TOUCH</h2>
 
-          <div className="space-y-6 flex flex-col">
+          <div className="space-y-8 flex flex-col">
             <motion.a
               href="mailto:a585gupt@uwaterloo.ca"
-              className="inline-flex items-center px-4 py-2 space-x-2 bg-transparent border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 rounded-md button-animation"
-              whileHover={{
-                scale: 1.03,
-                boxShadow: "0 0 15px rgba(var(--accent), 0.4)",
-              }}
+              className="group relative inline-flex items-center space-x-4 text-white hover:text-gold transition-colors duration-300 py-2"
+              whileHover={{ x: 8 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Mail className="h-5 w-5" />
-              <span className="font-medium">a585gupt@uwaterloo.ca</span>
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300">
+                <Mail className="h-5 w-5 text-gold" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-medium text-lg">Email</span>
+                <span className="text-sm text-white/70 group-hover:text-gold/80 transition-colors duration-300">
+                  a585gupt@uwaterloo.ca
+                </span>
+              </div>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500 ease-out" />
             </motion.a>
 
             <motion.a
               href="https://github.com/dev-Armaan"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 space-x-2 bg-transparent border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 rounded-md button-animation"
-              whileHover={{
-                scale: 1.03,
-                boxShadow: "0 0 15px rgba(var(--accent), 0.4)",
-              }}
+              className="group relative inline-flex items-center space-x-4 text-white hover:text-gold transition-colors duration-300 py-2"
+              whileHover={{ x: 8 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Github className="h-5 w-5" />
-              <span className="font-medium">github.com/dev-Armaan</span>
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300">
+                <Github className="h-5 w-5 text-gold" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-medium text-lg">GitHub</span>
+                <span className="text-sm text-white/70 group-hover:text-gold/80 transition-colors duration-300">
+                  github.com/dev-Armaan
+                </span>
+              </div>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500 ease-out" />
             </motion.a>
 
             <motion.a
               href="https://www.linkedin.com/in/gupta-armaan/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 space-x-2 bg-transparent border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 rounded-md button-animation"
-              whileHover={{
-                scale: 1.03,
-                boxShadow: "0 0 15px rgba(var(--accent), 0.4)",
-              }}
+              className="group relative inline-flex items-center space-x-4 text-white hover:text-gold transition-colors duration-300 py-2"
+              whileHover={{ x: 8 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Linkedin className="h-5 w-5" />
-              <span className="font-medium">linkedin.com/in/gupta-armaan</span>
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300">
+                <Linkedin className="h-5 w-5 text-gold" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-medium text-lg">LinkedIn</span>
+                <span className="text-sm text-white/70 group-hover:text-gold/80 transition-colors duration-300">
+                  linkedin.com/in/gupta-armaan
+                </span>
+              </div>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500 ease-out" />
             </motion.a>
           </div>
         </motion.div>

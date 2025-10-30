@@ -44,15 +44,8 @@ export default function Home() {
       title: "swe @ ford",
       description: "incoming winter 2026 internship, excited to work on automotive technology",
       image: "/ford.jpg",
-      year: "2025",
+      year: "2026",
       link: "/experiences/ford",
-    },
-    {
-      title: "product swe @ baba",
-      description: "building copilot for healthcare at a stealth startup",
-      image: "/baba.png",
-      year: "2025",
-      link: "/experiences/baba",
     },
     {
       title: "assembl3D",
@@ -67,6 +60,13 @@ export default function Home() {
       image: "/wato.png",
       year: "2025",
       link: "/experiences/watonomous",
+    },
+    {
+      title: "product swe @ baba",
+      description: "building copilot for healthcare at a stealth startup",
+      image: "/baba.png",
+      year: "2025",
+      link: "/experiences/baba",
     },
   ]
 
@@ -140,7 +140,7 @@ export default function Home() {
           {projects.map((project, index) => (
             <Link href={project.link} key={index}>
               <motion.div
-                className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center project-card ${index === 2 ? 'mb-12' : ''}`}
+                className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center project-card ${index === 0 || index === 1 ? 'mb-12' : ''}`}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 * index }}

@@ -71,6 +71,115 @@ type Project = {
 }
 
 const projectsData: Record<string, Project> = {
+  ford: {
+    title: "SWE @ Ford",
+    subtitle: "incoming winter 2026",
+    year: "2026",
+    type: "internship",
+    image: "/ford.jpg",
+    contents: [
+      "tbd",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "i'll be starting my software engineering internship at ford in winter 2026. excited to work on automotive technology and contribute to the future of mobility. i'll update this page with more details about my projects and experiences once i start!",
+      },
+    ],
+  },
+  baba: {
+    title: "Product SWE @ Baba",
+    subtitle: "building copilot for healthcare",
+    year: "2025",
+    type: "internship",
+    image: "/baba.png",
+    contents: [
+      "tba",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "baba is currently in stealth, so i can't share specific details about the product or technical implementation just yet. once we launch publicly, i'll update this page with more information about the work i've been doing!",
+      },
+    ],
+  },
+  assembl3d: {
+    title: "assembl3D",
+    subtitle: "copilot for furniture assembly",
+    year: "2025",
+    type: "project",
+    image: "/a3D_homepage.png",
+    repoUrl: "https://github.com/rajshah6/assembl3D",
+    demoUrl: "https://devpost.com/software/assembl3d",
+    contents: [
+      "intelligent pdf scraping & processing",
+      "ai vision analysis with gemini",
+      "interactive 3d visualization",
+      "real-time assembly chatbot",
+      "50+ product library",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "assembl3d is basically a copilot for putting together ikea furniture (or any furniture really). i built this at cal hacks 12.0 with my team because we were tired of staring at confusing 2d assembly manuals that look like hieroglyphics. the idea was simple: take any furniture manual pdf, use ai to understand what's going on, and render the steps in interactive 3d so you can actually see what you're supposed to be doing.",
+      },
+      {
+        type: "text",
+        content:
+          "the first part was getting the manuals themselves. i used bright data's apis to automatically scrape product info from ikea.their serp api searches google for products, web unlocker downloads protected pdfs, and we cached everything to avoid re-downloading. we ended up with a library of 50+ popular ikea products that you can browse through, or you can just paste any product url and the system will grab it for you.",
+      },
+      {
+        type: "text",
+        content:
+          "the harder part was making sense of the pdfs. assembly manuals are almost entirely visual with tiny diagrams with arrows and numbers everywhere. we tried text extraction at first but it was basically useless. the pivot was converting each pdf page into a high-res image and feeding it to google gemini. with some careful prompting, gemini could actually parse out the assembly steps, parts list, quantities, tools needed, and even spatial positioning. getting the ai to understand complex ikea diagrams and spit out structured json was probably the biggest technical win of the project.",
+      },
+
+      {
+        type: "image",
+        src: "/a3D_demo.png",
+        alt: "assembl3D 3d visualization interface",
+        width: 800,
+        height: 800,
+        fullWidth: false,
+      },
+
+      {
+        type: "text",
+        content:
+          "once we had the structured data, i built the 3d visualization using react three fiber. instead of using pre-made 3d models (which would've limited us to specific products), we generate geometric primitives procedurally based on the dimensions gemini extracts. so you can render any part type on the fly like screws, wooden slabs, brackets, whatever. the viewer lets you step through the assembly process, rotate the camera around with orbit controls, and see exactly how each part fits together.",
+      },
+      {
+        type: "text",
+        content:
+          "i also added a reka ai chatbot that answers questions about the current step. like if you're confused about which screw to use or how a part should be oriented, you can just ask and it'll help you out. it has context about the entire assembly process and the specific step you're on, so the answers are actually relevant.",
+      },
+      {
+        type: "text",
+        content:
+          "performance was a real challenge. rendering 50+ parts in 3d got laggy fast, so i spent time optimizing with low-poly primitives, frustum culling, and lazy loading. also had to deal with coordinate system conversions as pdf coordinates don't map directly to three.js 3d space (y-up vs z-up), which was annoying to figure out.",
+      },
+
+      {
+        type: "youtube",
+        videoId: "c-3XQTTbKns",
+        title: "assembl3D demo video",
+      },
+
+      {
+        type: "text",
+        content:
+          "rate limits were another pain point. gemini has a 60 requests/minute limit and bright data charges per request, so i implemented 500ms delays between api calls and md5-based caching to avoid reprocessing the same files. definitely learned a lot about managing api costs and optimizing scraping workflows.",
+      },
+      {
+        type: "text",
+        content:
+          "the final product looks pretty polished with smooth animations, responsive design, and it actually works well across devices. built the whole stack with typescript, next.js, and tailwind for the frontend, express and node for the backend, and integrated gemini and reka for the ai stuff. won some recognition at cal hacks which was cool. honestly just proud we built something that actually solves a real problem instead of yet another generic chatbot.",
+      },
+    ],
+  },
   traffic: {
     title: "real time traffic analysis",
     subtitle: "cnn model for real-time traffic analysis",
@@ -258,7 +367,7 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "more than 75,000,000 people worldwide have been diagnosed with autism spectrum disorder (asd), yet accurate diagnosis remains a challenge. a recent study by the journal of the american medical association found that medical teams could correctly diagnose asd in children only 60-89% of the time. given the scale of the condition, this means millions of individuals may be misdiagnosed or remain undiagnosed, leading to delayed interventions and inadequate support. this is where my model comes in—leveraging machine learning to enhance diagnostic accuracy and provide a data-driven approach to autism prediction.",
+          "more than 75,000,000 people worldwide have been diagnosed with autism spectrum disorder (asd), yet accurate diagnosis remains a challenge. a recent study by the journal of the american medical association found that medical teams could correctly diagnose asd in children only 60-89% of the time. given the scale of the condition, this means millions of individuals may be misdiagnosed or remain undiagnosed, leading to delayed interventions and inadequate support. this is where my model comes in, leveraging machine learning to enhance diagnostic accuracy and provide a data-driven approach to autism prediction.",
       },
       {
         type: "image",
@@ -750,7 +859,7 @@ export default function ProjectDetail() {
         </div>
 
         <div className="relative aspect-[4/3] overflow-hidden">
-          <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+          <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-contain" />
         </div>
       </div>
 

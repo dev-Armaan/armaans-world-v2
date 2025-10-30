@@ -41,39 +41,32 @@ export default function Home() {
 
   const projects = [
     {
+      title: "swe @ ford",
+      description: "incoming winter 2026 internship, excited to work on automotive technology",
+      image: "/ford.jpg",
+      year: "2025",
+      link: "/experiences/ford",
+    },
+    {
+      title: "product swe @ baba",
+      description: "building copilot for healthcare at a stealth startup",
+      image: "/baba.png",
+      year: "2025",
+      link: "/experiences/baba",
+    },
+    {
+      title: "assembl3D",
+      description: "copilot for furniture assembly with 3d visualization, automated pdf processing, and intelligent chatbot assistance",
+      image: "/a3D_homepage.png",
+      year: "2025",
+      link: "/experiences/assembl3d",
+    },
+    {
       title: "swe @ WATonomous",
       description: "working on cloud infrastructure and computing solutions to support autonomous vehicle development and testing",
       image: "/wato.png",
       year: "2025",
       link: "/experiences/watonomous",
-    },
-    {
-      title: "swe @ environment canada",
-      description: "working on climate reanalysis model pipeline and interactive web tool for 40+ years of climate data",
-      image: "/gov.png",
-      year: "2025",
-      link: "/experiences/govcanada",
-    },
-    {
-      title: "ASD Prediction Model",
-      description: "machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams",
-      image: "/asd.png",
-      year: "2025",
-      link: "/experiences/asd",
-    },
-    {
-      title: "PrepPal",
-      description: "ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks",
-      image: "/preppal.png",
-      year: "2025",
-      link: "/experiences/preppal",
-    },
-    {
-      title: "FOUNDER @ LANDINGX",
-      description: "developed and optimized responsive web apps using modern frameworks for clients",
-      image: "/landingx.png",
-      year: "2023-2024",
-      link: "/experiences/landingx",
     },
   ]
 
@@ -102,11 +95,13 @@ export default function Home() {
             <p className="text-base md:text-base font-dm-sans text-white max-w-2xl mt-6">
             studying cs + ai @ <strong> uwaterloo 👨‍💻</strong>
             <br />
+            product swe @ <strong>baba 🩺</strong>
+            <br />
             swe @ <strong>watonomous ☁️</strong>
             <br />
-            ex @ <strong>environment canada 🇨🇦</strong>
+            incoming swe @ <strong>ford 🚗</strong>
             <br />
-            looking for <strong>winter/summer 2026</strong> internships 🚀
+            looking for <strong>summer 2026</strong> internships 🚀
             </p>
           </div>
 
@@ -141,11 +136,11 @@ export default function Home() {
         </motion.h2>
       </div>
 
-        <div className="space-y-24">
+        <div className="space-y-32">
           {projects.map((project, index) => (
             <Link href={project.link} key={index}>
               <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center project-card"
+                className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center project-card ${index === 2 ? 'mb-12' : ''}`}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 * index }}
@@ -181,7 +176,7 @@ export default function Home() {
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
-                    className={`${project.image === "/gov.png" ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`} // Faster animation
+                    className={`${project.image === "/gov.png" || project.image === "/baba.png" ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`} // Faster animation
                   />
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-r from-black via-gold to-black transition-opacity duration-300"></div>{" "}
                   {/* Faster animation */}

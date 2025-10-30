@@ -11,6 +11,22 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "swe @ ford",
+      description: "[internship] incoming winter 2026",
+      tags: ["tbd"],
+      image: "/ford.jpg",
+      link: "/experiences/ford",
+      year: 2026,
+    },
+    {
+      title: "product swe @ baba",
+      description: "[internship] building copilot for healthcare (stealth)",
+      tags: ["full-stack", "ai integration", "healthcare", "product development"],
+      image: "/baba.png",
+      link: "/experiences/baba",
+      year: 2025,
+    },
+    {
       title: "swe @ WATonomous",
       description: "[internship] working on infra & cloud computing",
       tags: ["docker", "kubernetes", "slurm", "cloud-native apis", "microservices", "hpc", "automation scripts"],
@@ -25,6 +41,15 @@ export default function Projects() {
       tags: ["python", "pytorch", "scikit-learn", "pandas", "d3.js", "docker", "git", "ci/cd"],
       image: "/gov.png",
       link: "/experiences/govcanada",
+      year: 2025,
+    },
+    {
+      title: "assembl3D",
+      description:
+        "[project] copilot for furniture assembly with 3d visualization, automated pdf processing, and intelligent chatbot assistance",
+      tags: ["gemini ai", "reka ai", "three.js", "bright data", "next.js", "typescript"],
+      image: "/a3D_homepage.png",
+      link: "/experiences/assembl3d",
       year: 2025,
     },
     {

@@ -10,14 +10,14 @@ interface EntryAnimationProps {
 
 export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
   const [text, setText] = useState("")
-  const fullText = "WELCOME TO MY WORLD"
+  const fullText = "WELCOME TO ARMAAN'S WORLD"
   const animationCompleteRef = useRef(false)
 
   useEffect(() => {
     // More pronounced scramble effect
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/"
-    const letterDuration = 150 // 0.150 seconds per letter
-    const finalPause = 500 // 1 second pause at the end
+    const letterDuration = 125 // 0.150 seconds per letter
+    const finalPause = 400 // .5 second pause at the end
 
     let currentIndex = 0
     let isComplete = false

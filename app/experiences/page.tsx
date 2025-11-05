@@ -212,7 +212,7 @@ export default function Projects() {
                           src={project.image || "/placeholder.svg"}
                           alt={project.title}
                           fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          className={`${project.image === "/gov.png" || project.image === "/baba.png" ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`}
                         />
                       </div>
                       <div className="p-6">

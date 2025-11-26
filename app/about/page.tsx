@@ -15,8 +15,8 @@ export default function About() {
             transition={{ delay: 0.5, duration: 1 }}
           />
         </h1>
-        <p className="text-white/70 max-w-2xl text-lg">
-          born in sauga, raised in brampton, study in waterloo, work in toronto
+        <p className="text-white/90 max-w-2xl text-lg">
+          constantly building my way in and out of trouble
         </p>
       </div>
 
@@ -25,16 +25,15 @@ export default function About() {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">BACKGROUND</h2>
             <p className="text-white/80 leading-relaxed">
-              i've been building software for 5 years, starting with web development and moving into machine learning.
-              recently, i've been increasingly working on the intersection of ai and humanity's betterment.
-              subsequently, i've built a ml model capable of diagnosing autism correctly 93% of the time, beating
-              industry averages. i've also taken an internship position at eccc (federal agency) to improve
-              environmental prediction models which will help government officials make better ecological decisions in
-              the future.
+              i've been building software for 5 years, starting with simple web apps and slowly moving into machine
+              learning, infrastructure, and systems work. the common thread isn't a specific domain, it's
+              intentionally throwing myself into places where i'm learning faster than i&apos;m comfortable with.
             </p>
             <p className="text-white/80 leading-relaxed">
-              we have one planet, and it's our responsibility to take care of it. i'm passionate about using technology
-              to make the world a better place, and i'm excited to continue doing so in the future.
+              i gravitate toward fast-paced teams and high-ownership roles: student engineering teams, federal research
+              groups, early-stage startups, and my own company. i like being slightly in over my head, taking on
+              ambiguous problems, and using that discomfort as fuel to grow, learn as much as i can, and keep leveling
+              up how i think, build, and work with others.
             </p>
           </div>
 
@@ -111,48 +110,17 @@ export default function About() {
 
         <div className="space-y-12">
           <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-              <motion.a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 space-x-2 bg-transparent border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 rounded-md button-animation"
-                whileHover={{
-                  scale: 1.03,
-                  boxShadow: "0 0 15px rgba(var(--accent), 0.4)",
-                }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-                <span className="font-medium">view resume</span>
-              </motion.a>
-            </div>
             <h2 className="text-2xl font-bold">EXPERIENCE</h2>
             <div className="space-y-8">
               {[
                 {
-                  title: "SOFTWARE ENGINEER",
-                  company: "watonomous",
-                  period: "2025",
+                  title: "SOFTWARE ENGINEER INTERN",
+                  company: "ford",
+                  period: "2026 (incoming)",
                 },
                 {
-                  title: "SOFTWARE ENGINEER",
-                  company: "environment canada",
+                  title: "PRODUCT SOFTWARE ENGINEER",
+                  company: "baba care",
                   period: "2025",
                 },
                 {
@@ -171,9 +139,19 @@ export default function About() {
                   period: "2023",
                 },
                 {
+                  title: "Software Engineer",
+                  company: "watonomous",
+                  period: "2025",
+                },
+                {
+                  title: "Software Engineer",
+                  company: "environment and climate change canada",
+                  period: "2025",
+                },
+                {
                   title: "Cirriculum Developer",
                   company: "hippocampus learning",
-                  period: "2023",
+                  period: "2022",
                 },
               ].map((job, index) => (
                 <motion.div

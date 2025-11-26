@@ -96,8 +96,8 @@ export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
       transition={{ duration: 0.5 }}
     >
       <div className="flex flex-col items-center space-y-8">
-        <div className="relative w-64 h-64 flex items-center justify-center">
-          <BinaryGlobe size={256} />
+        <div className="relative w-80 h-80 flex items-center justify-center">
+          <BinaryGlobe size={320} />
         </div>
 
         <motion.div

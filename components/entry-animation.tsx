@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-import Image from "next/image"
+import BinaryGlobe from "@/components/binary-globe"
 
 interface EntryAnimationProps {
   onComplete: () => void
@@ -96,13 +96,8 @@ export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
       transition={{ duration: 0.5 }}
     >
       <div className="flex flex-col items-center space-y-8">
-        <div className="relative w-64 h-64">
-          <Image
-            src="/spinglobe.gif"
-            alt="Digital Globe Animation"
-            fill
-            className="object-contain"
-          />
+        <div className="relative w-64 h-64 flex items-center justify-center">
+          <BinaryGlobe size={256} />
         </div>
 
         <motion.div

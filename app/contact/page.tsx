@@ -1,6 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail } from "lucide-react"
+import BinaryGlobe from "@/components/binary-globe"
 
 export default function Contact() {
   return (
@@ -96,8 +97,8 @@ export default function Contact() {
           transition={{ delay: 0.3 }}
           className="flex items-center justify-center"
         >
-          <div className="relative w-full max-w-md overflow-hidden rounded-lg">
-            <img src="/spinglobe.gif" alt="Contact animation" className="w-full h-auto" />
+          <div className="relative w-full max-w-md overflow-hidden rounded-lg flex items-center justify-center">
+            <BinaryGlobe size={384} />
           </div>
         </motion.div>
         <br />

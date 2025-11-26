@@ -6,6 +6,7 @@ import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { useState, useEffect } from "react"
 import EntryAnimation from "@/components/entry-animation"
+import BinaryGlobe from "@/components/binary-globe"
 
 export default function Home() {
   const [showEntryAnimation, setShowEntryAnimation] = useState(true)
@@ -106,13 +107,8 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center">
-            <div className="relative w-64 h-64">
-              <Image
-                src="/spinglobe.gif"
-                alt="Digital Globe Animation"
-                fill
-                className="object-contain"
-              />
+            <div className="relative w-80 h-80 flex items-center justify-center">
+              <BinaryGlobe size={320} />
             </div>
           </div>
         </div>

@@ -123,7 +123,7 @@ export default function BinaryGlobe({ size = 256, className = "" }: BinaryGlobeP
       }
 
       // Update rotation
-      rotationRef.current += 0.008
+      rotationRef.current += 0.015
       timeRef.current += 0.03
 
       // Project and sort points by z-depth
@@ -252,5 +252,6 @@ export default function BinaryGlobe({ size = 256, className = "" }: BinaryGlobeP
     />
   )
 }
+
 
 

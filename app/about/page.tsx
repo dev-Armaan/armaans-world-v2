@@ -114,7 +114,7 @@ export default function About() {
             <div className="space-y-8">
               {[
                 {
-                  title: "SOFTWARE ENGINEER INTERN",
+                  title: "SOFTWARE ENGINEER",
                   company: "ford",
                   period: "2026 (incoming)",
                 },
@@ -153,7 +153,16 @@ export default function About() {
                   company: "hippocampus learning",
                   period: "2022",
                 },
-              ].map((job, index) => (
+              ]
+                .sort((a, b) => {
+                  // Extract year from period (e.g., "2026 (incoming)" -> 2026, "2025" -> 2025)
+                  const getYear = (period: string) => {
+                    const match = period.match(/\d{4}/)
+                    return match ? parseInt(match[0], 10) : 0
+                  }
+                  return getYear(b.period) - getYear(a.period)
+                })
+                .map((job, index) => (
                 <motion.div
                   key={index}
                   className="space-y-1 border-l-2 border-white/30 pl-4"

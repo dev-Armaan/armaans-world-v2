@@ -101,7 +101,7 @@ const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "baba is currently in stealth, so i can't share specific details about the product or technical implementation just yet. once we launch publicly, i'll update this page with more information about the work i've been doing!",
+          "baba is currently in stealth, so i can't share specific details about the product or technical implementation just yet. once baba care launches publicly, i'll update this page with more information about the work i've been doing!",
       },
     ],
   },

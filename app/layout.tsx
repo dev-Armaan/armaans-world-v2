@@ -20,7 +20,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.armaan.world"),
   title: {
-    default: "Armaan Gupta | Software Engineer & AI Developer",
+    default: "Armaan Gupta | University of Waterloo Engineer",
     template: "%s | Armaan Gupta",
   },
   description:

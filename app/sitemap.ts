@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dynamic experience pages
   const experiencePages: MetadataRoute.Sitemap = experienceSlugs.map(
     (slug) => ({
-      url: `${baseUrl}/experiences/${slug}`,
+      url: `${baseUrl}/${slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,

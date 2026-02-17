@@ -15,7 +15,7 @@ export default function ExperiencesContent() {
       description: "[internship] building automated pipelines and distributed systems",
       tags: ["java", "spring boot", "kafka", "datadog", "kubernetes", "postgresql"],
       image: "/ford.jpg",
-      link: "/experiences/ford",
+      link: "/ford",
       year: 2026,
     },
     {
@@ -23,7 +23,7 @@ export default function ExperiencesContent() {
       description: "[project] 🏆 winner @ tartanhacks '26 - transforms research papers into visual stories with 3blue1brown-style animations",
       tags: ["next.js", "fastapi", "claude", "manim", "modal.com", "elevenlabs", "dedalus sdk"],
       image: "/arx-logo.png",
-      link: "/experiences/arxivisual",
+      link: "/arxivisual",
       year: 2026,
     },
     {
@@ -31,7 +31,7 @@ export default function ExperiencesContent() {
       description: "[internship] building copilot for healthcare (stealth)",
       tags: ["full-stack", "ai integration", "healthcare", "product development"],
       image: "/baba.png",
-      link: "/experiences/baba",
+      link: "/baba",
       year: 2025,
     },
     {
@@ -39,7 +39,7 @@ export default function ExperiencesContent() {
       description: "[internship] working on infra & cloud computing",
       tags: ["docker", "kubernetes", "slurm", "cloud-native apis", "microservices", "hpc", "automation scripts"],
       image: "/wato.png",
-      link: "/experiences/watonomous",
+      link: "/watonomous",
       year: 2025,
     },
     {
@@ -48,7 +48,7 @@ export default function ExperiencesContent() {
         "[internship] worked on climate reanalysis models and visualization tools",
       tags: ["python", "pytorch", "scikit-learn", "pandas", "d3.js", "docker", "git", "ci/cd"],
       image: "/gov.png",
-      link: "/experiences/govcanada",
+      link: "/govcanada",
       year: 2025,
     },
     {
@@ -57,7 +57,7 @@ export default function ExperiencesContent() {
         "[project] copilot for furniture assembly with 3d visualization, automated pdf processing, and intelligent chatbot assistance",
       tags: ["gemini ai", "reka ai", "three.js", "bright data", "next.js", "typescript"],
       image: "/a3D_homepage.png",
-      link: "/experiences/assembl3d",
+      link: "/assembl3d",
       year: 2025,
     },
     {
@@ -66,7 +66,7 @@ export default function ExperiencesContent() {
         "[project] machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams",
       tags: ["pandas", "sklearn", "numpy", "matplotlib", "python"],
       image: "/asd2.png",
-      link: "/experiences/asd",
+      link: "/asd",
       year: 2025,
     },
     {
@@ -75,7 +75,7 @@ export default function ExperiencesContent() {
         "[project] cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis",
       tags: ["opencv", "ultralytics", "numpy", "supervision", "python"],
       image: "/vtracker.png",
-      link: "/experiences/traffic",
+      link: "/traffic",
       year: 2025,
     },
     {
@@ -84,7 +84,7 @@ export default function ExperiencesContent() {
         "[project] ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks",
       tags: ["sql", "react", "flask", "gcp", "mongodb"],
       image: "/preppal.png",
-      link: "/experiences/preppal",
+      link: "/preppal",
       year: 2025,
     },
     {
@@ -93,7 +93,7 @@ export default function ExperiencesContent() {
         "[project] second iteration of my personal website, featuring a new design and improved performance",
       tags: ["react", "next.js", "typescript", "tailwind", "vercel"],
       image: "/aworld.png",
-      link: "/experiences/v2world",
+      link: "/v2world",
       year: 2025,
     },
     {
@@ -101,7 +101,7 @@ export default function ExperiencesContent() {
       description: "[job] developed, optimized & shipped responsive web apps using modern frameworks for clients",
       tags: ["npm", "aws", "react", "next.js", "typescript"],
       image: "/landingx.png",
-      link: "/experiences/landingx",
+      link: "/landingx",
       year: 2024,
     },
     {
@@ -109,7 +109,7 @@ export default function ExperiencesContent() {
       description: "[job] developed an interactive lua-based curriculum in Roblox Studio",
       tags: ["lua", "scripting apis", "edtech", "game development"],
       image: "/cninjas.png",
-      link: "/experiences/codeninjas",
+      link: "/codeninjas",
       year: 2024,
     },
     {
@@ -117,7 +117,7 @@ export default function ExperiencesContent() {
       description: "[project] first iteration of my personal website, complete with 3d models and hosted on aws",
       tags: ["3d modelling", "aws", "react", "next.js", "tailwind"],
       image: "/v1aworld.png",
-      link: "/experiences/v1world",
+      link: "/v1world",
       year: 2024,
     },
     {
@@ -125,7 +125,7 @@ export default function ExperiencesContent() {
       description: "[program] optimized NLP and CV models + personally consulted mastercard foundation & cibc execs on separate occasions",
       tags: ["neural networks", "nlp", "mobile app development", "git"],
       image: "/tks.png",
-      link: "/experiences/tks",
+      link: "/tks",
       year: 2023,
     },
     {
@@ -133,7 +133,7 @@ export default function ExperiencesContent() {
       description: "[job] developed programming cirriculum for students in grades 1-8",
       tags: ["scratch", "python", "ms office", "google suite"],
       image: "/hcampus2.jpg",
-      link: "/experiences/hippocampus",
+      link: "/hippocampus",
       year: 2022,
     },
   ]

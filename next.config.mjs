@@ -21,6 +21,30 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  async redirects() {
+    const slugs = [
+      'arxivisual',
+      'ford',
+      'baba',
+      'assembl3d',
+      'traffic',
+      'watonomous',
+      'govcanada',
+      'asd',
+      'preppal',
+      'v2world',
+      'landingx',
+      'codeninjas',
+      'v1world',
+      'tks',
+      'hippocampus',
+    ];
+    return slugs.map((slug) => ({
+      source: `/experiences/${slug}`,
+      destination: `/${slug}`,
+      permanent: true,
+    }));
+  },
 }
 
 mergeConfig(nextConfig, userConfig)

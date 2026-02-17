@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${project.title} | Armaan Gupta`,
       description: `${project.subtitle} - ${description}`,
-      url: `https://www.armaan.world/experiences/${slug}`,
+      url: `https://www.armaan.world/${slug}`,
       type: "article",
       images: [
         {
@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [project.image],
     },
     alternates: {
-      canonical: `https://www.armaan.world/experiences/${slug}`,
+      canonical: `https://www.armaan.world/${slug}`,
     },
   };
 }

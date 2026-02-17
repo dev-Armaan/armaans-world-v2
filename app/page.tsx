@@ -42,6 +42,20 @@ export default function Home() {
 
   const projects = [
     {
+      title: "arXivisual",
+      description: "🏆 winner @ tartanhacks '26 - transforms research papers into visual stories with 3blue1brown-style animations",
+      image: "/arx-logo.png",
+      year: "2026",
+      link: "/experiences/arxivisual",
+    },
+    {
+      title: "swe @ ford",
+      description: "building automated pipelines and distributed systems for automotive technology",
+      image: "/ford.jpg",
+      year: "2026",
+      link: "/experiences/ford",
+    },
+    {
       title: "assembl3D",
       description: "copilot for furniture assembly with 3d visualization, automated pdf processing, and intelligent chatbot assistance",
       image: "/a3D_homepage.png",
@@ -49,14 +63,7 @@ export default function Home() {
       link: "/experiences/assembl3d",
     },
     {
-      title: "swe @ ford",
-      description: "incoming winter 2026 internship, excited to work on automotive technology",
-      image: "/ford.jpg",
-      year: "2026",
-      link: "/experiences/ford",
-    },
-    {
-      title: "product swe @ baba",
+      title: "engineer @ baba",
       description: "building copilot for healthcare at a stealth startup",
       image: "/baba.png",
       year: "2025",
@@ -96,11 +103,7 @@ export default function Home() {
             <p className="text-base md:text-base font-dm-sans text-white max-w-2xl mt-6">
             studying cs + ai @ <strong> uwaterloo 👨‍💻</strong>
             <br />
-            product swe @ <strong>baba 🩺</strong>
-            <br />
-            swe @ <strong>watonomous ☁️</strong>
-            <br />
-            incoming swe @ <strong>ford 🚗</strong>
+            swe @ <strong>ford 🚗</strong>
             <br />
             looking for <strong>summer 2026</strong> internships 🚀
             </p>
@@ -172,7 +175,7 @@ export default function Home() {
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
-                    className={`${project.image === "/gov.png" || project.image === "/baba.png" ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`} // Faster animation
+                    className={`${project.image === "/gov.png" || project.image === "/baba.png" || project.image === "/arx-logo.png" ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`} // Faster animation
                   />
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-r from-black via-gold to-black transition-opacity duration-300"></div>{" "}
                   {/* Faster animation */}

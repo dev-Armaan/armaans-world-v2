@@ -4,7 +4,7 @@ import AboutContent from "@/components/about-content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Armaan Gupta - Software Engineer studying Computer Science & AI at University of Waterloo. Background, skills, and work experience at Ford, Baba Care, WATonomous, and more.",
+    "Learn about Armaan Gupta - Software Engineer studying Computer Science & AI at University of Waterloo. Background, skills, and work experience at Ford, Baba, WATonomous, and more.",
   keywords: [
     "Armaan Gupta",
     "About Armaan Gupta",

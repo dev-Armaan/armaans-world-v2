@@ -116,12 +116,12 @@ export default function AboutContent() {
                 {
                   title: "SOFTWARE ENGINEER",
                   company: "ford",
-                  period: "2026 (incoming)",
+                  period: "2026 - present",
                 },
                 {
-                  title: "PRODUCT SOFTWARE ENGINEER",
-                  company: "baba care",
-                  period: "2025",
+                  title: "ENGINEER",
+                  company: "baba",
+                  period: "2025 - 2026",
                 },
                 {
                   title: "Founder & CEO",

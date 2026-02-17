@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail } from "lucide-react"
 import BinaryGlobe from "@/components/binary-globe"
+import XIcon from "@/components/icons/x-icon"
 
 export default function ContactContent() {
   return (
@@ -33,18 +34,20 @@ export default function ContactContent() {
 
           <div className="space-y-8 flex flex-col">
             <motion.a
-              href="mailto:a585gupt@uwaterloo.ca"
+              href="https://x.com/armaangupt0"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center space-x-4 text-white hover:text-gold transition-colors duration-300 py-2"
               whileHover={{ x: 8 }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300">
-                <Mail className="h-5 w-5 text-gold" />
+                <XIcon className="h-5 w-5 text-gold" />
               </div>
               <div className="flex flex-col">
-                <span className="font-medium text-lg">Email</span>
+                <span className="font-medium text-lg">X</span>
                 <span className="text-sm text-white/70 group-hover:text-gold/80 transition-colors duration-300">
-                  a585gupt@uwaterloo.ca
+                  @armaangupt0
                 </span>
               </div>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500 ease-out" />
@@ -85,6 +88,24 @@ export default function ContactContent() {
                 <span className="font-medium text-lg">LinkedIn</span>
                 <span className="text-sm text-white/70 group-hover:text-gold/80 transition-colors duration-300">
                   linkedin.com/in/gupta-armaan
+                </span>
+              </div>
+              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500 ease-out" />
+            </motion.a>
+
+            <motion.a
+              href="mailto:a585gupt@uwaterloo.ca"
+              className="group relative inline-flex items-center space-x-4 text-white hover:text-gold transition-colors duration-300 py-2"
+              whileHover={{ x: 8 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300">
+                <Mail className="h-5 w-5 text-gold" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-medium text-lg">Email</span>
+                <span className="text-sm text-white/70 group-hover:text-gold/80 transition-colors duration-300">
+                  a585gupt@uwaterloo.ca
                 </span>
               </div>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500 ease-out" />

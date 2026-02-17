@@ -4,7 +4,7 @@ import ExperiencesContent from "@/components/experiences-content";
 export const metadata: Metadata = {
   title: "Experiences",
   description:
-    "Explore Armaan Gupta's professional experiences, projects, and internships. Software engineering work at Ford, Baba Care, WATonomous, Environment Canada, and personal projects.",
+    "Explore Armaan Gupta's professional experiences, projects, and internships. Software engineering work at Ford, Baba, WATonomous, Environment Canada, and personal projects.",
   keywords: [
     "Armaan Gupta Projects",
     "Armaan Gupta Experience",

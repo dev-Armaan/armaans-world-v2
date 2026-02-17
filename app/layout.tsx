@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Armaan Gupta",
   },
   description:
-    "Armaan Gupta - Software Engineer studying Computer Science & AI at University of Waterloo. Building innovative solutions at Ford, Baba Care, and WATonomous.",
+    "Armaan Gupta - Software Engineer studying Computer Science & AI at University of Waterloo. Building innovative solutions at Ford, Baba, and WATonomous.",
   keywords: [
     "Armaan Gupta",
     "Armaan",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "Full Stack Developer",
     "Ford",
     "WATonomous",
-    "Baba Care",
+    "Baba",
     "Portfolio",
     "Armaan's World",
   ],
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     siteName: "Armaan Gupta - Portfolio",
     title: "Armaan Gupta | Software Engineer & AI Developer",
     description:
-      "Armaan Gupta - Software Engineer studying Computer Science & AI at University of Waterloo. Building innovative solutions at Ford, Baba Care, and WATonomous.",
+      "Armaan Gupta - Software Engineer studying Computer Science & AI at University of Waterloo. Building innovative solutions at Ford, Baba, and WATonomous.",
     images: [
       {
         url: "/favicon-rbg.png",
@@ -111,7 +111,7 @@ const jsonLd = {
     },
     {
       "@type": "Organization",
-      name: "Baba Care",
+      name: "Baba",
     },
     {
       "@type": "Organization",

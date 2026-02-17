@@ -35,23 +35,158 @@ export type Project = {
 };
 
 export const projectsData: Record<string, Project> = {
-  ford: {
-    title: "SWE @ Ford",
-    subtitle: "incoming winter 2026",
+  arxivisual: {
+    title: "arXivisual",
+    subtitle: "transforming research papers into visual stories",
     year: "2026",
-    type: "internship",
-    image: "/ford.jpg",
-    contents: ["tbd"],
+    type: "project",
+    image: "/arx-logo.png",
+    repoUrl: "https://github.com/rajshah6/arXivisual",
+    demoUrl: "https://arxivisual.org",
+    contents: [
+      "tartanhacks '26 winner",
+      "multi-agent ai pipeline",
+      "3blue1brown-style animations",
+      "serverless manim rendering",
+      "interactive scrollytelling ui",
+      "real-time documentation via dedalus sdk",
+    ],
     descriptionBlocks: [
       {
         type: "text",
         content:
-          "i'll be starting my software engineering internship at ford in winter 2026. excited to work on automotive technology and contribute to the future of mobility. i'll update this page with more details about my projects and experiences once i start!",
+          "built arXivisual at tartanhacks '26 to solve a problem i've personally felt: academic papers are incredibly dense and hard to parse. we won the hackathon by creating a full-stack system that automatically transforms arxiv research papers into interactive visual stories with 3blue1brown-style animated explanations. paste any arxiv url, and within minutes you get a scrollytelling interface where manim animations play inline as you read through the paper. the goal was simple: make cutting-edge research accessible to everyone through animation + narration.",
+      },
+      {
+        type: "image",
+        src: "/arxiv.png",
+        alt: "arXiv paper ingestion and processing",
+        width: 800,
+        height: 600,
+        fullWidth: true,
+      },
+      {
+        type: "text",
+        content:
+          "the technical architecture is split into a next.js 16 frontend with react 19 and a python fastapi backend orchestrating a sophisticated multi-agent ai pipeline. when you submit a paper, the backend fetches it from arxiv, parses sections using pymupdf4llm or ar5iv html, then runs a sequence of 7 specialized ai agents built with anthropic claude. the sectionanalyzer identifies visualizable concepts, the visualizationplanner creates storyboards with scene breakdowns, and the manimgenerator writes executable python code using manim (3blue1brown's animation library).",
+      },
+      {
+        type: "text",
+        content:
+          "what made this project especially interesting was implementing a 4-stage quality pipeline with retry logic. code goes through syntactic validation (ast parsing), spatial validation (checking if elements are off-screen), voiceover quality scoring (using both heuristics and llm judges), and render testing before we actually spin up a serverless modal.com container to render the video. this multi-gate approach took our success rate from ~60% on first attempt to ~98% by attempt 3. each failure provides detailed feedback to the code generator, creating a tight feedback loop.",
+      },
+      {
+        type: "youtube",
+        videoId: "ug9BamKXKdk",
+        title: "arXivisual demo - TartanHacks '26",
+      },
+      {
+        type: "text",
+        content:
+          "one of the coolest parts was integrating the dedalus sdk with context7 mcp for live documentation retrieval. manim's api changes frequently, so instead of relying on static docs that go stale, the manimgenerator agent fetches real-time api references from context7 as it writes code. this was our entry for the 'best use of tool calling' track and it genuinely improved code quality since the agent always had access to current manim syntax. if mcp fails, we fall back to cached docs, but the live approach works remarkably well.",
+      },
+      {
+        type: "image",
+        src: "/loading.png",
+        alt: "arXivisual processing pipeline with real-time progress",
+        width: 800,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "the voiceover quality validator was critical for maintaining educational standards. we banned phrases like 'now we display...' or 'watch as...' because those are meta-commentary about the animation, not actual explanations of the concept. narration needed to teach, not describe. the validator uses dual scoring: heuristic rules check for banned phrases and concept alignment, while an llm judge evaluates pedagogical quality (like explaining to a high schooler). if scores fall below thresholds, we regenerate with targeted feedback. this strictness paid off as the final narrations actually explain the math and intuition.",
+      },
+      {
+        type: "text",
+        content:
+          "rendering happens serverlessly on modal.com, where we spin up isolated containers with all the manim dependencies (ffmpeg, cairo, pango, latex). each visualization takes 30-60 seconds to render, and we use elevenlabs for high-quality tts voiceovers synced to the animations. videos get uploaded to cloudflare r2 (s3-compatible storage), and the frontend displays them in a beautiful scrollytelling interface. as you scroll through the paper, sections transform from cards to full-screen, with videos playing inline next to the relevant text. we even render latex equations with katex so the math flows naturally with the prose.",
+      },
+      {
+        type: "image",
+        src: "/manim.png",
+        alt: "3Blue1Brown-style Manim animations generated by AI",
+        width: 800,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "the frontend was built with next.js 16 (app router), react 19, tailwindcss 4, and framer motion for smooth animations. the landing page has this glassmorphic ui with floating shards and a mosaic background that looks pretty sick. we implemented real-time progress tracking with estimated completion times, and added a demo mode where pre-processed papers (like 'attention is all you need') load instantly with a 5-second simulated processing animation for that instant gratification.",
+      },
+      {
+        type: "text",
+        content:
+          "backend wise, we used python 3.11 with fastapi, sqlalchemy 2.0 async for database operations (sqlite for dev, postgresql for prod), and structured everything around clear separation of concerns. the ingestion system handles both ar5iv html parsing (preferred) and pdf parsing (fallback), extracting sections, equations, figures, and tables while preserving hierarchical structure. the agent orchestrator runs visualizations sequentially with configurable retry counts and failure policies.",
+      },
+      {
+        type: "text",
+        content:
+          "performance was interesting to optimize. processing a paper takes 3-6 minutes: a few seconds for arxiv fetching, 5-10s for parsing, 5-10s for parallel section analysis, then 45-150s for visualization generation across 3-5 visualizations, and 90-300s for rendering. the bottlenecks are llm calls (manimgenerator generates 8k tokens) and rendering (modal cold starts + manim execution). we parallelized section analysis and implemented static validation before expensive rendering to minimize compute costs.",
+      },
+      {
+        type: "text",
+        content:
+          "winning tartanhacks '26 with this was incredible validation that the problem we were solving actually mattered. academic papers shouldn't be gatekeepers of knowledge when we have the tools to make them intuitive and visual. the tech stack came together beautifully: typescript frontend, python backend, claude for agents, elevenlabs for voice, modal for serverless rendering, manim for animations, and dedalus+context7 for live docs. it's a production-grade system that's technically ambitious, pedagogically sound, and genuinely useful. definitely one of the projects i'm most proud of.",
+      },
+    ],
+  },
+  ford: {
+    title: "SWE @ Ford",
+    subtitle: "handling a lot of data",
+    year: "2026",
+    type: "internship",
+    image: "/ford.jpg",
+    contents: [
+      "automated order validation & persistence",
+      "distributed systems instrumentation",
+      "datadog apm integration",
+      "pipeline architecture & design",
+      "performance optimization & monitoring",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "currently working as a software engineer at ford motor company in toronto, building backend infrastructure and automation systems for critical order processing workflows in automotive manufacturing. my work focuses on designing scalable distributed systems, implementing observability tooling, and eliminating manual processes through intelligent automation.",
+      },
+      {
+        type: "image",
+        src: "/ready-ford.jpg",
+        alt: "Ford facility",
+        width: 800,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "one of my primary contributions has been designing and implementing automated validation and persistence pipelines for order ingestion. i architected end-to-end pipelines that validate incoming orders against business rules, handle edge cases, and persist data to downstream services without human oversight. this eliminated manual order ingestion paths and reduced human intervention by over 60%, significantly improving throughput and reducing processing errors. the pipeline includes comprehensive validation logic, intelligent retry strategies with exponential backoff, and dead letter queues for orders requiring manual review.",
+      },
+      {
+        type: "text",
+        content:
+          "i instrumented distributed services across the order processing stack with datadog apm, implementing distributed tracing, custom metrics, and proactive alerting. this gives our team real-time visibility into service health, request latencies, and error rates across microservices. with distributed tracing, we can track individual orders through the entire pipeline, pinpointing bottlenecks and failures with precision. the custom dashboards and alerting system i built have drastically reduced mean time to detection and resolution for incidents, enabling low-latency debugging and proactive performance regression detection.",
+      },
+      {
+        type: "image",
+        src: "/ford-electric.jpg",
+        alt: "Ford electric vehicle",
+        width: 800,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "working with technologies like java spring boot, kafka for event streaming, postgresql for persistence, and kubernetes for orchestration has given me deep exposure to enterprise-grade distributed systems architecture. this role has been an incredible learning experience in large-scale systems, modern observability practices, and the complexities of automotive software engineering.",
       },
     ],
   },
   baba: {
-    title: "Product SWE @ Baba",
+    title: "Engineer @ Baba",
     subtitle: "building copilot for healthcare",
     year: "2025",
     type: "internship",
@@ -61,7 +196,7 @@ export const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "baba is currently in stealth, so i can't share specific details about the product or technical implementation just yet. once baba care launches publicly, i'll update this page with more information about the work i've been doing!",
+          "baba is currently in stealth, so i can't share specific details about the product or technical implementation just yet. once baba launches publicly, i'll update this page with more information about the work i've been doing!",
       },
     ],
   },

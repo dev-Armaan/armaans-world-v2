@@ -4,12 +4,14 @@ import ContactContent from "@/components/contact-content";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Armaan Gupta - Software Engineer at University of Waterloo. Reach out via email, GitHub, or LinkedIn for opportunities and collaborations.",
+    "Get in touch with Armaan Gupta - Software Engineer at University of Waterloo. Reach out via email, GitHub, LinkedIn, or X/Twitter for opportunities and collaborations.",
   keywords: [
     "Contact Armaan Gupta",
     "Armaan Gupta Email",
     "Armaan Gupta LinkedIn",
     "Armaan Gupta GitHub",
+    "Armaan Gupta Twitter",
+    "Armaan Gupta X",
     "Hire Armaan Gupta",
     "Software Engineer Contact",
     "University of Waterloo Student",

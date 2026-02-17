@@ -12,10 +12,18 @@ export default function ExperiencesContent() {
   const projects = [
     {
       title: "swe @ ford",
-      description: "[internship] incoming winter 2026",
-      tags: ["tbd"],
+      description: "[internship] building automated pipelines and distributed systems",
+      tags: ["java", "spring boot", "kafka", "datadog", "kubernetes", "postgresql"],
       image: "/ford.jpg",
       link: "/experiences/ford",
+      year: 2026,
+    },
+    {
+      title: "arXivisual",
+      description: "[project] 🏆 winner @ tartanhacks '26 - transforms research papers into visual stories with 3blue1brown-style animations",
+      tags: ["next.js", "fastapi", "claude", "manim", "modal.com", "elevenlabs", "dedalus sdk"],
+      image: "/arx-logo.png",
+      link: "/experiences/arxivisual",
       year: 2026,
     },
     {
@@ -212,7 +220,7 @@ export default function ExperiencesContent() {
                           src={project.image || "/placeholder.svg"}
                           alt={project.title}
                           fill
-                          className={`${project.image === "/gov.png" || project.image === "/baba.png" ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`}
+                          className={`${project.image === "/gov.png" || project.image === "/baba.png" || project.image === "/arx-logo.png" ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`}
                         />
                       </div>
                       <div className="p-6">

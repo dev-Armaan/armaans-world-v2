@@ -154,13 +154,15 @@ export default function ExperienceDetailContent({
               return (
                 <div key={index} className="my-12 flex justify-center">
                   <div className={block.fullWidth ? "w-full" : ""}>
-                    <Image
-                      src={block.src || "/placeholder.svg"}
-                      alt={block.alt}
-                      width={block.width}
-                      height={block.height}
-                      className="rounded-lg object-contain"
-                    />
+                    <div className="flex justify-center">
+                      <Image
+                        src={block.src || "/placeholder.svg"}
+                        alt={block.alt}
+                        width={block.width}
+                        height={block.height}
+                        className="rounded-lg object-contain"
+                      />
+                    </div>
                     {block.caption && (
                       <p className="text-sm text-white/60 text-center mt-2">
                         {block.caption}

@@ -99,7 +99,7 @@ export default function ExperienceDetailContent({
 
                 {project.demoUrl && (
                   <div className="space-y-2 pt-2">
-                    <h3 className="text-white/60 text-sm uppercase">DEMO</h3>
+                    <h3 className="text-white/60 text-sm uppercase">{project.title === "arXivisual" ? "WEBSITE" : "DEMO"}</h3>
                     <motion.a
                       href={project.demoUrl}
                       target="_blank"

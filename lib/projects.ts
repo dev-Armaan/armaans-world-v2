@@ -77,7 +77,7 @@ export const projectsData: Record<string, Project> = {
       },
       {
         type: "youtube",
-        videoId: "ug9BamKXKdk",
+        videoId: "2PncIouibG8",
         title: "arXivisual demo - TartanHacks '26",
       },
       {

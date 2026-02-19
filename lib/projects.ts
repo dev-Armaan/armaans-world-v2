@@ -237,7 +237,7 @@ export const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "the first part was getting the manuals themselves. i used bright data's apis to automatically scrape product info from ikea.their serp api searches google for products, web unlocker downloads protected pdfs, and we cached everything to avoid re-downloading. we ended up with a library of 50+ popular ikea products that you can browse through, or you can just paste any product url and the system will grab it for you.",
+          "the first part was getting the manuals themselves. i used bright data's apis to automatically scrape product info from ikea. their serp api searches google for products, web unlocker downloads protected pdfs, and we cached everything to avoid re-downloading. we ended up with a library of 50+ popular ikea products that you can browse through, or you can just paste any product url and the system will grab it for you.",
       },
       {
         type: "text",
@@ -296,7 +296,7 @@ export const projectsData: Record<string, Project> = {
       "object detection & tracking",
       "speed estimation",
       "vehicle classification",
-      "cutomizable configuration",
+      "customizable configuration",
       "video processing & analytics",
     ],
     descriptionBlocks: [
@@ -630,7 +630,7 @@ export const projectsData: Record<string, Project> = {
       "app development",
       "client & team communication",
       "performance optimization",
-      "cross-device compatability",
+      "cross-device compatibility",
     ],
     descriptionBlocks: [
       {

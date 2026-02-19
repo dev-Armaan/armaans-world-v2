@@ -129,7 +129,7 @@ export default function AboutContent() {
                   period: "2024",
                 },
                 {
-                  title: "Sensai & Camp Leader",
+                  title: "Sensei & Camp Leader",
                   company: "code ninjas",
                   period: "2024",
                 },
@@ -149,7 +149,7 @@ export default function AboutContent() {
                   period: "2025",
                 },
                 {
-                  title: "Cirriculum Developer",
+                  title: "Curriculum Developer",
                   company: "hippocampus learning",
                   period: "2022",
                 },

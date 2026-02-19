@@ -105,7 +105,7 @@ export default function ExperiencesContent() {
       year: 2024,
     },
     {
-      title: "sensai & camp leader @ code ninjas",
+      title: "sensei & camp leader @ code ninjas",
       description: "[job] developed an interactive lua-based curriculum in Roblox Studio",
       tags: ["lua", "scripting apis", "edtech", "game development"],
       image: "/cninjas.png",
@@ -129,8 +129,8 @@ export default function ExperiencesContent() {
       year: 2023,
     },
     {
-      title: "cirriculum dev @ hippocampus",
-      description: "[job] developed programming cirriculum for students in grades 1-8",
+      title: "curriculum dev @ hippocampus",
+      description: "[job] developed programming curriculum for students in grades 1-8",
       tags: ["scratch", "python", "ms office", "google suite"],
       image: "/hcampus2.jpg",
       link: "/hippocampus",

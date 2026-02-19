@@ -677,8 +677,8 @@ export const projectsData: Record<string, Project> = {
     ],
   },
   codeninjas: {
-    title: "sensai & camp leader @ code ninjas",
-    subtitle: "developed cirriculum & taught students",
+    title: "sensei & camp leader @ code ninjas",
+    subtitle: "developed curriculum & taught students",
     year: "2024",
     type: "job",
     image: "/cninjas2.png",
@@ -803,8 +803,8 @@ export const projectsData: Record<string, Project> = {
     ],
   },
   hippocampus: {
-    title: "cirriculum dev @ hippocampus",
-    subtitle: "developed programming cirriculum",
+    title: "curriculum dev @ hippocampus",
+    subtitle: "developed programming curriculum",
     year: "2022",
     type: "job",
     image: "/hcampus2.jpg",

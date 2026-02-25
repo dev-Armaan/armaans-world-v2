@@ -69,13 +69,6 @@ export default function Home() {
       year: "2025",
       link: "/baba",
     },
-    {
-      title: "swe @ WATonomous",
-      description: "working on cloud infrastructure and computing solutions to support autonomous vehicle development and testing",
-      image: "/wato.png",
-      year: "2025",
-      link: "/watonomous",
-    },
   ]
 
   if (showEntryAnimation) {

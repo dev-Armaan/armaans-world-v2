@@ -200,16 +200,68 @@ export const projectsData: Record<string, Project> = {
   },
   baba: {
     title: "Engineer @ Baba",
-    subtitle: "building copilot for healthcare",
-    year: "2025",
+    subtitle: "building the future of american healthcare",
+    year: "2026",
     type: "internship",
     image: "/baba.png",
-    contents: ["tba"],
+    contents: [
+      "care-center search platform",
+      "prescription intelligence engine",
+      "programmatic seo & geospatial queries",
+      "sqlalchemy & supabase",
+      "core infrastructure",
+    ],
     descriptionBlocks: [
       {
         type: "text",
         content:
-          "baba is currently in stealth, so i can't share specific details about the product or technical implementation just yet. once baba launches publicly, i'll update this page with more information about the work i've been doing!",
+          "baba is the american healthcare company. they connect older adults and their families with dedicated advocates (nurses and social workers) who coordinate their care and navigate the complexities of the medical system. i joined as one of the first engineers, working alongside an incredibly ambitious team of former founders to build the core infrastructure leading up to their public launch and $6.5m seed round led by general catalyst.",
+      },
+      {
+        type: "image",
+        src: "/baba-website.png",
+        alt: "Baba website homepage",
+        width: 800,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "one of my biggest projects was engineering the most comprehensive care-center search platform in the country. looking at existing options, i realized they were all lacking: terrible ui design, no proximity search features, and no way to directly compare facilities. to fix this, i ingested massive datasets from cms care compare, aggregating and normalizing metrics across 40,000+ nursing homes and assisted living facilities.",
+      },
+      {
+        type: "text",
+        content:
+          "to enable actual proximity search, i wrote backend logic that converted the raw zip codes provided by cms into precise latitude and longitude coordinates. by leveraging spatial queries within the supabase database, the platform accurately approximates distances and returns relevant results near the user in milliseconds. on the frontend, i built an intuitive ui that lets users select and side-by-side compare up to 5 nursing homes at once across dozens of quality metrics. i also engineered a programmatic seo pipeline, dynamically generating highly optimized landing pages for every city, county, and state to drive organic traffic. the launch was massively successful, generating over 10,000 visits within weeks.",
+      },
+      {
+        type: "image",
+        src: "/nursing-search.png",
+        alt: "Baba nursing home search platform",
+        width: 800,
+        height: 600,
+        fullWidth: false,
+      },
+      {
+        type: "text",
+        content:
+          "i also built a prescription intelligence engine to help patients find lower-cost medications and generic alternatives. to get the foundational data, i built pipelines to ingest the fda's orange book database, effectively cataloging every single approved prescription drug in the usa. then, i integrated pricing data from mark cuban cost plus drug company and cross-referenced it against official cms datasets (like the national average drug acquisition cost) and public insurance formularies.",
+      },
+      {
+        type: "text",
+        content:
+          "using sqlalchemy and supabase, i architected the backend to intelligently match a user's expensive brand-name prescription to its generic equivalent, query the cost plus drugs pricing, and compare it against the bloated cms averages. this allowed the product to definitively calculate and display the exact out-of-pocket savings for the patient. by relying on reliable apis and free open data sources, i ensured high data accuracy while completely eliminating the need for expensive third-party healthcare licensing costs.",
+      },
+      {
+        type: "youtube",
+        videoId: "_Rugn6zsFDs",
+        title: "Baba Demo",
+      },
+      {
+        type: "text",
+        content:
+          "working at baba was chaotic and uncertain, but never dull. there's something sacred about pushing yourself to the limits in the company of other committed people trying to solve a massive societal problem. i'm really proud of the infrastructure i built to help their advocates act as the connective tissue that makes people healthier, saves money, and reduces fraud.",
       },
     ],
   },

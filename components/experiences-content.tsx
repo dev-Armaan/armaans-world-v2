@@ -28,7 +28,7 @@ export default function ExperiencesContent() {
     },
     {
       title: "product swe @ baba",
-      description: "[internship] building copilot for healthcare (stealth)",
+      description: "[internship] building the future of american healthcare",
       tags: ["full-stack", "ai integration", "healthcare", "product development"],
       image: "/baba.png",
       link: "/baba",

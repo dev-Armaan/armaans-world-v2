@@ -56,18 +56,18 @@ export default function Home() {
       link: "/ford",
     },
     {
+      title: "engineer @ baba",
+      description: "building the future of american healthcare",
+      image: "/baba.png",
+      year: "2025",
+      link: "/baba",
+    },
+    {
       title: "assembl3D",
       description: "copilot for furniture assembly with 3d visualization, automated pdf processing, and intelligent chatbot assistance",
       image: "/a3D_homepage.png",
       year: "2025",
       link: "/assembl3d",
-    },
-    {
-      title: "engineer @ baba",
-      description: "building copilot for healthcare at a stealth startup",
-      image: "/baba.png",
-      year: "2025",
-      link: "/baba",
     },
   ]
 

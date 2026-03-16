@@ -47,7 +47,7 @@ export default function ExperienceDetailContent({
       transition={{ duration: 0.5 }}
       className="space-y-16"
     >
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 md:gap-16">
         <div className="space-y-8">
           <Link
             href="/experiences"
@@ -152,15 +152,15 @@ export default function ExperienceDetailContent({
               return <p key={index}>{block.content}</p>;
             } else if (block.type === "image") {
               return (
-                <div key={index} className="my-12 flex justify-center">
-                  <div className={block.fullWidth ? "w-full" : ""}>
+                <div key={index} className="my-8 md:my-12 flex justify-center">
+                  <div className={block.fullWidth ? "w-full" : "w-full max-w-full"}>
                     <div className="flex justify-center">
                       <Image
                         src={block.src || "/placeholder.svg"}
                         alt={block.alt}
                         width={block.width}
                         height={block.height}
-                        className="rounded-lg object-contain"
+                        className="rounded-lg object-contain max-w-full h-auto"
                       />
                     </div>
                     {block.caption && (

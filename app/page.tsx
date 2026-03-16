@@ -10,8 +10,8 @@ import BinaryGlobe from "@/components/binary-globe"
 
 export default function Home() {
   const [showEntryAnimation, setShowEntryAnimation] = useState(true)
+  const [globeSize, setGlobeSize] = useState(320)
 
-  // Check if this is the first visit to the site in this session
   useEffect(() => {
     const hasVisited = sessionStorage.getItem("hasVisited")
     if (hasVisited) {
@@ -19,6 +19,15 @@ export default function Home() {
     } else {
       sessionStorage.setItem("hasVisited", "true")
     }
+  }, [])
+
+  useEffect(() => {
+    const updateGlobeSize = () => {
+      setGlobeSize(window.innerWidth < 768 ? 220 : 320)
+    }
+    updateGlobeSize()
+    window.addEventListener("resize", updateGlobeSize)
+    return () => window.removeEventListener("resize", updateGlobeSize)
   }, [])
 
   const handleAnimationComplete = () => {
@@ -103,8 +112,8 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center">
-            <div className="relative w-80 h-80 flex items-center justify-center">
-              <BinaryGlobe size={320} />
+            <div className="relative w-[220px] h-[220px] md:w-80 md:h-80 flex items-center justify-center">
+              <BinaryGlobe size={globeSize} />
             </div>
           </div>
         </div>
@@ -128,7 +137,7 @@ export default function Home() {
         </motion.h2>
       </div>
 
-        <div className="space-y-32">
+        <div className="space-y-16 md:space-y-32">
           {projects.map((project, index) => (
             <Link href={project.link} key={index}>
               <motion.div

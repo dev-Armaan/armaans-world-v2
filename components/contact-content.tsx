@@ -23,7 +23,7 @@ export default function ContactContent() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
         <motion.div
           className="space-y-8 flex flex-col justify-center h-full"
           initial={{ opacity: 0, x: -20 }}

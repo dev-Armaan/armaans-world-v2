@@ -20,7 +20,7 @@ export default function AboutContent() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 md:gap-12">
         <div className="space-y-12">
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">BACKGROUND</h2>
@@ -39,7 +39,7 @@ export default function AboutContent() {
 
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">SKILLS</h2>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8">
               <div>
                 <h3 className="text-white/60 text-sm mb-4 uppercase tracking-wider">LANGUAGES</h3>
                 <ul className="space-y-3">

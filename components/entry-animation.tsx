@@ -10,58 +10,71 @@ interface EntryAnimationProps {
 
 export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
   const [text, setText] = useState("")
+  const [isMobile, setIsMobile] = useState(false)
   const fullText = "WELCOME TO ARMAAN'S WORLD"
+  const onCompleteRef = useRef(onComplete)
   const animationCompleteRef = useRef(false)
+  const intervalsRef = useRef<ReturnType<typeof setInterval>[]>([])
+  const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([])
 
   useEffect(() => {
-    // More pronounced scramble effect
+    onCompleteRef.current = onComplete
+  }, [onComplete])
+
+  useEffect(() => {
+    const mobile = window.innerWidth < 768
+    setIsMobile(mobile)
+
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/"
-    const letterDuration = 110 // 0.150 seconds per letter
-    const finalPause = 300 // .5 second pause at the end
+    const letterDuration = mobile ? 60 : 110
+    const iterationsPerLetter = mobile ? 5 : 15
+    const finalPause = 300
 
     let currentIndex = 0
     let isComplete = false
 
-    // Function to scramble the current letter
+    const finish = () => {
+      if (!animationCompleteRef.current) {
+        animationCompleteRef.current = true
+        onCompleteRef.current()
+      }
+    }
+
     const scrambleLetter = () => {
+      if (animationCompleteRef.current) return
+
       if (currentIndex >= fullText.length) {
         if (!isComplete) {
           isComplete = true
-          // Wait 1 second after all letters are revealed
-          setTimeout(() => {
-            if (!animationCompleteRef.current) {
-              animationCompleteRef.current = true
-              onComplete()
-            }
-          }, finalPause)
+          const t = setTimeout(finish, finalPause)
+          timeoutsRef.current.push(t)
         }
         return
       }
 
-      // Number of scramble iterations per letter
-      const iterationsPerLetter = 15
       let iteration = 0
 
       const interval = setInterval(() => {
+        if (animationCompleteRef.current) {
+          clearInterval(interval)
+          return
+        }
+
         iteration++
 
         let scrambledText = ""
-
         for (let i = 0; i < fullText.length; i++) {
           if (i < currentIndex) {
             scrambledText += fullText[i]
-          }
-          else if (i === currentIndex) {
+          } else if (i === currentIndex) {
             if (iteration === iterationsPerLetter) {
               scrambledText += fullText[i]
-            }
-            else if (fullText[i] === " ") {
+            } else if (fullText[i] === " ") {
               scrambledText += " "
             } else {
               scrambledText += chars[Math.floor(Math.random() * chars.length)]
             }
-          }
-          else if (fullText[i] === " ") {
+          } else if (fullText[i] === " ") {
             scrambledText += " "
           } else {
             scrambledText += ""
@@ -76,16 +89,26 @@ export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
           scrambleLetter()
         }
       }, letterDuration / iterationsPerLetter)
+
+      intervalsRef.current.push(interval)
     }
 
-    // Start the scramble effect
     scrambleLetter()
 
-    // Cleanup function
+    const maxDuration = fullText.length * letterDuration + finalPause + 2000
+    const safetyTimeout = setTimeout(finish, maxDuration)
+    timeoutsRef.current.push(safetyTimeout)
+
     return () => {
       animationCompleteRef.current = true
+      intervalsRef.current.forEach(clearInterval)
+      timeoutsRef.current.forEach(clearTimeout)
+      intervalsRef.current = []
+      timeoutsRef.current = []
     }
-  }, [onComplete])
+  }, [])
+
+  const globeSize = isMobile ? 220 : 320
 
   return (
     <motion.div
@@ -96,8 +119,10 @@ export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
       transition={{ duration: 0.5 }}
     >
       <div className="flex flex-col items-center space-y-8">
-        <div className="relative w-80 h-80 flex items-center justify-center">
-          <BinaryGlobe size={320} />
+        <div className="relative flex items-center justify-center"
+          style={{ width: globeSize, height: globeSize }}
+        >
+          <BinaryGlobe size={globeSize} />
         </div>
 
         <motion.div

@@ -26,10 +26,10 @@ export default function BinaryGlobe({ size = 256, className = "" }: BinaryGlobeP
 
   const generateGlobePoints = useCallback((radius: number): Point[] => {
     const points: Point[] = []
-    const numLatitudes = 24
-    const numLongitudes = 36
+    const isSmall = size < 280
+    const numLatitudes = isSmall ? 16 : 24
+    const numLongitudes = isSmall ? 24 : 36
 
-    // Generate points on a sphere using latitude/longitude
     for (let lat = 0; lat < numLatitudes; lat++) {
       const theta = (lat / numLatitudes) * Math.PI
       const sinTheta = Math.sin(theta)
@@ -67,7 +67,7 @@ export default function BinaryGlobe({ size = 256, className = "" }: BinaryGlobeP
     ]
 
     continentCenters.forEach((continent) => {
-      const extraPoints = 15 + Math.floor(Math.random() * 10)
+      const extraPoints = (isSmall ? 8 : 15) + Math.floor(Math.random() * (isSmall ? 5 : 10))
       for (let i = 0; i < extraPoints; i++) {
         const latVariance = (Math.random() - 0.5) * continent.spread
         const lonVariance = (Math.random() - 0.5) * continent.spread
@@ -95,7 +95,7 @@ export default function BinaryGlobe({ size = 256, className = "" }: BinaryGlobeP
     })
 
     return points
-  }, [])
+  }, [size])
 
   const rotateY = useCallback((point: Point, angle: number): { x: number; y: number; z: number } => {
     const cos = Math.cos(angle)

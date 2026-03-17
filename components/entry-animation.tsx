@@ -26,8 +26,8 @@ export default function EntryAnimation({ onComplete }: EntryAnimationProps) {
     setIsMobile(mobile)
 
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/"
-    const letterDuration = mobile ? 60 : 110
-    const iterationsPerLetter = mobile ? 5 : 15
+    const letterDuration = mobile ? 80 : 110
+    const iterationsPerLetter = mobile ? 8 : 15
     const finalPause = 300
 
     let currentIndex = 0

@@ -58,6 +58,13 @@ export default function Home() {
       link: "/arxivisual",
     },
     {
+      title: "CageFantasy",
+      description: "mma-native fantasy picks with fight intelligence, scorecards, private leagues, and live card context",
+      image: "/cagefantasy-hero.png",
+      year: "2026",
+      link: "/cagefantasy",
+    },
+    {
       title: "swe @ ford",
       description: "building automated pipelines and distributed systems for automotive technology",
       image: "/ford.jpg",
@@ -70,13 +77,6 @@ export default function Home() {
       image: "/baba.png",
       year: "2025",
       link: "/baba",
-    },
-    {
-      title: "assembl3D",
-      description: "copilot for furniture assembly with 3d visualization, automated pdf processing, and intelligent chatbot assistance",
-      image: "/a3D_homepage.png",
-      year: "2025",
-      link: "/assembl3d",
     },
   ]
 

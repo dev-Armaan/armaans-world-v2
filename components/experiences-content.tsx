@@ -27,6 +27,14 @@ export default function ExperiencesContent() {
       year: 2026,
     },
     {
+      title: "CageFantasy",
+      description: "[project] mma-native fantasy picks with live fight context, scored receipts, and private leagues",
+      tags: ["next.js", "expo", "react native", "supabase", "postgres", "drizzle", "tanstack query"],
+      image: "/cagefantasy-hero.png",
+      link: "/cagefantasy",
+      year: 2026,
+    },
+    {
       title: "product swe @ baba",
       description: "[internship] building the future of american healthcare",
       tags: ["full-stack", "ai integration", "healthcare", "product development"],

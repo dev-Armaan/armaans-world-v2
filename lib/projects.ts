@@ -35,6 +35,77 @@ export type Project = {
 };
 
 export const projectsData: Record<string, Project> = {
+  cagefantasy: {
+    title: "CageFantasy",
+    subtitle: "fight-week picks, scorecards, and standings",
+    year: "2026",
+    type: "project",
+    image: "/cagefantasy-hero.png",
+    demoUrl: "https://cagefantasy.com",
+    contents: [
+      "mma-native fantasy pick'em",
+      "fight intelligence & market context",
+      "split card locks & scored results",
+      "private leagues & live fantasy",
+      "native ios app + responsive web",
+    ],
+    descriptionBlocks: [
+      {
+        type: "youtube",
+        videoId: "detDSuDXrR4",
+        title: "CageFantasy iOS demo",
+        caption: "a walkthrough of the CageFantasy iOS experience",
+      },
+      {
+        type: "text",
+        content:
+          "cagefantasy is a skill-based mma fantasy app built around a simple idea: every fight, every pick, one board. instead of treating a fight card like a generic sports slate, it gives fans a full fight-week desk for making calls, following the card, and seeing exactly how their reads stack up. users can pick winners, optionally call the method and finishing round, lock in one Double Down fight, and track detailed results after the final bell.",
+      },
+      {
+        type: "image",
+        src: "/cagefantasy-features.png",
+        alt: "CageFantasy iOS screens for live odds, fight intelligence, and private leagues",
+        width: 1920,
+        height: 1080,
+        caption: "live card context, fighter intel, and a social league layer in one native flow",
+        fullWidth: true,
+      },
+      {
+        type: "text",
+        content:
+          "the product is designed around the way mma fans actually follow cards: main card, prelims, early prelims, all of it. picks can be made across the full card, while segment-aware locks keep the experience fair: prelim and full-card selections freeze at the first fight, then main-card selections stay open until the main card begins. once the relevant scope locks, other users' picks become visible and the receipts are on the board.",
+      },
+      {
+        type: "text",
+        content:
+          "scoring rewards conviction and precision without turning the experience into wagering. a correct winner is the foundation, then method, round, decision calls, card sweeps, and the Double Down decision add meaningful strategy. CageFantasy also brings in normalized, two-sided implied probability context from mapped Polymarket markets, making underdog reads visible through the Super Dog mechanic while keeping the product centered on fantasy skill and transparent scorekeeping.",
+      },
+      {
+        type: "image",
+        src: "/cagefantasy-ecosystem.png",
+        alt: "CageFantasy product ecosystem with live fight data and market context",
+        width: 1920,
+        height: 1080,
+        caption: "an mma-native fantasy layer built around event data, fighter context, and live card momentum",
+        fullWidth: true,
+      },
+      {
+        type: "text",
+        content:
+          "private leagues make the app personal. fans can create invite-only groups, choose main-card or full-card standings, and either share their global picks or create league-specific sheets before lock. commissioners control membership and invite codes, while standings retain every point breakdown so a week of trash talk can always be checked against the scorecard.",
+      },
+      {
+        type: "text",
+        content:
+          "for Live Fantasy leagues, winner picks can be switched during an active fight when market context is available. the system records each valid switch with its timestamp, odds, fight status, and selection; it also clears any stale method or round call and blocks switches for Double Down fights or effectively settled markets. that audit trail matters: it makes a fast-moving live feature feel intentional, legible, and fair.",
+      },
+      {
+        type: "text",
+        content:
+          "under the hood, the web product uses next.js, react, typescript, tailwind, tanstack query, supabase auth, postgres, and drizzle. ESPN competition data anchors the event schedule, card order, fighter metadata, live status, and official results, while protected sync and scoring jobs keep the experience current. the active mobile direction is a standalone expo/react native app with native authentication, secure session storage, and dedicated screens for the dashboard, events, picks, leagues, leaderboard, and profile.",
+      },
+    ],
+  },
   arxivisual: {
     title: "arXivisual",
     subtitle: "transforming research papers into visual stories",

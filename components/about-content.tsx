@@ -115,8 +115,13 @@ export default function AboutContent() {
               {[
                 {
                   title: "SOFTWARE ENGINEER",
-                  company: "ford",
+                  company: "shopify",
                   period: "2026 - present",
+                },
+                {
+                  title: "SOFTWARE ENGINEER",
+                  company: "ford",
+                  period: "2026",
                 },
                 {
                   title: "ENGINEER",

@@ -23,6 +23,7 @@ const nextConfig = {
   },
   async redirects() {
     const slugs = [
+      'cagefantasy',
       'arxivisual',
       'ford',
       'baba',

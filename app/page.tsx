@@ -58,6 +58,13 @@ export default function Home() {
       link: "/arxivisual",
     },
     {
+      title: "CageFantasy",
+      description: "mma-native fantasy picks with fight intelligence, scorecards, private leagues, and live card context",
+      image: "/cagefantasy-hero.png",
+      year: "2026",
+      link: "/cagefantasy",
+    },
+    {
       title: "swe @ ford",
       description: "building automated pipelines and distributed systems for automotive technology",
       image: "/ford.jpg",
@@ -70,13 +77,6 @@ export default function Home() {
       image: "/baba.png",
       year: "2025",
       link: "/baba",
-    },
-    {
-      title: "assembl3D",
-      description: "copilot for furniture assembly with 3d visualization, automated pdf processing, and intelligent chatbot assistance",
-      image: "/a3D_homepage.png",
-      year: "2025",
-      link: "/assembl3d",
     },
   ]
 
@@ -105,9 +105,9 @@ export default function Home() {
             <p className="text-base md:text-base font-dm-sans text-white max-w-2xl mt-6">
             studying cs + ai @ <strong> uwaterloo 👨‍💻</strong>
             <br />
-            swe @ <strong>ford 🚗</strong>
+            swe @ <strong>shopify 🛒</strong>
             <br />
-            looking for <strong>summer 2026</strong> internships 🚀
+            looking for <strong>summer 2027</strong> internships 🚀
             </p>
           </div>
 

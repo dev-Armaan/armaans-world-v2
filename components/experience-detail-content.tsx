@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight, Github, ExternalLink } from "lucide-react";
 import type { Project, YouTubeBlock } from "@/lib/projects";
 
 const getYouTubeVideoId = (url: string): string => {
@@ -16,10 +16,11 @@ const YouTubeEmbed = ({ videoId, title, caption }: YouTubeBlock) => {
   const id = getYouTubeVideoId(videoId);
 
   return (
-    <div className="my-12">
+    <figure className="!my-12">
       <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg">
         <iframe
-          src={`https://www.youtube.com/embed/${id}`}
+          src={`https://www.youtube-nocookie.com/embed/${id}`}
+          loading="lazy"
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -27,149 +28,143 @@ const YouTubeEmbed = ({ videoId, title, caption }: YouTubeBlock) => {
         />
       </div>
       {caption && (
-        <p className="text-sm text-white/60 text-center mt-2">{caption}</p>
+        <figcaption className="text-sm text-white/50 text-center mt-3">{caption}</figcaption>
       )}
-    </div>
+    </figure>
   );
+};
+
+type ProjectLink = { slug: string; title: string };
+
+const demoLabel = (url: string) => {
+  if (/youtu\.?be/.test(url)) return "watch demo";
+  if (url.includes("devpost.com")) return "view on devpost";
+  return "visit site";
 };
 
 interface ExperienceDetailContentProps {
   project: Project;
+  previous: ProjectLink;
+  next: ProjectLink;
 }
 
 export default function ExperienceDetailContent({
   project,
+  previous,
+  next,
 }: ExperienceDetailContentProps) {
+  const details = [
+    { label: "type", value: project.type },
+    { label: "year", value: project.year },
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="space-y-16"
+      className="space-y-20"
     >
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8 md:gap-16">
-        <div className="space-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+        <div className="space-y-10">
           <Link
             href="/experiences"
-            className="inline-flex items-center text-white/60 hover:text-white transition-colors"
+            className="group inline-flex items-center text-white/50 hover:text-white transition-colors"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            <span className="text-sm uppercase tracking-wider">
-              Back to experiences
-            </span>
+            <ArrowLeft className="mr-2 h-4 w-4 transition-transform duration-200 group-hover:-translate-x-0.5" />
+            <span className="text-xs uppercase tracking-[0.18em]">all experiences</span>
           </Link>
 
-          <div className="space-y-2">
-            <h1 className="text-4xl md:text-5xl font-bold">{project.title}</h1>
-            <p className="text-white/70">{project.subtitle}</p>
+          <div className="space-y-3">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-balance">{project.title}</h1>
+            <p className="text-white/70 text-lg">{project.subtitle}</p>
           </div>
 
-          {project.repoUrl && (
-            <motion.a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 space-x-2 bg-transparent border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 rounded-md button-animation"
-              whileHover={{
-                scale: 1.03,
-                boxShadow: "0 0 15px rgba(var(--accent), 0.4)",
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Github className="h-5 w-5" />
-              <span className="font-medium">view repo</span>
-            </motion.a>
+          {(project.repoUrl || project.demoUrl) && (
+            <div className="flex flex-wrap gap-3">
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-md bg-gold px-4 py-2 text-sm font-medium text-black transition-opacity hover:opacity-90"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  {demoLabel(project.demoUrl)}
+                </a>
+              )}
+              {project.repoUrl && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md border border-white/20 px-4 py-2 text-sm font-medium text-white/85 transition-colors hover:border-white/50 hover:text-white"
+                >
+                  <Github className="h-4 w-4" />
+                  {project.repoUrl.includes("github.com") ? "view repo" : "view portfolio"}
+                </a>
+              )}
+            </div>
           )}
 
-          <div className="space-y-6">
-            <div className="space-y-1">
-              <h2 className="text-white text-sm uppercase tracking-wider">
-                experience info
-              </h2>
-              <br />
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-white/60 text-sm uppercase">TYPE</h3>
-                  <p>{project.type}</p>
-                </div>
-                <div>
-                  <h3 className="text-white/60 text-sm uppercase">YEAR</h3>
-                  <p>{project.year}</p>
-                </div>
-
-                {project.demoUrl && (
-                  <div className="space-y-2 pt-2">
-                    <h3 className="text-white/60 text-sm uppercase">{project.title === "arXivisual" ? "WEBSITE" : "DEMO"}</h3>
-                    <motion.a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-white/70 hover:text-gold transition-colors group"
-                      whileHover={{ x: 3 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <ExternalLink className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                      <span>view link</span>
-                    </motion.a>
-                  </div>
-                )}
+          <dl className="grid grid-cols-2 gap-6 border-t border-white/10 pt-6">
+            {details.map(({ label, value }) => (
+              <div key={label} className="space-y-1">
+                <dt className="text-xs uppercase tracking-[0.18em] text-white/45">{label}</dt>
+                <dd className="text-white/90">{value}</dd>
               </div>
-            </div>
+            ))}
+          </dl>
 
-            <div className="space-y-1">
-              <h2 className="text-white/60 text-sm uppercase tracking-wider">
-                Contents
-              </h2>
-              <ul className="space-y-2">
-                {project.contents.map((item, index) => (
-                  <li key={index} className="text-white/80">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="space-y-4">
+            <h2 className="text-xs uppercase tracking-[0.18em] text-white/45 font-dm-sans">highlights</h2>
+            <ul className="space-y-2.5">
+              {project.contents.map((item, index) => (
+                <li key={index} className="flex gap-3 text-white/80">
+                  <span className="mt-[0.7em] h-px w-3 shrink-0 bg-gold" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden md:sticky md:top-28">
           <Image
-            src={project.image || "/placeholder.svg"}
-            alt={project.title}
+            src={project.image}
+            alt={`${project.title}: ${project.subtitle}`}
             fill
+            priority
+            sizes="(min-width: 768px) 45vw, 100vw"
             className="object-contain"
           />
         </div>
       </div>
 
-      <div className="space-y-8">
-        <h2 className="text-2xl text-center md:text-3xl font-bold uppercase">
-          description
-        </h2>
+      <article className="max-w-3xl mx-auto space-y-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-center">description</h2>
 
-        <div className="text-white/80 space-y-8 leading-relaxed">
+        <div className="text-white/80 space-y-6 leading-[1.8] text-pretty">
           {project.descriptionBlocks.map((block, index) => {
             if (block.type === "text") {
               return <p key={index}>{block.content}</p>;
             } else if (block.type === "image") {
               return (
-                <div key={index} className="my-8 md:my-12 flex justify-center">
-                  <div className={block.fullWidth ? "w-full" : "w-full max-w-full"}>
-                    <div className="flex justify-center">
-                      <Image
-                        src={block.src || "/placeholder.svg"}
-                        alt={block.alt}
-                        width={block.width}
-                        height={block.height}
-                        className="rounded-lg object-contain max-w-full h-auto"
-                      />
-                    </div>
-                    {block.caption && (
-                      <p className="text-sm text-white/60 text-center mt-2">
-                        {block.caption}
-                      </p>
-                    )}
-                  </div>
-                </div>
+                <figure key={index} className="!my-12">
+                  <Image
+                    src={block.src}
+                    alt={block.alt}
+                    width={block.width}
+                    height={block.height}
+                    sizes="(min-width: 768px) 768px, 100vw"
+                    className="rounded-lg w-full h-auto"
+                  />
+                  {block.caption && (
+                    <figcaption className="text-sm text-white/50 text-center mt-3">
+                      {block.caption}
+                    </figcaption>
+                  )}
+                </figure>
               );
             } else if (block.type === "youtube") {
               return <YouTubeEmbed key={index} {...block} />;
@@ -177,15 +172,31 @@ export default function ExperienceDetailContent({
             return null;
           })}
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-      </div>
-      <footer className="w-full py-4 text-center text-sm text-white/70 border-t border-white/10 mt-16">
-        © {new Date().getFullYear()} armaan gupta. all rights reserved.
-      </footer>
+      </article>
+
+      <nav
+        aria-label="More experiences"
+        className="grid grid-cols-2 gap-4 border-t border-white/10 pt-8"
+      >
+        <Link href={`/${previous.slug}`} className="group space-y-2">
+          <span className="flex items-center gap-1.5 text-xs uppercase tracking-[0.18em] text-white/45">
+            <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-x-0.5" />
+            previous
+          </span>
+          <span className="block font-space-grotesk font-bold uppercase tracking-wider text-white/80 transition-colors group-hover:text-white">
+            {previous.title}
+          </span>
+        </Link>
+        <Link href={`/${next.slug}`} className="group space-y-2 text-right">
+          <span className="flex items-center justify-end gap-1.5 text-xs uppercase tracking-[0.18em] text-white/45">
+            next
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+          </span>
+          <span className="block font-space-grotesk font-bold uppercase tracking-wider text-white/80 transition-colors group-hover:text-white">
+            {next.title}
+          </span>
+        </Link>
+      </nav>
     </motion.div>
   );
 }
-

@@ -2,47 +2,36 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
+import { pages as links } from "@/lib/site"
 
 export default function Navigation() {
   const pathname = usePathname()
-  const [hoveredPath, setHoveredPath] = useState(pathname)
+  // Experience detail pages live at the root (/ford, /baba, ...), so anything that
+  // isn't a top-level page belongs to experiences
+  const activePath = links.some((l) => l.path === pathname) ? pathname : "/experiences"
+  const [hoveredPath, setHoveredPath] = useState(activePath)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const checkIfMobile = () => {
-        setIsMobile(window.innerWidth < 768)
-      }
-
-      checkIfMobile()
-
-      window.addEventListener("resize", checkIfMobile)
-
-      return () => window.removeEventListener("resize", checkIfMobile)
-    }
-  }, [])
 
   // Close mobile menu when path changes
   useEffect(() => {
     setIsMenuOpen(false)
-  }, [pathname])
+    setHoveredPath(activePath)
+  }, [pathname, activePath])
 
-  const links = [
-    { path: "/", label: "HOME" },
-    { path: "/experiences", label: "EXPERIENCES" },
-    { path: "/about", label: "ABOUT" },
-    { path: "/contact", label: "CONTACT" },
-  ]
+  useEffect(() => {
+    if (!isMenuOpen) return
+    const onKeyDown = (e: KeyboardEvent) => e.key === "Escape" && setIsMenuOpen(false)
+    window.addEventListener("keydown", onKeyDown)
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [isMenuOpen])
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-black/80 backdrop-blur-sm">
       <div className="max-w-screen-xl mx-auto px-6 md:px-12 lg:px-24 py-6 flex justify-between items-center">
         <Link href="/" className="text-lg tracking-wider font-space-grotesk uppercase gold-highlight">
-          <span className="sr-only">Home</span>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -64,23 +53,25 @@ export default function Navigation() {
           className="md:hidden text-white p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Desktop navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {links.map(({ path, label }) => (
             <motion.div key={path} whileHover={{ y: -2 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href={path}
+                aria-current={activePath === path ? "page" : undefined}
                 className="relative py-1.5 px-3 text-sm tracking-wider font-space-grotesk rounded-md transition-all duration-200"
                 onMouseEnter={() => setHoveredPath(path)}
-                onMouseLeave={() => setHoveredPath(pathname)}
+                onMouseLeave={() => setHoveredPath(activePath)}
               >
                 <span
                   className={`relative z-10 gold-highlight ${
-                    pathname === path ? "text-white font-semibold" : "text-white/70 hover:text-white"
+                    activePath === path ? "text-white font-semibold" : "text-white/70 hover:text-white"
                   }`}
                 >
                   {label}
@@ -96,7 +87,7 @@ export default function Navigation() {
                   />
                 )}
 
-                {pathname === path && (
+                {activePath === path && (
                   <motion.div
                     className="absolute bottom-0 left-0 h-[2px] bg-gold w-full"
                     layoutId="navbar-underline"
@@ -111,13 +102,14 @@ export default function Navigation() {
         </div>
 
         {/* Mobile navigation dropdown */}
+        <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md md:hidden"
-            initial={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md md:hidden border-b border-white/10"
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.2 }}
           >
             <div className="flex flex-col items-center py-6 space-y-4">
               {links.map(({ path, label }, index) => (
@@ -125,20 +117,21 @@ export default function Navigation() {
                   key={path}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index }}
+                  transition={{ delay: 0.04 * index }}
                   className="w-4/5"
                 >
                   <Link
                     href={path}
+                    aria-current={activePath === path ? "page" : undefined}
                     className={`relative py-3 px-4 w-full flex justify-center items-center text-center text-sm tracking-wider font-space-grotesk rounded-md ${
-                      pathname === path
+                      activePath === path
                         ? "bg-gold/20 text-white"
                         : "bg-white/5 hover:bg-white/10 text-white/70 hover:text-white"
                     } transition-all duration-200`}
                   >
                     <span className="relative z-10 gold-highlight font-medium">{label}</span>
 
-                    {pathname === path && (
+                    {activePath === path && (
                       <motion.div
                         className="absolute bottom-0 left-0 h-[2px] bg-gold w-full"
                         initial={{ width: 0 }}
@@ -152,6 +145,7 @@ export default function Navigation() {
             </div>
           </motion.div>
         )}
+        </AnimatePresence>
       </div>
     </nav>
   )

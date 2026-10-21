@@ -232,12 +232,41 @@ export default function BinaryGlobe({ size = 256, className = "" }: BinaryGlobeP
       animationRef.current = requestAnimationFrame(animate)
     }
 
-    animate()
-
-    return () => {
+    const stop = () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current)
+        animationRef.current = undefined
       }
+    }
+
+    // Reduced motion gets a single still frame
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      draw(ctx, displayWidth, displayHeight)
+      return
+    }
+
+    // Only spend frames while the globe is on screen
+    let onScreen = false
+    const observer = new IntersectionObserver(([entry]) => {
+      onScreen = entry.isIntersecting
+      if (onScreen && !document.hidden) {
+        if (!animationRef.current) animate()
+      } else {
+        stop()
+      }
+    })
+    observer.observe(canvas)
+
+    const onVisibilityChange = () => {
+      if (document.hidden) stop()
+      else if (onScreen && !animationRef.current) animate()
+    }
+    document.addEventListener("visibilitychange", onVisibilityChange)
+
+    return () => {
+      stop()
+      observer.disconnect()
+      document.removeEventListener("visibilitychange", onVisibilityChange)
     }
   }, [size, draw])
 

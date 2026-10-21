@@ -59,10 +59,10 @@ export default function ResumeView() {
           <h1 className="text-3xl md:text-4xl font-bold relative inline-block">
             RESUME
             <motion.span
-              className="absolute -bottom-2 left-0 w-full h-1 bg-gold"
+              className="absolute -bottom-2 left-0 w-full h-1 bg-gold origin-left"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
+              transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             />
           </h1>
           <motion.a

@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { email, socials, OPEN_COMMAND_MENU } from "@/lib/site"
 
 const links = [
@@ -27,9 +26,6 @@ export default function SiteFooter() {
             {label}
           </a>
         ))}
-        <Link href="/resume" className="hover:text-white transition-colors">
-          resume
-        </Link>
         <button
           type="button"
           onClick={() => window.dispatchEvent(new Event(OPEN_COMMAND_MENU))}

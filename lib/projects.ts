@@ -44,6 +44,45 @@ export type Project = {
 };
 
 export const projectsData: Record<string, Project> = {
+  shopify: {
+    title: "SWE @ Shopify",
+    shortTitle: "swe @ shopify",
+    subtitle: "making sure the money adds up",
+    year: "2026",
+    type: "internship",
+    summary: "building tax and billing infrastructure that merchants trust with their money",
+    tags: ["billing", "tax", "distributed systems", "financial infrastructure", "shadow traffic", "load testing"],
+    image: "/shopify.png",
+    contents: [
+      "distributed tax pipeline fix",
+      "global billing infrastructure",
+      "shadow traffic & cutover controls",
+      "load testing before launch",
+      "financial infrastructure at scale",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "currently a software engineer at shopify in toronto, working on the financial infrastructure side of things: tax, billing, and all the plumbing that makes sure merchants get charged the right amount at the right time. it's the kind of work where nobody notices when it's right and everybody notices when it's wrong, which honestly makes it pretty fun.",
+      },
+      {
+        type: "text",
+        content:
+          "one of the first things i got to work on was a bug in a distributed tax pipeline that was hitting 10,000+ orders a month. i caught it, tracked it down across the pipeline, and shipped the fix. that one change ends up saving customers around $1.3M a year, which is a pretty wild number to attach to a single pr.",
+      },
+      {
+        type: "text",
+        content:
+          "i've also been building out billing infrastructure across global markets. moving money systems around isn't something you want to yolo, so the rollout leaned on shadow traffic (running the new path alongside the old one and comparing the results), cutover controls so markets could be flipped over gradually, and a lot of load testing before anything went live. the end result is 99.99%+ billing accuracy.",
+      },
+      {
+        type: "text",
+        content:
+          "on the scaling side, i work on financial infrastructure that supports 69.5% of us transactions and 79,700+ annualized filings. working at that scale has taught me a ton about designing for correctness first, and about how much care goes into systems people trust with their money.",
+      },
+    ],
+  },
   cagefantasy: {
     title: "CageFantasy",
     subtitle: "fight-week picks, scorecards, and standings",
@@ -1040,6 +1079,7 @@ export type ProjectEntry = Project & { slug: string };
 
 // Display order, newest and most notable first
 const experienceOrder = [
+  "shopify",
   "ford",
   "arxivisual",
   "cagefantasy",
@@ -1058,7 +1098,7 @@ const experienceOrder = [
   "hippocampus",
 ];
 
-const featuredSlugs = ["arxivisual", "cagefantasy", "ford", "baba"];
+const featuredSlugs = ["shopify", "arxivisual", "cagefantasy", "ford", "baba"];
 
 const toEntry = (slug: string): ProjectEntry => ({ slug, ...projectsData[slug] });
 

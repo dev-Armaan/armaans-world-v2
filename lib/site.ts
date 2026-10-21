@@ -11,7 +11,6 @@ export const pages = [
   { path: "/experiences", label: "EXPERIENCES" },
   { path: "/about", label: "ABOUT" },
   { path: "/contact", label: "CONTACT" },
-  { path: "/resume", label: "RESUME" },
 ];
 
 // Fired by anything that wants to open the ⌘K menu

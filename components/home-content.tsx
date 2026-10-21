@@ -35,7 +35,6 @@ const item = {
 }
 
 const heroLinks = [
-  { label: "resume", href: "/resume", external: false },
   { label: "github", href: socials.github.href, external: true },
   { label: "linkedin", href: socials.linkedin.href, external: true },
 ]

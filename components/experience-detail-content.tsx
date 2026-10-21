@@ -44,8 +44,8 @@ const demoLabel = (url: string) => {
 
 interface ExperienceDetailContentProps {
   project: Project;
-  previous: ProjectLink;
-  next: ProjectLink;
+  previous: ProjectLink | null;
+  next: ProjectLink | null;
 }
 
 export default function ExperienceDetailContent({
@@ -178,24 +178,30 @@ export default function ExperienceDetailContent({
         aria-label="More experiences"
         className="grid grid-cols-2 gap-4 border-t border-white/10 pt-8"
       >
-        <Link href={`/${previous.slug}`} className="group space-y-2">
-          <span className="flex items-center gap-1.5 text-xs uppercase tracking-[0.18em] text-white/45">
-            <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-x-0.5" />
-            previous
-          </span>
-          <span className="block font-space-grotesk font-bold uppercase tracking-wider text-white/80 transition-colors group-hover:text-white">
-            {previous.title}
-          </span>
-        </Link>
-        <Link href={`/${next.slug}`} className="group space-y-2 text-right">
-          <span className="flex items-center justify-end gap-1.5 text-xs uppercase tracking-[0.18em] text-white/45">
-            next
-            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-          </span>
-          <span className="block font-space-grotesk font-bold uppercase tracking-wider text-white/80 transition-colors group-hover:text-white">
-            {next.title}
-          </span>
-        </Link>
+        {previous ? (
+          <Link href={`/${previous.slug}`} className="group space-y-2">
+            <span className="flex items-center gap-1.5 text-xs uppercase tracking-[0.18em] text-white/45">
+              <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-x-0.5" />
+              previous
+            </span>
+            <span className="block font-space-grotesk font-bold uppercase tracking-wider text-white/80 transition-colors group-hover:text-white">
+              {previous.title}
+            </span>
+          </Link>
+        ) : (
+          <div />
+        )}
+        {next && (
+          <Link href={`/${next.slug}`} className="group space-y-2 text-right">
+            <span className="flex items-center justify-end gap-1.5 text-xs uppercase tracking-[0.18em] text-white/45">
+              next
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </span>
+            <span className="block font-space-grotesk font-bold uppercase tracking-wider text-white/80 transition-colors group-hover:text-white">
+              {next.title}
+            </span>
+          </Link>
+        )}
       </nav>
     </motion.div>
   );

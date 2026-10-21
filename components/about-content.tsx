@@ -13,7 +13,7 @@ const skills = [
 
 // Newest first
 const roles = [
-  { title: "Software Engineer", company: "shopify", period: "2026 – present" },
+  { title: "Software Engineer", company: "shopify", period: "2026 – present", slug: "shopify" },
   { title: "Software Engineer", company: "ford", period: "2026", slug: "ford" },
   { title: "Engineer", company: "baba", period: "2025 – 2026", slug: "baba" },
   { title: "Software Engineer", company: "watonomous", period: "2025", slug: "watonomous" },

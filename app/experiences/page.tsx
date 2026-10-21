@@ -42,6 +42,7 @@ export default function Experiences() {
     slug: p.slug,
     title: p.shortTitle ?? p.title,
     summary: p.summary,
+    stat: p.stat ?? null,
     tags: p.tags,
     type: p.type,
     year: getStartYear(p),

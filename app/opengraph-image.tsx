@@ -1,12 +1,9 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "fs/promises";
-import { join } from "path";
+import { GOLD, OG_SIZE, loadOgFonts } from "@/lib/og";
 
 export const alt = "Armaan Gupta | University of Waterloo Engineer";
-export const size = { width: 1200, height: 630 };
+export const size = OG_SIZE;
 export const contentType = "image/png";
-
-const GOLD = "rgb(212, 175, 55)";
 
 // A still frame of the binary globe: fibonacci points on a sphere,
 // projected orthographically, fading toward the back
@@ -35,10 +32,7 @@ function globeChars(radius: number) {
 }
 
 export default async function Image() {
-  const [spaceGrotesk, dmSans] = await Promise.all([
-    readFile(join(process.cwd(), "assets/fonts/space-grotesk-latin-700-normal.woff")),
-    readFile(join(process.cwd(), "assets/fonts/dm-sans-latin-400-normal.woff")),
-  ]);
+  const fonts = await loadOgFonts();
 
   const radius = 190;
 
@@ -143,10 +137,7 @@ export default async function Image() {
     ),
     {
       ...size,
-      fonts: [
-        { name: "Space Grotesk", data: spaceGrotesk, weight: 700, style: "normal" },
-        { name: "DM Sans", data: dmSans, weight: 400, style: "normal" },
-      ],
+      fonts,
     },
   );
 }

@@ -19,7 +19,7 @@ interface Point {
 
 export default function BinaryGlobe({ size = 256, className = "" }: BinaryGlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | undefined>(undefined)
   const pointsRef = useRef<Point[]>([])
   const rotationRef = useRef(0)
   const timeRef = useRef(0)

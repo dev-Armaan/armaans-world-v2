@@ -51,13 +51,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: `${project.subtitle} - ${description}`,
       url: `https://www.armaan.world/${slug}`,
       type: "article",
-      images: [{ url: project.image, alt: project.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${project.title} | Armaan Gupta`,
       description: project.subtitle,
-      images: [project.image],
     },
     alternates: {
       canonical: `https://www.armaan.world/${slug}`,

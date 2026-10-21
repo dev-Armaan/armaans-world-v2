@@ -13,6 +13,7 @@ export type FeaturedProject = {
   slug: string
   title: string
   summary: string
+  stat: string | null
   year: string
   type: string
   image: string
@@ -149,6 +150,12 @@ export default function HomeContent({ featured }: { featured: FeaturedProject[] 
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold">{project.title}</h3>
                     <p className="text-white/70 leading-relaxed text-pretty max-w-md">{project.summary}</p>
+                    {project.stat && (
+                      <div className="flex items-center gap-3 text-sm text-white pt-1">
+                        <span className="h-px w-4 bg-gold" aria-hidden="true" />
+                        {project.stat}
+                      </div>
+                    )}
                     <div className="flex items-center gap-2 text-white/50 group-hover:text-white transition-colors pt-2">
                       <span className="text-xs uppercase tracking-[0.18em]">view experience</span>
                       <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

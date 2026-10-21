@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Github, ExternalLink } from "lucide-react";
+import ZoomableImage from "@/components/zoomable-image";
 import type { Project, YouTubeBlock } from "@/lib/projects";
 
 const getYouTubeVideoId = (url: string): string => {
@@ -114,6 +115,12 @@ export default function ExperienceDetailContent({
                 <dd className="text-white/90">{value}</dd>
               </div>
             ))}
+            {project.stat && (
+              <div className="col-span-2 space-y-1">
+                <dt className="text-xs uppercase tracking-[0.18em] text-white/45">result</dt>
+                <dd className="text-white/90">{project.stat}</dd>
+              </div>
+            )}
           </dl>
 
           <div className="space-y-4">
@@ -151,14 +158,7 @@ export default function ExperienceDetailContent({
             } else if (block.type === "image") {
               return (
                 <figure key={index} className="!my-12">
-                  <Image
-                    src={block.src}
-                    alt={block.alt}
-                    width={block.width}
-                    height={block.height}
-                    sizes="(min-width: 768px) 768px, 100vw"
-                    className="rounded-lg w-full h-auto"
-                  />
+                  <ZoomableImage src={block.src} alt={block.alt} width={block.width} height={block.height} />
                   {block.caption && (
                     <figcaption className="text-sm text-white/50 text-center mt-3">
                       {block.caption}

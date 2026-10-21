@@ -2,10 +2,11 @@ import HomeContent from "@/components/home-content"
 import { getFeaturedProjects } from "@/lib/projects"
 
 export default function Home() {
-  const featured = getFeaturedProjects().map(({ slug, title, shortTitle, summary, year, type, image, cardImage, imageFit }) => ({
+  const featured = getFeaturedProjects().map(({ slug, title, shortTitle, summary, stat, year, type, image, cardImage, imageFit }) => ({
     slug,
     title: shortTitle ?? title,
     summary,
+    stat: stat ?? null,
     year,
     type,
     image: cardImage ?? image,

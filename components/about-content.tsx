@@ -5,17 +5,17 @@ import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 
 const skills = [
-  { label: "languages", items: ["python", "java", "typescript", "javascript", "c++", "c", "c#", "sql", "swift"] },
+  { label: "languages", items: ["python", "java", "typescript", "go", "c++", "rust", "c", "c#", "kotlin", "swift", "sql", "javascript"] },
   { label: "frameworks", items: ["react", "next.js", "node.js", "spring boot", "fastapi", "flask", "angular", "three.js"] },
-  { label: "infrastructure", items: ["kubernetes", "docker", "kafka", "postgresql", "mongodb", "aws", "gcp", "azure", "linux"] },
-  { label: "machine learning", items: ["pytorch", "scikit-learn", "pandas", "numpy", "opencv"] },
+  { label: "infrastructure", items: ["kubernetes", "docker", "terraform", "kafka", "redis", "postgresql", "grpc", "graphql", "aws", "gcp", "azure", "datadog", "linux"] },
+  { label: "machine learning", items: ["pytorch", "tensorflow", "scikit-learn", "pandas", "numpy", "opencv"] },
 ]
 
 // Newest first
 const roles = [
   { title: "Software Engineer", company: "shopify", period: "2026 – present", slug: "shopify" },
   { title: "Software Engineer", company: "ford", period: "2026", slug: "ford" },
-  { title: "Engineer", company: "baba", period: "2025 – 2026", slug: "baba" },
+  { title: "Member of Technical Staff", company: "baba", period: "2025 – 2026", slug: "baba" },
   { title: "Software Engineer", company: "watonomous", period: "2025", slug: "watonomous" },
   { title: "Software Engineer", company: "environment and climate change canada", period: "2025", slug: "govcanada" },
   { title: "Founder & CEO", company: "landingx", period: "2024", slug: "landingx" },

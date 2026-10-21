@@ -31,6 +31,8 @@ export type Project = {
   type: string;
   /** one-line description used on cards */
   summary: string;
+  /** headline result shown on cards and link previews */
+  stat?: string;
   tags: string[];
   image: string;
   /** image used on cards when it differs from the detail page */
@@ -51,6 +53,7 @@ export const projectsData: Record<string, Project> = {
     year: "2026",
     type: "internship",
     summary: "building tax and billing infrastructure that merchants trust with their money",
+    stat: "$1.3M saved for customers annually",
     tags: ["billing", "tax", "distributed systems", "financial infrastructure", "shadow traffic", "load testing"],
     image: "/shopify-wordmark-dark.webp",
     contents: [
@@ -104,6 +107,7 @@ export const projectsData: Record<string, Project> = {
     year: "2026",
     type: "project",
     summary: "mma-native fantasy picks with live fight context, scored receipts, and private leagues",
+    stat: "#1 ufc fantasy app on the app store",
     tags: ["next.js", "expo", "react native", "supabase", "postgres", "drizzle", "tanstack query"],
     image: "/cagefantasy-hero.png",
     demoUrl: "https://cagefantasy.com",
@@ -169,6 +173,11 @@ export const projectsData: Record<string, Project> = {
         content:
           "under the hood, the web product uses next.js, react, typescript, tailwind, tanstack query, supabase auth, postgres, and drizzle. ESPN competition data anchors the event schedule, card order, fighter metadata, live status, and official results, while protected sync and scoring jobs keep the experience current. the active mobile direction is a standalone expo/react native app with native authentication, secure session storage, and dedicated screens for the dashboard, events, picks, leagues, leaderboard, and profile.",
       },
+      {
+        type: "text",
+        content:
+          "the response has been wild: cagefantasy became the #1 ufc fantasy app on the app store and picked up 2,000+ users in under two weeks. i solo-engineered the live fantasy mode, which as far as i know is the first of its kind, letting users adjust picks mid-fight off prediction market odds with sub-100ms accuracy.",
+      },
     ],
   },
   arxivisual: {
@@ -177,6 +186,7 @@ export const projectsData: Record<string, Project> = {
     year: "2026",
     type: "project",
     summary: "winner @ tartanhacks '26. turns research papers into visual stories with 3blue1brown-style animations",
+    stat: "10M+ views · 100K+ users",
     tags: ["next.js", "fastapi", "claude", "manim", "modal.com", "elevenlabs", "dedalus sdk"],
     imageFit: "contain",
     image: "/arx-logo.png",
@@ -283,6 +293,11 @@ export const projectsData: Record<string, Project> = {
         content:
           "building arXivisual with this incredible team made all the difference. the collaborative energy during the hackathon, the late nights debugging modal.com containers, and the rush of seeing our first successful manim render all came together into something we're genuinely proud of. definitely one of the projects i'm most proud of, both technically and personally.",
       },
+      {
+        type: "text",
+        content:
+          "it didn't stop at the hackathon either. arxivisual has since grown to 10,000,000+ views and 100,000+ users, and the dual-ingestion, 7-agent pipeline now parses 98% of the 10,000+ unique papers people have thrown at it.",
+      },
     ],
   },
   ford: {
@@ -291,8 +306,9 @@ export const projectsData: Record<string, Project> = {
     year: "2026",
     type: "internship",
     shortTitle: "swe @ ford",
-    summary: "building automated pipelines and distributed systems for automotive technology",
-    tags: ["java", "spring boot", "kafka", "datadog", "kubernetes", "postgresql"],
+    summary: "built automated pipelines and distributed systems for automotive order processing",
+    stat: "60%+ of manual operations automated",
+    tags: ["c++", "docker", "java", "spring boot", "kafka", "datadog", "kubernetes"],
     image: "/ford.jpg",
     contents: [
       "automated order validation & persistence",
@@ -305,7 +321,7 @@ export const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "currently working as a software engineer at ford motor company in toronto, building backend infrastructure and automation systems for critical order processing workflows in automotive manufacturing. my work focuses on designing scalable distributed systems, implementing observability tooling, and eliminating manual processes through intelligent automation.",
+          "from january to april 2026 i was a software engineer at ford motor company in toronto, building backend infrastructure and automation systems for critical order processing workflows in automotive manufacturing. my work focused on designing scalable distributed systems, implementing observability tooling, and eliminating manual processes through intelligent automation.",
       },
       {
         type: "image",
@@ -318,12 +334,12 @@ export const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "one of my primary contributions has been designing and implementing automated validation and persistence pipelines for order ingestion. i architected end-to-end pipelines that validate incoming orders against business rules, handle edge cases, and persist data to downstream services without human oversight. this eliminated manual order ingestion paths and reduced human intervention by over 60%, significantly improving throughput and reducing processing errors. the pipeline includes comprehensive validation logic, intelligent retry strategies with exponential backoff, and dead letter queues for orders requiring manual review.",
+          "one of my primary contributions was owning the design of automated validation and persistence pipelines for order ingestion, built in c++ and shipped with docker. i architected end-to-end pipelines that validate incoming orders against business rules, handle edge cases, and persist data to downstream services without human oversight. this eliminated manual order ingestion paths and reduced human intervention by over 60%, significantly improving throughput and reducing processing errors. the pipeline includes comprehensive validation logic, intelligent retry strategies with exponential backoff, and dead letter queues for orders requiring manual review.",
       },
       {
         type: "text",
         content:
-          "i instrumented distributed services across the order processing stack with datadog apm, implementing distributed tracing, custom metrics, and proactive alerting. this gives our team real-time visibility into service health, request latencies, and error rates across microservices. with distributed tracing, we can track individual orders through the entire pipeline, pinpointing bottlenecks and failures with precision. the custom dashboards and alerting system i built have drastically reduced mean time to detection and resolution for incidents, enabling low-latency debugging and proactive performance regression detection.",
+          "i instrumented distributed services across the order processing stack with datadog apm, implementing distributed tracing, custom metrics, and proactive alerting. this gave the team real-time visibility into service health, request latencies, and error rates across microservices. with distributed tracing, we could track individual orders through the entire pipeline, pinpointing bottlenecks and failures with precision. the custom dashboards and alerting system i built drastically reduced mean time to detection and resolution for incidents, enabling low-latency debugging and proactive performance regression detection.",
       },
       {
         type: "image",
@@ -336,17 +352,18 @@ export const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "working with technologies like java spring boot, kafka for event streaming, postgresql for persistence, and kubernetes for orchestration has given me deep exposure to enterprise-grade distributed systems architecture. this role has been an incredible learning experience in large-scale systems, modern observability practices, and the complexities of automotive software engineering.",
+          "working with c++ and docker for the ingest pipelines, alongside java spring boot, kafka for event streaming, postgresql for persistence, and kubernetes for orchestration, gave me deep exposure to enterprise-grade distributed systems architecture. this role was an incredible learning experience in large-scale systems, modern observability practices, and the complexities of automotive software engineering.",
       },
     ],
   },
   baba: {
-    title: "Engineer @ Baba",
+    title: "Member of Technical Staff @ Baba",
     subtitle: "building the future of american healthcare",
     year: "2025 – 2026",
     type: "internship",
-    shortTitle: "product swe @ baba",
-    summary: "building the future of american healthcare",
+    shortTitle: "mts @ baba",
+    summary: "one of the first engineers, building the future of american healthcare",
+    stat: "early engineer · $6.5M+ seed",
     tags: ["full-stack", "ai integration", "healthcare", "product development"],
     imageFit: "contain",
     image: "/baba.png",
@@ -545,6 +562,7 @@ export const projectsData: Record<string, Project> = {
     type: "internship",
     shortTitle: "swe @ watonomous",
     summary: "infrastructure and cloud computing for a student autonomous vehicle team",
+    stat: "300% higher simulation throughput",
     tags: ["docker", "kubernetes", "slurm", "cloud-native apis", "microservices", "hpc"],
     image: "/wato.png",
     contents: [
@@ -558,12 +576,12 @@ export const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "currently working as a software engineer at watonomous, university of waterloo's autonomous vehicle research team. i am focused on developing and maintaining cloud infrastructure and computing solutions to support autonomous vehicle development and testing, with a particular emphasis on building robust, scalable systems that enhance operational efficiency.",
+          "in 2025 i was a software engineer at watonomous, university of waterloo's autonomous vehicle research team, focused on developing and maintaining cloud infrastructure and computing solutions to support autonomous vehicle development and testing, with a particular emphasis on building robust, scalable systems that enhance operational efficiency.",
       },
       {
         type: "text",
         content:
-          "one of my key achievements is building an automated power outage notification system that leverages cloud-based services and containerized microservices with docker. this system has reduced manual reporting delays by 80%, significantly improving response times and operational reliability for the autonomous vehicle testing infrastructure.",
+          "one of my key achievements was building an automated power outage notification system that leverages cloud-based services and containerized microservices with docker. this system reduced manual reporting delays by 80%, significantly improving response times and operational reliability for the autonomous vehicle testing infrastructure.",
       },
       {
         type: "image",
@@ -576,12 +594,12 @@ export const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "i am developing cloud-native apis and automation scripts to integrate with slurm and kubernetes, enabling parallel execution of simulation jobs and increasing throughput by 300%. this integration allows for efficient resource management and job scheduling across distributed computing environments, supporting the complex computational requirements of autonomous vehicle simulation and testing.",
+          "i developed cloud-native apis and automation scripts to integrate with slurm and kubernetes, enabling parallel execution of simulation jobs and increasing throughput by 300%. this integration allowed for efficient resource management and job scheduling across distributed computing environments, supporting the complex computational requirements of autonomous vehicle simulation and testing.",
       },
       {
         type: "text",
         content:
-          "my work involves developing and containerizing backend services with docker, deploying them to both cloud and hpc clusters via kubernetes. this approach ensures consistent deployment environments, improved scalability, and enhanced resource utilization across different computing platforms. the containerized architecture enables seamless scaling and management of services as the team's computational needs grow.",
+          "my work involved developing and containerizing backend services with docker, deploying them to both cloud and hpc clusters via kubernetes. this approach ensured consistent deployment environments, improved scalability, and enhanced resource utilization across different computing platforms. the containerized architecture enabled seamless scaling and management of services as the team's computational needs grow.",
       },
       {
         type: "image",
@@ -594,7 +612,7 @@ export const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "working at watonomous is providing me with invaluable experience in cloud computing, containerization, and distributed systems while contributing to cutting-edge autonomous vehicle research. this role is strengthening my skills in cloud infrastructure, devops practices, and high-performance computing while supporting innovative research that advances autonomous vehicle technology.",
+          "working at watonomous gave me invaluable experience in cloud computing, containerization, and distributed systems while contributing to cutting-edge autonomous vehicle research. this role strengthened my skills in cloud infrastructure, devops practices, and high-performance computing while supporting innovative research that advances autonomous vehicle technology.",
       },
     ],
   },
@@ -605,8 +623,9 @@ export const projectsData: Record<string, Project> = {
     type: "internship",
     shortTitle: "swe @ environment canada",
     summary: "climate reanalysis models and visualization tools",
+    stat: "35% better spatial resolution",
     tags: ["python", "pytorch", "scikit-learn", "pandas", "d3.js", "docker", "ci/cd"],
-    cardImage: "/gov.png",
+    cardImage: "/gov-dark.webp",
     imageFit: "contain",
     image: "/gov2.png",
     contents: [
@@ -665,7 +684,8 @@ export const projectsData: Record<string, Project> = {
     subtitle: "machine learning prediction model",
     year: "2025",
     type: "project",
-    summary: "machine learning model that reached 93% accuracy diagnosing autism spectrum disorder, outperforming professional teams",
+    summary: "machine learning model for diagnosing autism spectrum disorder that outperformed professional teams",
+    stat: "93% diagnostic accuracy",
     tags: ["python", "pandas", "sklearn", "numpy", "matplotlib"],
     cardImage: "/asd2.png",
     image: "/asd.png",
@@ -739,7 +759,8 @@ export const projectsData: Record<string, Project> = {
     subtitle: "ai-powered interview prep bot",
     year: "2025",
     type: "project",
-    summary: "ai interview prep assistant with real-time feedback. boosted user readiness by 40% and reached 100+ users in two weeks",
+    summary: "ai interview prep assistant with real-time feedback that boosted user readiness by 40%",
+    stat: "100+ users in two weeks",
     tags: ["react", "flask", "gcp", "mongodb", "sql"],
     image: "/preppal.png",
     repoUrl: "https://github.com/dev-Armaan/ai-interviewer",
@@ -809,7 +830,7 @@ export const projectsData: Record<string, Project> = {
     contents: [
       "modern & responsive ui",
       "optimized performance",
-      "integrated email functionality",
+      "⌘k command menu",
       "cross-device compatibility",
     ],
     descriptionBlocks: [
@@ -821,7 +842,7 @@ export const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "leveraging next.js for server-side rendering and vite for fast builds, the website is designed for speed and efficiency. integrated email functionality via emailjs allows visitors to contact me directly, ensuring seamless communication. deployed on vercel, the site benefits from automatic optimizations and a globally distributed network for minimal load times.",
+          "pages are server-rendered with next.js, so they load fast and show up properly in search, and there's a ⌘k menu for jumping anywhere on the site. deployed on vercel, the site benefits from automatic optimizations and a globally distributed network for minimal load times.",
       },
       {
         type: "image",
@@ -903,7 +924,7 @@ export const projectsData: Record<string, Project> = {
     type: "job",
     summary: "built an interactive lua curriculum in roblox studio",
     tags: ["lua", "scripting apis", "edtech", "game development"],
-    cardImage: "/cninjas.png",
+    cardImage: "/cninjas-dark.webp",
     image: "/cninjas2.png",
     contents: [
       "curriculum development",
@@ -1037,6 +1058,7 @@ export const projectsData: Record<string, Project> = {
     type: "job",
     summary: "developed a programming curriculum for students in grades 1–8",
     tags: ["scratch", "python", "ms office", "google suite"],
+    cardImage: "/hcampus-dark.webp",
     image: "/hcampus2.jpg",
     contents: [
       "interactive learning",

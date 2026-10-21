@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { readFile } from "fs/promises";
 import { join } from "path";
 
+// The PDF only changes on deploy, so serve it as a static file
+export const dynamic = "force-static";
+
 /**
  * Serves the resume PDF with headers that trigger a download prompt on iOS Safari.
  * iOS Safari ignores the HTML `download` attribute and opens PDFs inline. Using

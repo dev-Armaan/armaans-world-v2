@@ -9,6 +9,7 @@ export type ExperienceCard = {
   slug: string
   title: string
   summary: string
+  stat: string | null
   tags: string[]
   type: string
   year: number
@@ -80,7 +81,14 @@ export default function ExperiencesContent({ experiences }: { experiences: Exper
                           <h3 className="text-xl font-medium">{project.title}</h3>
                           <ArrowUpRight className="h-5 w-5 shrink-0 text-white/50 transition-all duration-200 group-hover:text-gold group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                         </div>
-                        <p className="text-white/70 leading-relaxed text-pretty mb-6">{project.summary}</p>
+                        <p className="text-white/70 leading-relaxed text-pretty">{project.summary}</p>
+                        {project.stat && (
+                          <div className="flex items-center gap-3 text-sm text-white mt-3">
+                            <span className="h-px w-4 bg-gold" aria-hidden="true" />
+                            {project.stat}
+                          </div>
+                        )}
+                        <div className="mb-6" />
                         <ul className="flex flex-wrap gap-2 mt-auto" aria-label="Technologies">
                           {project.tags.map((tag) => (
                             <li key={tag} className="text-xs px-2.5 py-1 border border-white/10 rounded-full text-white/55">

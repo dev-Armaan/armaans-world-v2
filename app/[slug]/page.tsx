@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { projectsData, getProjectSlugs, getProject } from "@/lib/projects";
+import { getProjectSlugs, getProject, getAdjacentProjects } from "@/lib/projects";
 import ExperienceDetailContent from "@/components/experience-detail-content";
 
 interface PageProps {
@@ -51,14 +51,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: `${project.subtitle} - ${description}`,
       url: `https://www.armaan.world/${slug}`,
       type: "article",
-      images: [
-        {
-          url: project.image,
-          width: 1200,
-          height: 630,
-          alt: project.title,
-        },
-      ],
+      images: [{ url: project.image, alt: project.title }],
     },
     twitter: {
       card: "summary_large_image",
@@ -80,5 +73,8 @@ export default async function ExperienceDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  return <ExperienceDetailContent project={project} />;
+  const { previous, next } = getAdjacentProjects(slug);
+  const link = (p: typeof previous) => ({ slug: p.slug, title: p.shortTitle ?? p.title });
+
+  return <ExperienceDetailContent project={project} previous={link(previous)} next={link(next)} />;
 }

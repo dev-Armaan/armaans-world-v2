@@ -10,41 +10,20 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
   async redirects() {
-    const slugs = [
-      'cagefantasy',
-      'arxivisual',
-      'ford',
-      'baba',
-      'assembl3d',
-      'traffic',
-      'watonomous',
-      'govcanada',
-      'asd',
-      'preppal',
-      'v2world',
-      'landingx',
-      'codeninjas',
-      'v1world',
-      'tks',
-      'hippocampus',
+    // Experience pages used to live under /experiences/:slug
+    return [
+      {
+        source: '/experiences/:slug',
+        destination: '/:slug',
+        permanent: true,
+      },
     ];
-    return slugs.map((slug) => ({
-      source: `/experiences/${slug}`,
-      destination: `/${slug}`,
-      permanent: true,
-    }));
   },
 }
 

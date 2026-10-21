@@ -24,10 +24,19 @@ export type ContentBlock = TextBlock | ImageBlock | YouTubeBlock;
 
 export type Project = {
   title: string;
+  /** shorter title used on cards, falls back to title */
+  shortTitle?: string;
   subtitle: string;
   year: string;
   type: string;
+  /** one-line description used on cards */
+  summary: string;
+  tags: string[];
   image: string;
+  /** image used on cards when it differs from the detail page */
+  cardImage?: string;
+  /** logos and wordmarks look better letterboxed than cropped */
+  imageFit?: "cover" | "contain";
   contents: string[];
   descriptionBlocks: ContentBlock[];
   repoUrl?: string;
@@ -40,6 +49,8 @@ export const projectsData: Record<string, Project> = {
     subtitle: "fight-week picks, scorecards, and standings",
     year: "2026",
     type: "project",
+    summary: "mma-native fantasy picks with live fight context, scored receipts, and private leagues",
+    tags: ["next.js", "expo", "react native", "supabase", "postgres", "drizzle", "tanstack query"],
     image: "/cagefantasy-hero.png",
     demoUrl: "https://cagefantasy.com",
     contents: [
@@ -111,6 +122,9 @@ export const projectsData: Record<string, Project> = {
     subtitle: "transforming research papers into visual stories",
     year: "2026",
     type: "project",
+    summary: "winner @ tartanhacks '26. turns research papers into visual stories with 3blue1brown-style animations",
+    tags: ["next.js", "fastapi", "claude", "manim", "modal.com", "elevenlabs", "dedalus sdk"],
+    imageFit: "contain",
     image: "/arx-logo.png",
     repoUrl: "https://github.com/rajshah6/arXivisual",
     demoUrl: "https://arxivisual.org",
@@ -222,6 +236,9 @@ export const projectsData: Record<string, Project> = {
     subtitle: "handling a lot of data",
     year: "2026",
     type: "internship",
+    shortTitle: "swe @ ford",
+    summary: "building automated pipelines and distributed systems for automotive technology",
+    tags: ["java", "spring boot", "kafka", "datadog", "kubernetes", "postgresql"],
     image: "/ford.jpg",
     contents: [
       "automated order validation & persistence",
@@ -272,8 +289,12 @@ export const projectsData: Record<string, Project> = {
   baba: {
     title: "Engineer @ Baba",
     subtitle: "building the future of american healthcare",
-    year: "2026",
+    year: "2025 – 2026",
     type: "internship",
+    shortTitle: "product swe @ baba",
+    summary: "building the future of american healthcare",
+    tags: ["full-stack", "ai integration", "healthcare", "product development"],
+    imageFit: "contain",
     image: "/baba.png",
     contents: [
       "care-center search platform",
@@ -341,6 +362,8 @@ export const projectsData: Record<string, Project> = {
     subtitle: "copilot for furniture assembly",
     year: "2025",
     type: "project",
+    summary: "copilot for furniture assembly with 3d visualization, automated pdf processing, and a chatbot that walks you through each step",
+    tags: ["gemini ai", "reka ai", "three.js", "bright data", "next.js", "typescript"],
     image: "/a3D_homepage.png",
     repoUrl: "https://github.com/rajshah6/assembl3D",
     demoUrl: "https://devpost.com/software/assembl3d",
@@ -412,6 +435,9 @@ export const projectsData: Record<string, Project> = {
     subtitle: "cnn model for real-time traffic analysis",
     year: "2025",
     type: "project",
+    shortTitle: "real-time traffic analysis",
+    summary: "cnn model that tracks vehicles and estimates their speed, among other metrics, from live footage",
+    tags: ["opencv", "ultralytics", "numpy", "supervision", "python"],
     image: "/vtracker.png",
     repoUrl: "https://github.com/dev-Armaan/vehicle-tracker",
     demoUrl: "https://youtu.be/S-3mQ_zNbvw",
@@ -463,6 +489,9 @@ export const projectsData: Record<string, Project> = {
     subtitle: "cloud computing & infrastructure internship",
     year: "2025",
     type: "internship",
+    shortTitle: "swe @ watonomous",
+    summary: "infrastructure and cloud computing for a student autonomous vehicle team",
+    tags: ["docker", "kubernetes", "slurm", "cloud-native apis", "microservices", "hpc"],
     image: "/wato.png",
     contents: [
       "automated power outage notification system",
@@ -520,6 +549,11 @@ export const projectsData: Record<string, Project> = {
     subtitle: "climate reanalysis & data visualization",
     year: "2025",
     type: "internship",
+    shortTitle: "swe @ environment canada",
+    summary: "climate reanalysis models and visualization tools",
+    tags: ["python", "pytorch", "scikit-learn", "pandas", "d3.js", "docker", "ci/cd"],
+    cardImage: "/gov.png",
+    imageFit: "contain",
     image: "/gov2.png",
     contents: [
       "climate reanalysis model pipeline",
@@ -577,6 +611,9 @@ export const projectsData: Record<string, Project> = {
     subtitle: "machine learning prediction model",
     year: "2025",
     type: "project",
+    summary: "machine learning model that reached 93% accuracy diagnosing autism spectrum disorder, outperforming professional teams",
+    tags: ["python", "pandas", "sklearn", "numpy", "matplotlib"],
+    cardImage: "/asd2.png",
     image: "/asd.png",
     repoUrl: "https://github.com/dev-Armaan/autism-prediction",
     contents: [
@@ -648,6 +685,8 @@ export const projectsData: Record<string, Project> = {
     subtitle: "ai-powered interview prep bot",
     year: "2025",
     type: "project",
+    summary: "ai interview prep assistant with real-time feedback. boosted user readiness by 40% and reached 100+ users in two weeks",
+    tags: ["react", "flask", "gcp", "mongodb", "sql"],
     image: "/preppal.png",
     repoUrl: "https://github.com/dev-Armaan/ai-interviewer",
     demoUrl: "https://preppal.work",
@@ -709,6 +748,8 @@ export const projectsData: Record<string, Project> = {
     subtitle: "second iteration of my personal website",
     year: "2025",
     type: "project",
+    summary: "second iteration of this website, with a new design and better performance",
+    tags: ["react", "next.js", "typescript", "tailwind", "vercel"],
     repoUrl: "https://github.com/dev-Armaan/armaans-world-v2",
     image: "/aworld.png",
     contents: [
@@ -748,6 +789,8 @@ export const projectsData: Record<string, Project> = {
     subtitle: "created a web dev company for business and personal purposes",
     year: "2024",
     type: "job",
+    summary: "built, optimized, and shipped responsive web apps for clients",
+    tags: ["react", "next.js", "typescript", "aws", "npm"],
     image: "/landingx.png",
     contents: [
       "app development",
@@ -804,6 +847,9 @@ export const projectsData: Record<string, Project> = {
     subtitle: "developed curriculum & taught students",
     year: "2024",
     type: "job",
+    summary: "built an interactive lua curriculum in roblox studio",
+    tags: ["lua", "scripting apis", "edtech", "game development"],
+    cardImage: "/cninjas.png",
     image: "/cninjas2.png",
     contents: [
       "curriculum development",
@@ -843,6 +889,9 @@ export const projectsData: Record<string, Project> = {
     subtitle: "first iteration of my personal website",
     year: "2024",
     type: "project",
+    summary: "first iteration of this website, complete with 3d models and hosted on aws",
+    tags: ["3d modelling", "aws", "react", "next.js", "tailwind"],
+    cardImage: "/v1aworld.png",
     image: "/v1aworld2.png",
     repoUrl: "https://github.com/dev-Armaan/armaans-world",
     contents: [
@@ -881,8 +930,10 @@ export const projectsData: Record<string, Project> = {
   tks: {
     title: "AI INNOVATOR @ TKS",
     subtitle: "9-month human accelerator program",
-    year: "2024",
+    year: "2023 – 2024",
     type: "program",
+    summary: "optimized nlp and cv models, and consulted mastercard foundation and cibc executives",
+    tags: ["neural networks", "nlp", "mobile app development", "git"],
     image: "/tks.png",
     repoUrl: "https://tks.life/profile/armaan.gupta#portfolio",
     contents: [
@@ -930,6 +981,8 @@ export const projectsData: Record<string, Project> = {
     subtitle: "developed programming curriculum",
     year: "2022",
     type: "job",
+    summary: "developed a programming curriculum for students in grades 1–8",
+    tags: ["scratch", "python", "ms office", "google suite"],
     image: "/hcampus2.jpg",
     contents: [
       "interactive learning",
@@ -981,5 +1034,50 @@ export function getProjectSlugs(): string[] {
 // Helper function to get a project by slug
 export function getProject(slug: string): Project | undefined {
   return projectsData[slug];
+}
+
+export type ProjectEntry = Project & { slug: string };
+
+// Display order, newest and most notable first
+const experienceOrder = [
+  "ford",
+  "arxivisual",
+  "cagefantasy",
+  "baba",
+  "watonomous",
+  "govcanada",
+  "assembl3d",
+  "asd",
+  "traffic",
+  "preppal",
+  "v2world",
+  "landingx",
+  "codeninjas",
+  "v1world",
+  "tks",
+  "hippocampus",
+];
+
+const featuredSlugs = ["arxivisual", "cagefantasy", "ford", "baba"];
+
+const toEntry = (slug: string): ProjectEntry => ({ slug, ...projectsData[slug] });
+
+export function getExperiences(): ProjectEntry[] {
+  return experienceOrder.map(toEntry);
+}
+
+export function getFeaturedProjects(): ProjectEntry[] {
+  return featuredSlugs.map(toEntry);
+}
+
+// "2025 – 2026" groups under its starting year
+export function getStartYear(project: Project): number {
+  return parseInt(project.year, 10);
+}
+
+export function getAdjacentProjects(slug: string) {
+  const index = experienceOrder.indexOf(slug);
+  const at = (i: number) => toEntry(experienceOrder[(i + experienceOrder.length) % experienceOrder.length]);
+  return { previous: at(index - 1), next: at(index + 1) };
 }
 

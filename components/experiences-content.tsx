@@ -3,269 +3,99 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
-import { useState } from "react"
 import Image from "next/image"
 
-export default function ExperiencesContent() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+export type ExperienceCard = {
+  slug: string
+  title: string
+  summary: string
+  tags: string[]
+  type: string
+  year: number
+  image: string
+  imageFit: "cover" | "contain"
+}
 
-  const projects = [
-    {
-      title: "swe @ ford",
-      description: "[internship] building automated pipelines and distributed systems",
-      tags: ["java", "spring boot", "kafka", "datadog", "kubernetes", "postgresql"],
-      image: "/ford.jpg",
-      link: "/ford",
-      year: 2026,
-    },
-    {
-      title: "arXivisual",
-      description: "[project] 🏆 winner @ tartanhacks '26 - transforms research papers into visual stories with 3blue1brown-style animations",
-      tags: ["next.js", "fastapi", "claude", "manim", "modal.com", "elevenlabs", "dedalus sdk"],
-      image: "/arx-logo.png",
-      link: "/arxivisual",
-      year: 2026,
-    },
-    {
-      title: "CageFantasy",
-      description: "[project] mma-native fantasy picks with live fight context, scored receipts, and private leagues",
-      tags: ["next.js", "expo", "react native", "supabase", "postgres", "drizzle", "tanstack query"],
-      image: "/cagefantasy-hero.png",
-      link: "/cagefantasy",
-      year: 2026,
-    },
-    {
-      title: "product swe @ baba",
-      description: "[internship] building the future of american healthcare",
-      tags: ["full-stack", "ai integration", "healthcare", "product development"],
-      image: "/baba.png",
-      link: "/baba",
-      year: 2025,
-    },
-    {
-      title: "swe @ WATonomous",
-      description: "[internship] working on infra & cloud computing",
-      tags: ["docker", "kubernetes", "slurm", "cloud-native apis", "microservices", "hpc", "automation scripts"],
-      image: "/wato.png",
-      link: "/watonomous",
-      year: 2025,
-    },
-    {
-      title: "swe @ environment canada",
-      description:
-        "[internship] worked on climate reanalysis models and visualization tools",
-      tags: ["python", "pytorch", "scikit-learn", "pandas", "d3.js", "docker", "git", "ci/cd"],
-      image: "/gov.png",
-      link: "/govcanada",
-      year: 2025,
-    },
-    {
-      title: "assembl3D",
-      description:
-        "[project] copilot for furniture assembly with 3d visualization, automated pdf processing, and intelligent chatbot assistance",
-      tags: ["gemini ai", "reka ai", "three.js", "bright data", "next.js", "typescript"],
-      image: "/a3D_homepage.png",
-      link: "/assembl3d",
-      year: 2025,
-    },
-    {
-      title: "ASD Prediction Model",
-      description:
-        "[project] machine learning model that achieved 93% accuracy in diagnosing autism spectrum disorder (asd), outperforming professional teams",
-      tags: ["pandas", "sklearn", "numpy", "matplotlib", "python"],
-      image: "/asd2.png",
-      link: "/asd",
-      year: 2025,
-    },
-    {
-      title: "Real-Time Traffic Analysis",
-      description:
-        "[project] cnn model that tracks vehicles & estimates speed amongst other metrics for real-time traffic analysis",
-      tags: ["opencv", "ultralytics", "numpy", "supervision", "python"],
-      image: "/vtracker.png",
-      link: "/traffic",
-      year: 2025,
-    },
-    {
-      title: "PrepPal",
-      description:
-        "[project] ai-powered interview prep assistant with real-time feedback, boosting user readiness by 40% and gaining 100+ users in two weeks",
-      tags: ["sql", "react", "flask", "gcp", "mongodb"],
-      image: "/preppal.png",
-      link: "/preppal",
-      year: 2025,
-    },
-    {
-      title: "Armaan's World [v2]",
-      description:
-        "[project] second iteration of my personal website, featuring a new design and improved performance",
-      tags: ["react", "next.js", "typescript", "tailwind", "vercel"],
-      image: "/aworld.png",
-      link: "/v2world",
-      year: 2025,
-    },
-    {
-      title: "FOUNDER @ LANDINGX",
-      description: "[job] developed, optimized & shipped responsive web apps using modern frameworks for clients",
-      tags: ["npm", "aws", "react", "next.js", "typescript"],
-      image: "/landingx.png",
-      link: "/landingx",
-      year: 2024,
-    },
-    {
-      title: "sensei & camp leader @ code ninjas",
-      description: "[job] developed an interactive lua-based curriculum in Roblox Studio",
-      tags: ["lua", "scripting apis", "edtech", "game development"],
-      image: "/cninjas.png",
-      link: "/codeninjas",
-      year: 2024,
-    },
-    {
-      title: "Armaan's World [v1]",
-      description: "[project] first iteration of my personal website, complete with 3d models and hosted on aws",
-      tags: ["3d modelling", "aws", "react", "next.js", "tailwind"],
-      image: "/v1aworld.png",
-      link: "/v1world",
-      year: 2024,
-    },
-    {
-      title: "AI INNOVATOR @ TKS",
-      description: "[program] optimized NLP and CV models + personally consulted mastercard foundation & cibc execs on separate occasions",
-      tags: ["neural networks", "nlp", "mobile app development", "git"],
-      image: "/tks.png",
-      link: "/tks",
-      year: 2023,
-    },
-    {
-      title: "curriculum dev @ hippocampus",
-      description: "[job] developed programming curriculum for students in grades 1-8",
-      tags: ["scratch", "python", "ms office", "google suite"],
-      image: "/hcampus2.jpg",
-      link: "/hippocampus",
-      year: 2022,
-    },
-  ]
-
-  // Group projects by year
-  const projectsByYear = projects.reduce(
-    (acc, project) => {
-      const year = project.year
-      if (!acc[year]) {
-        acc[year] = []
-      }
-      acc[year].push(project)
-      return acc
-    },
-    {} as Record<number, typeof projects>,
-  )
-
-  // Sort years in descending order
-  const years = Object.keys(projectsByYear)
-    .map(Number)
-    .sort((a, b) => b - a)
+export default function ExperiencesContent({ experiences }: { experiences: ExperienceCard[] }) {
+  // Group by year, newest first, keeping the curated order within each year
+  const years = Array.from(new Set(experiences.map((e) => e.year))).sort((a, b) => b - a)
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="space-y-12">
-      <div className="space-y-4">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="space-y-16">
+      <div className="space-y-6">
         <div className="flex justify-center w-full">
-          <motion.h1
-            className="text-4xl font-bold relative inline-block"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <h1 className="text-4xl font-bold relative inline-block">
             Experiences
             <motion.span
-              className="absolute -bottom-2 left-0 w-full h-1 bg-gold"
+              className="absolute -bottom-2 left-0 w-full h-1 bg-gold origin-left"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
+              transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             />
-          </motion.h1>
+          </h1>
         </div>
-        <p className="text-white max-w-2xl mx-auto text-center">
-          a selection of internships + projects + programs i've done
+        <p className="text-white/80 max-w-2xl mx-auto text-center">
+          a selection of internships, projects, and programs i&apos;ve done
         </p>
       </div>
 
-      <div className="space-y-16">
+      <div className="space-y-20">
         {years.map((year) => (
-          <div key={year} className="space-y-8">
-            <div className="flex justify-start w-full">
-              <motion.h2
-                className="text-2xl font-bold relative inline-block"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
+          <section key={year} className="space-y-8" aria-labelledby={`year-${year}`}>
+            <div className="flex items-center gap-4">
+              <h2 id={`year-${year}`} className="text-sm font-bold text-gold tracking-[0.2em]">
                 {year}
-                <motion.span
-                  className="absolute -bottom-2 left-0 w-full h-0.5 bg-gold"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 0.5, duration: 1 }}
-                />
-              </motion.h2>
+              </h2>
+              <div className="h-px flex-1 bg-white/10" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {projectsByYear[year].map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="relative group"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                  whileHover={{ x: 5 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Link href={project.link} className="block">
-                    <div className="border border-white/10 rounded-lg overflow-hidden h-full transition-colors hover:bg-white/5">
-                      <div className="relative aspect-video">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {experiences
+                .filter((e) => e.year === year)
+                .map((project, index) => (
+                  <motion.div
+                    key={project.slug}
+                    data-reveal
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-60px" }}
+                    transition={{ duration: 0.5, delay: (index % 2) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link
+                      href={`/${project.slug}`}
+                      className="group flex flex-col h-full border border-white/10 rounded-lg overflow-hidden transition-colors duration-300 hover:border-white/25 hover:bg-white/[0.03]"
+                    >
+                      <div className="relative aspect-video overflow-hidden border-b border-white/10">
                         <Image
-                          src={project.image || "/placeholder.svg"}
-                          alt={project.title}
+                          src={project.image}
+                          alt={`${project.title} preview`}
                           fill
-                          className={`${project.image === "/gov.png" || project.image === "/baba.png" || project.image === "/arx-logo.png" ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`}
+                          sizes="(min-width: 768px) 40vw, 100vw"
+                          className={`${project.imageFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-500 ease-out group-hover:scale-[1.03]`}
                         />
                       </div>
-                      <div className="p-6">
-                        <div className="flex justify-between items-start mb-4">
-                          <h2 className="text-xl font-medium">{project.title}</h2>
-                          <motion.div
-                            animate={{
-                              rotate: hoveredIndex === index ? 45 : 0,
-                            }}
-                            transition={{ duration: 0.1 }}
-                          >
-                            <ArrowUpRight className="h-5 w-5 text-white/60" />
-                          </motion.div>
+                      <div className="flex flex-col flex-1 p-6">
+                        <div className="text-xs uppercase tracking-[0.18em] text-white/40 mb-2">{project.type}</div>
+                        <div className="flex justify-between items-start gap-4 mb-3">
+                          <h3 className="text-xl font-medium">{project.title}</h3>
+                          <ArrowUpRight className="h-5 w-5 shrink-0 text-white/50 transition-all duration-200 group-hover:text-gold group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                         </div>
-                        <p className="text-white/70 mb-6">{project.description}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map((tag, tagIndex) => (
-                            <span key={tagIndex} className="text-xs px-2 py-1 bg-white/10 rounded-full text-white/60">
+                        <p className="text-white/70 leading-relaxed text-pretty mb-6">{project.summary}</p>
+                        <ul className="flex flex-wrap gap-2 mt-auto" aria-label="Technologies">
+                          {project.tags.map((tag) => (
+                            <li key={tag} className="text-xs px-2.5 py-1 border border-white/10 rounded-full text-white/55">
                               {tag}
-                            </span>
+                            </li>
                           ))}
-                        </div>
+                        </ul>
                       </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
+                    </Link>
+                  </motion.div>
+                ))}
             </div>
-          </div>
+          </section>
         ))}
       </div>
-
-      <br /><br /><br />
-      <footer className="w-full py-4 text-center text-sm text-white/70 border-t border-white/10">
-        © {new Date().getFullYear()} armaan gupta. all rights reserved.
-      </footer>
     </motion.div>
   )
 }
-

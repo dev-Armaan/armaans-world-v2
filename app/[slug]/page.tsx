@@ -74,7 +74,7 @@ export default async function ExperienceDetailPage({ params }: PageProps) {
   }
 
   const { previous, next } = getAdjacentProjects(slug);
-  const link = (p: typeof previous) => ({ slug: p.slug, title: p.shortTitle ?? p.title });
+  const link = (p: typeof previous) => (p ? { slug: p.slug, title: p.shortTitle ?? p.title } : null);
 
   return <ExperienceDetailContent project={project} previous={link(previous)} next={link(next)} />;
 }

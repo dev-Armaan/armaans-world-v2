@@ -52,7 +52,7 @@ export const projectsData: Record<string, Project> = {
     type: "internship",
     summary: "building tax and billing infrastructure that merchants trust with their money",
     tags: ["billing", "tax", "distributed systems", "financial infrastructure", "shadow traffic", "load testing"],
-    image: "/shopify.png",
+    image: "/shopify-wordmark.webp",
     contents: [
       "distributed tax pipeline fix",
       "global billing infrastructure",
@@ -67,6 +67,14 @@ export const projectsData: Record<string, Project> = {
           "currently a software engineer at shopify in toronto, working on the financial infrastructure side of things: tax, billing, and all the plumbing that makes sure merchants get charged the right amount at the right time. it's the kind of work where nobody notices when it's right and everybody notices when it's wrong, which honestly makes it pretty fun.",
       },
       {
+        type: "image",
+        src: "/shopify-office.webp",
+        alt: "Shopify's Toronto office looking out at the CN Tower",
+        width: 1280,
+        height: 853,
+        caption: "not a bad view from the toronto office",
+      },
+      {
         type: "text",
         content:
           "one of the first things i got to work on was a bug in a distributed tax pipeline that was hitting 10,000+ orders a month. i caught it, tracked it down across the pipeline, and shipped the fix. that one change ends up saving customers around $1.3M a year, which is a pretty wild number to attach to a single pr.",
@@ -75,6 +83,13 @@ export const projectsData: Record<string, Project> = {
         type: "text",
         content:
           "i've also been building out billing infrastructure across global markets. moving money systems around isn't something you want to yolo, so the rollout leaned on shadow traffic (running the new path alongside the old one and comparing the results), cutover controls so markets could be flipped over gradually, and a lot of load testing before anything went live. the end result is 99.99%+ billing accuracy.",
+      },
+      {
+        type: "image",
+        src: "/shopify-globe.webp",
+        alt: "Shopify logo beside a globe of commerce traffic across North America",
+        width: 2000,
+        height: 1050,
       },
       {
         type: "text",
@@ -1098,12 +1113,19 @@ const experienceOrder = [
   "hippocampus",
 ];
 
+// Anything missing from experienceOrder still shows up, at the end, so the
+// experiences page and previous/next links always cover every project
+const orderedSlugs = [
+  ...experienceOrder,
+  ...Object.keys(projectsData).filter((slug) => !experienceOrder.includes(slug)),
+];
+
 const featuredSlugs = ["shopify", "arxivisual", "cagefantasy", "ford", "baba"];
 
 const toEntry = (slug: string): ProjectEntry => ({ slug, ...projectsData[slug] });
 
 export function getExperiences(): ProjectEntry[] {
-  return experienceOrder.map(toEntry);
+  return orderedSlugs.map(toEntry);
 }
 
 export function getFeaturedProjects(): ProjectEntry[] {
@@ -1115,9 +1137,10 @@ export function getStartYear(project: Project): number {
   return parseInt(project.year, 10);
 }
 
+// Neighbours in display order; the first and last experiences have no previous/next
 export function getAdjacentProjects(slug: string) {
-  const index = experienceOrder.indexOf(slug);
-  const at = (i: number) => toEntry(experienceOrder[(i + experienceOrder.length) % experienceOrder.length]);
+  const index = orderedSlugs.indexOf(slug);
+  const at = (i: number) => (index >= 0 && i >= 0 && i < orderedSlugs.length ? toEntry(orderedSlugs[i]) : null);
   return { previous: at(index - 1), next: at(index + 1) };
 }
 

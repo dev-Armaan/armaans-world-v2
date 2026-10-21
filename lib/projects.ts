@@ -52,7 +52,7 @@ export const projectsData: Record<string, Project> = {
     type: "internship",
     summary: "building tax and billing infrastructure that merchants trust with their money",
     tags: ["billing", "tax", "distributed systems", "financial infrastructure", "shadow traffic", "load testing"],
-    image: "/shopify-wordmark.webp",
+    image: "/shopify-wordmark-dark.webp",
     contents: [
       "distributed tax pipeline fix",
       "global billing infrastructure",

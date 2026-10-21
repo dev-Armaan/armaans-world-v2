@@ -1,6 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navigation from "@/components/navigation";
 import SiteFooter from "@/components/site-footer";
@@ -9,15 +9,18 @@ import MotionProvider from "@/components/motion-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { getExperiences } from "@/lib/projects";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["700"],
+// Self-hosted so builds never depend on fetching from Google Fonts
+const spaceGrotesk = localFont({
+  src: "../assets/fonts/space-grotesk-latin-700-normal.woff2",
+  weight: "700",
   variable: "--font-space-grotesk",
 });
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500"],
+const dmSans = localFont({
+  src: [
+    { path: "../assets/fonts/dm-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../assets/fonts/dm-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
+  ],
   variable: "--font-dm-sans",
 });
 

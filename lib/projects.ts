@@ -363,7 +363,7 @@ export const projectsData: Record<string, Project> = {
     type: "internship",
     shortTitle: "mts @ baba",
     summary: "one of the first engineers, building the future of american healthcare",
-    stat: "early engineer · $6.5M+ seed",
+    stat: "early engineer · $47M+ in funding",
     tags: ["full-stack", "ai integration", "healthcare", "product development"],
     imageFit: "contain",
     image: "/baba.png",
@@ -378,7 +378,7 @@ export const projectsData: Record<string, Project> = {
       {
         type: "text",
         content:
-          "baba is the american healthcare company. they connect older adults and their families with dedicated advocates (nurses and social workers) who coordinate their care and navigate the complexities of the medical system. i joined as one of the first engineers, working alongside an incredibly ambitious team of former founders to build the core infrastructure leading up to their public launch and $6.5m seed round led by general catalyst.",
+          "baba is the american healthcare company. they connect older adults and their families with dedicated advocates (nurses and social workers) who coordinate their care and navigate the complexities of the medical system. i joined as one of the first engineers, working alongside an incredibly ambitious team of former founders to build the core infrastructure leading up to their public launch. baba has since raised $47m+ in funding.",
       },
       {
         type: "image",

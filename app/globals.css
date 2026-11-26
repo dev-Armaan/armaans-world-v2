@@ -9,6 +9,13 @@
   --accent-secondary: 243, 229, 171; /* Lighter gold for subtle elements */
 }
 
+html {
+  color-scheme: dark;
+  /* anchors and focus jumps clear the fixed nav */
+  scroll-padding-top: 6rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   color: rgb(var(--foreground));
   background: rgb(var(--background));
@@ -33,6 +40,7 @@ body {
     font-family: var(--font-space-grotesk);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    text-wrap: balance;
   }
 
   p,

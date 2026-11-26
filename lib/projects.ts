@@ -3,14 +3,29 @@ export type TextBlock = {
   content: string;
 };
 
-export type ImageBlock = {
-  type: "image";
+export type Picture = {
   src: string;
   alt: string;
   width: number;
   height: number;
+  /** animated files are served as-is so they keep their frames */
+  animated?: boolean;
+};
+
+export type ImageBlock = Picture & {
+  type: "image";
   caption?: string;
+  /** breaks out wider than the text column */
   fullWidth?: boolean;
+  /** swapped in on small screens, for diagrams that don't shrink well */
+  narrow?: Picture;
+};
+
+/** pictures side by side at a shared height, stacked on small screens */
+export type GalleryBlock = {
+  type: "gallery";
+  items: Picture[];
+  caption?: string;
 };
 
 export type YouTubeBlock = {
@@ -20,7 +35,7 @@ export type YouTubeBlock = {
   caption?: string;
 };
 
-export type ContentBlock = TextBlock | ImageBlock | YouTubeBlock;
+export type ContentBlock = TextBlock | ImageBlock | GalleryBlock | YouTubeBlock;
 
 export type Project = {
   title: string;
@@ -98,6 +113,126 @@ export const projectsData: Record<string, Project> = {
         type: "text",
         content:
           "on the scaling side, i work on financial infrastructure that supports 69.5% of us transactions and 79,700+ annualized filings. working at that scale has taught me a ton about designing for correctness first, and about how much care goes into systems people trust with their money.",
+      },
+    ],
+  },
+  watched: {
+    title: "watched.earth",
+    subtitle: "every satellite that passed over you this week",
+    year: "2026",
+    type: "project",
+    summary: "pick any place on earth and see every satellite that flew over it this week, plus the photos they took",
+    stat: "1M+ users in the first week · 500+ points on hacker news",
+    tags: ["typescript", "react", "three.js", "webgl", "web workers", "cloudflare workers", "supabase"],
+    image: "/watched-hero.jpg",
+    repoUrl: "https://github.com/dev-Armaan/satellites",
+    demoUrl: "https://www.watched.earth",
+    contents: [
+      "1,000,000+ users in the first week",
+      "500+ points on hacker news",
+      "a pass search that can't skip a pass",
+      "17,000 satellites animated on the gpu",
+      "orbit maths runs in your browser",
+      "open source, 300+ github stars",
+    ],
+    descriptionBlocks: [
+      {
+        type: "text",
+        content:
+          "watched.earth does one thing: you give it any place on earth, and it shows you every satellite that passed over it in the last 7 days, plus the actual pictures they took. it's free, there's no sign-up, and the orbit maths runs in your browser.",
+      },
+      {
+        type: "image",
+        src: "/watched-landing.jpg",
+        alt: "The watched.earth landing page: the headline 'Something watched you this week' beside a globe wrapped in a halo of about 17,000 satellites",
+        width: 1600,
+        height: 1000,
+        caption: "every dot around the globe is a real satellite, roughly where it is right now",
+        fullWidth: true,
+      },
+      {
+        type: "text",
+        content:
+          "i built it solo and open sourced the whole thing. it picked up 500+ points on hacker news and crossed 1,000,000 users in its first week, which is still a little hard to wrap my head around.",
+      },
+      {
+        type: "text",
+        content:
+          "the hard part is not missing anything. a narrow camera sweeps past a place in a few seconds, so checking the week at fixed intervals either skips passes or takes forever. instead, the search works out the fastest a satellite could possibly be closing in on your spot and never steps further than that, so a pass can't fall between two samples. then it pins the closest approach to a tenth of a second. i ran it against a one-second brute force on the nastiest cases i could come up with (both poles, the antimeridian, null island) and it missed nothing. a full week for all ~400 satellites it tracks takes 1.3 seconds on one thread.",
+      },
+      {
+        type: "gallery",
+        items: [
+          {
+            src: "/watched-reveal.webp",
+            alt: "A pass replay: a scan line moves along the satellite's track and uncovers a Sentinel-2 photo of Palm Jumeirah line by line",
+            width: 710,
+            height: 710,
+            animated: true,
+          },
+          {
+            src: "/watched-timelapse.webp",
+            alt: "A time-lapse of Egypt's New Administrative Capital from 2015 to 2026, bare desert turning into a grid of districts and ring roads",
+            width: 576,
+            height: 576,
+            animated: true,
+          },
+        ],
+        caption:
+          "a pass replayed the way the camera recorded it, and eleven years of egypt's new capital rising out of the desert",
+      },
+      {
+        type: "text",
+        content:
+          "finding the passes is half of it. the other half is matching each one to a real photo in the public archives: sentinel-2, landsat, sentinel-1 radar, and nasa's and eumetsat's weather imagery. that's trickier than it sounds, because an archive's timestamp isn't when the satellite was over you, it's when it started recording the strip, up to 7 minutes earlier. every photo also gets cut on the same grid in the satellite's own pixels, so nothing is warped and eleven years of time-lapse frames line up with no alignment step.",
+      },
+      {
+        type: "text",
+        content:
+          "the globe draws all ~17,000 active satellites at once. a vertex shader solves kepler's equation for every one of them, every frame, so the whole swarm lives on the gpu. the sun is placed to about a hundredth of a degree, which means the day/night line and the city lights are where they really are right now.",
+      },
+      {
+        type: "image",
+        src: "/watched-pipeline.svg",
+        alt: "Diagram of one lookup: place, passes, photos, pixels, and share all run in the browser, each backed by one outside service",
+        width: 960,
+        height: 428,
+        caption: "what runs where for a single lookup. almost all of it is your browser",
+        fullWidth: true,
+        narrow: {
+          src: "/watched-pipeline-narrow.svg",
+          alt: "Diagram of one lookup: place, passes, photos, pixels, and share all run in the browser, each backed by one outside service",
+          width: 360,
+          height: 746,
+        },
+      },
+      {
+        type: "text",
+        content:
+          "doing the heavy lifting on your device also means the backend gets to stay tiny: a handful of functions on a cloudflare worker and a locked-down supabase database that can only do four things. that's a nice property to have when a million people show up in a week. lookups are stored as 10 km cells and raw events are deleted after 48 hours, because a site about being watched probably shouldn't be watching you.",
+      },
+      {
+        type: "gallery",
+        items: [
+          {
+            src: "/watched-phone.jpg",
+            alt: "watched.earth on a phone: results for Palm Jumeirah, and the time-lapse player with a year slider",
+            width: 1536,
+            height: 1208,
+          },
+          {
+            src: "/watched-card.jpg",
+            alt: "The share card for a pass: a Sentinel-2 photo of Palm Jumeirah beside '260 satellites watched Palm Jumeirah' with altitude, off-nadir angle, and pixel size",
+            width: 1200,
+            height: 630,
+          },
+        ],
+        caption: "on a phone, and the card every shared link unfurls into",
+      },
+      {
+        type: "text",
+        content:
+          "the thing i care about most is that it never overclaims. every pass gets one of four labels, and only \"watched\" means there's a real published image of your spot from that pass. the photos are 10 m a pixel at best, so nobody can be made out in them, and the site tells you exactly that.",
       },
     ],
   },
@@ -215,8 +350,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/arxiv.png",
         alt: "arXiv paper ingestion and processing",
-        width: 800,
-        height: 600,
+        width: 2000,
+        height: 1111,
         fullWidth: true,
       },
       {
@@ -248,9 +383,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/loading.png",
         alt: "arXivisual processing pipeline with real-time progress",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        width: 2000,
+        height: 1295,
       },
       {
         type: "text",
@@ -266,9 +400,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/manim.png",
         alt: "3Blue1Brown-style Manim animations generated by AI",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        width: 2000,
+        height: 1295,
       },
       {
         type: "text",
@@ -284,9 +417,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/tartan.JPG",
         alt: "TartanHacks '26 winning team",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        width: 2000,
+        height: 2667,
       },
       {
         type: "text",
@@ -326,10 +458,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/ready-ford.jpg",
-        alt: "Ford facility",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        alt: "Ready Set Ford graphic over a race car",
+        width: 1850,
+        height: 1042,
       },
       {
         type: "text",
@@ -344,10 +475,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/ford-electric.jpg",
-        alt: "Ford electric vehicle",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        alt: "Ford's electric lineup under the words go electric",
+        width: 1640,
+        height: 720,
       },
       {
         type: "text",
@@ -384,9 +514,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/baba-website.png",
         alt: "Baba website homepage",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        width: 2000,
+        height: 937,
       },
       {
         type: "text",
@@ -402,9 +531,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/nursing-search.png",
         alt: "Baba nursing home search platform",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        width: 2000,
+        height: 1109,
       },
       {
         type: "text",
@@ -465,9 +593,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/a3D_demo.png",
         alt: "assembl3D 3d visualization interface",
-        width: 800,
-        height: 800,
-        fullWidth: false,
+        width: 2000,
+        height: 1109,
       },
       {
         type: "text",
@@ -528,10 +655,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/vtracker.png",
-        alt: "E-commerce dashboard interface",
-        width: 800,
-        height: 800,
-        fullWidth: false,
+        alt: "Highway footage with each vehicle boxed and labelled with its estimated speed",
+        width: 2000,
+        height: 1126,
       },
       {
         type: "text",
@@ -587,9 +713,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/watcloud_machines.png",
         alt: "WATonomous cloud infrastructure architecture",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        width: 2000,
+        height: 1106,
       },
       {
         type: "text",
@@ -605,9 +730,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/watcloud_cluster.jpg",
         alt: "WATcloud cluster",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        width: 2000,
+        height: 1500,
       },
       {
         type: "text",
@@ -650,9 +774,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/govcan_pipeline.png",
         alt: "Environment Canada data pipeline architecture",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        width: 1732,
+        height: 907,
       },
       {
         type: "text",
@@ -668,9 +791,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/govcan_weather.jpeg",
         alt: "Climate change extremes",
-        width: 800,
-        height: 600,
-        fullWidth: false,
+        width: 2000,
+        height: 984,
       },
       {
         type: "text",
@@ -706,10 +828,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/kdata.png",
-        alt: "ASD prediction model correlation heatmap",
-        width: 700,
-        height: 600,
-        fullWidth: false,
+        alt: "Preview of the Kaggle training dataset",
+        width: 2000,
+        height: 1221,
       },
       {
         type: "text",
@@ -719,10 +840,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/asd.png",
-        alt: "ASD prediction model correlation heatmap",
-        width: 700,
-        height: 600,
-        fullWidth: false,
+        alt: "Correlation heatmap of the ASD dataset features",
+        width: 2000,
+        height: 1492,
       },
       {
         type: "text",
@@ -737,10 +857,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/asd-hyper.png",
-        alt: "ASD prediction model correlation heatmap",
-        width: 600,
-        height: 600,
-        fullWidth: false,
+        alt: "Hyperparameter grids for the decision tree and random forest search",
+        width: 908,
+        height: 684,
       },
       {
         type: "text",
@@ -781,10 +900,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/pfeedback.png",
-        alt: "Fitness app interface",
-        width: 800,
-        height: 800,
-        fullWidth: false,
+        alt: "PrepPal feedback screen with an overall grade, tone, eye contact, and filler word counts",
+        width: 2000,
+        height: 1082,
       },
       {
         type: "text",
@@ -848,9 +966,8 @@ export const projectsData: Record<string, Project> = {
         type: "image",
         src: "/aworld3.png",
         alt: "Armaan's world v2 screenshot",
-        width: 800,
-        height: 800,
-        fullWidth: false,
+        width: 2000,
+        height: 1299,
       },
       {
         type: "text",
@@ -887,10 +1004,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/lxinsta.png",
-        alt: "Fitness app interface",
-        width: 800,
-        height: 800,
-        fullWidth: false,
+        alt: "LandingX Instagram profile",
+        width: 2000,
+        height: 432,
       },
       {
         type: "text",
@@ -905,10 +1021,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/lxdemo.png",
-        alt: "Fitness app interface",
-        width: 800,
-        height: 800,
-        fullWidth: false,
+        alt: "FAQ and call-to-action section from a LandingX client site",
+        width: 2000,
+        height: 1180,
       },
       {
         type: "text",
@@ -947,10 +1062,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/cninjas3.png",
-        alt: "code ninjas class",
-        width: 800,
-        height: 800,
-        fullWidth: false,
+        alt: "Students coding on laptops at Code Ninjas",
+        width: 1120,
+        height: 747,
       },
       {
         type: "text",
@@ -990,10 +1104,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/v1aworld.png",
-        alt: "code ninjas class",
-        width: 800,
-        height: 800,
-        fullWidth: false,
+        alt: "Contact page of Armaan's World v1 with a 3D globe",
+        width: 2000,
+        height: 1106,
       },
       {
         type: "text",
@@ -1026,10 +1139,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/mnist.png",
-        alt: "code ninjas class",
-        width: 400,
-        height: 800,
-        fullWidth: false,
+        alt: "Grid of handwritten digits with their predicted labels",
+        width: 796,
+        height: 690,
       },
       {
         type: "text",
@@ -1039,10 +1151,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/tksmc.png",
-        alt: "code ninjas class",
-        width: 800,
-        height: 800,
-        fullWidth: false,
+        alt: "TKS and Mastercard Foundation title slide: reimagining Uganda's rainfed agriculture system",
+        width: 1920,
+        height: 1078,
       },
       {
         type: "text",
@@ -1075,10 +1186,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/hcampus5.jpg",
-        alt: "hippocampus class",
-        width: 600,
-        height: 800,
-        fullWidth: false,
+        alt: "Students gathered around a robotics lesson at Hippocampus",
+        width: 1360,
+        height: 1020,
       },
       {
         type: "text",
@@ -1088,10 +1198,9 @@ export const projectsData: Record<string, Project> = {
       {
         type: "image",
         src: "/hcampus4.jpg",
-        alt: "hippocampus student",
-        width: 600,
-        height: 800,
-        fullWidth: false,
+        alt: "A student steering a robot along a taped track",
+        width: 1360,
+        height: 1020,
       },
       {
         type: "text",
@@ -1117,6 +1226,7 @@ export type ProjectEntry = Project & { slug: string };
 // Display order, newest and most notable first
 const experienceOrder = [
   "shopify",
+  "watched",
   "ford",
   "arxivisual",
   "cagefantasy",
@@ -1142,7 +1252,7 @@ const orderedSlugs = [
   ...Object.keys(projectsData).filter((slug) => !experienceOrder.includes(slug)),
 ];
 
-const featuredSlugs = ["shopify", "arxivisual", "cagefantasy", "ford", "baba"];
+const featuredSlugs = ["shopify", "watched", "arxivisual", "cagefantasy", "ford", "baba"];
 
 const toEntry = (slug: string): ProjectEntry => ({ slug, ...projectsData[slug] });
 

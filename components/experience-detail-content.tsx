@@ -1,11 +1,17 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Github, ExternalLink } from "lucide-react";
 import ZoomableImage from "@/components/zoomable-image";
-import type { Project, YouTubeBlock } from "@/lib/projects";
+import type { ContentBlock, Project, YouTubeBlock } from "@/lib/projects";
+
+// Prose keeps a readable measure; media sits wider, and wider still when it earns it
+const PROSE = "mx-auto max-w-[68ch]";
+const MEDIA = "mx-auto !my-12";
+const CAPTION = "mx-auto mt-3 max-w-[68ch] text-center text-sm leading-relaxed text-white/50 text-pretty";
 
 const getYouTubeVideoId = (url: string): string => {
   const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -17,8 +23,8 @@ const YouTubeEmbed = ({ videoId, title, caption }: YouTubeBlock) => {
   const id = getYouTubeVideoId(videoId);
 
   return (
-    <figure className="!my-12">
-      <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg">
+    <figure className={`${MEDIA} max-w-3xl`}>
+      <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg border border-white/10">
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${id}`}
           loading="lazy"
@@ -29,10 +35,54 @@ const YouTubeEmbed = ({ videoId, title, caption }: YouTubeBlock) => {
         />
       </div>
       {caption && (
-        <figcaption className="text-sm text-white/50 text-center mt-3">{caption}</figcaption>
+        <figcaption className={CAPTION}>{caption}</figcaption>
       )}
     </figure>
   );
+};
+
+const Block = ({ block }: { block: ContentBlock }) => {
+  switch (block.type) {
+    case "text":
+      return <p className={PROSE}>{block.content}</p>;
+    case "youtube":
+      return <YouTubeEmbed {...block} />;
+    case "image": {
+      const { fullWidth, narrow, caption, ...picture } = block;
+      const sizes = fullWidth ? "(min-width: 1024px) 1024px, 100vw" : undefined;
+      return (
+        <figure className={`${MEDIA} ${fullWidth ? "max-w-5xl" : "max-w-3xl"}`}>
+          {narrow ? (
+            <>
+              <ZoomableImage {...narrow} className="sm:hidden" />
+              <ZoomableImage {...picture} sizes={sizes} className="hidden sm:block" />
+            </>
+          ) : (
+            <ZoomableImage {...picture} sizes={sizes} />
+          )}
+          {caption && <figcaption className={CAPTION}>{caption}</figcaption>}
+        </figure>
+      );
+    }
+    case "gallery":
+      return (
+        <figure className={`${MEDIA} max-w-5xl`}>
+          <div className="flex flex-col gap-3 sm:flex-row md:gap-4">
+            {block.items.map((picture) => (
+              // Growing each picture by its aspect ratio lands them all on one height
+              <div
+                key={picture.src}
+                className="min-w-0 sm:flex-[var(--ratio)_1_0%]"
+                style={{ "--ratio": picture.width / picture.height } as CSSProperties}
+              >
+                <ZoomableImage {...picture} sizes="(min-width: 640px) 50vw, 100vw" />
+              </div>
+            ))}
+          </div>
+          {block.caption && <figcaption className={CAPTION}>{block.caption}</figcaption>}
+        </figure>
+      );
+  }
 };
 
 type ProjectLink = { slug: string; title: string };
@@ -148,30 +198,11 @@ export default function ExperienceDetailContent({
         </div>
       </div>
 
-      <article className="max-w-3xl mx-auto space-y-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-center">description</h2>
-
-        <div className="text-white/80 space-y-6 leading-[1.8] text-pretty">
-          {project.descriptionBlocks.map((block, index) => {
-            if (block.type === "text") {
-              return <p key={index}>{block.content}</p>;
-            } else if (block.type === "image") {
-              return (
-                <figure key={index} className="!my-12">
-                  <ZoomableImage src={block.src} alt={block.alt} width={block.width} height={block.height} />
-                  {block.caption && (
-                    <figcaption className="text-sm text-white/50 text-center mt-3">
-                      {block.caption}
-                    </figcaption>
-                  )}
-                </figure>
-              );
-            } else if (block.type === "youtube") {
-              return <YouTubeEmbed key={index} {...block} />;
-            }
-            return null;
-          })}
-        </div>
+      <article className="space-y-6 border-t border-white/10 pt-14 md:pt-16 text-white/80 leading-[1.8] text-pretty">
+        <h2 className="sr-only">Write-up</h2>
+        {project.descriptionBlocks.map((block, index) => (
+          <Block key={index} block={block} />
+        ))}
       </article>
 
       <nav

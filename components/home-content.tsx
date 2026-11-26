@@ -118,21 +118,13 @@ export default function HomeContent({ featured }: { featured: FeaturedProject[] 
           </div>
         </motion.section>
 
-        <motion.section variants={item} data-reveal className="space-y-16 md:space-y-20">
-          <div className="flex justify-center w-full">
-            <h2 className="text-3xl font-bold text-center relative inline-block">
-              featured works
-              <motion.span
-                className="absolute -bottom-2 left-0 w-full h-1 bg-gold origin-left"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              />
-            </h2>
+        <motion.section variants={item} data-reveal className="space-y-12 md:space-y-16">
+          <div className="flex items-center gap-5">
+            <h2 className="text-2xl md:text-3xl font-bold">featured works</h2>
+            <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
           </div>
 
-          <div className="space-y-16 md:space-y-24">
+          <div className="space-y-14 md:space-y-20">
             {featured.map((project) => (
               <Link href={`/${project.slug}`} key={project.slug} className="block group">
                 <motion.article
@@ -161,7 +153,7 @@ export default function HomeContent({ featured }: { featured: FeaturedProject[] 
                       <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </div>
                   </div>
-                  <div className="relative aspect-video md:aspect-[4/3] overflow-hidden rounded-sm order-1 md:order-2">
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-white/10 order-1 md:order-2 transition-colors duration-300 group-hover:border-white/25">
                     <Image
                       src={project.image}
                       alt={`${project.title} preview`}
@@ -175,7 +167,7 @@ export default function HomeContent({ featured }: { featured: FeaturedProject[] 
             ))}
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center pt-4">
             <Link
               href="/experiences"
               className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 hover:text-white transition-colors"

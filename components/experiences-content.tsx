@@ -24,8 +24,8 @@ export default function ExperiencesContent({ experiences }: { experiences: Exper
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="space-y-16">
       <div className="space-y-6">
-        <div className="flex justify-center w-full">
-          <h1 className="text-4xl font-bold relative inline-block">
+        <div>
+          <h1 className="text-5xl md:text-6xl font-bold relative inline-block">
             Experiences
             <motion.span
               className="absolute -bottom-2 left-0 w-full h-1 bg-gold origin-left"
@@ -35,7 +35,7 @@ export default function ExperiencesContent({ experiences }: { experiences: Exper
             />
           </h1>
         </div>
-        <p className="text-white/80 max-w-2xl mx-auto text-center">
+        <p className="text-white/90 max-w-2xl text-lg">
           a selection of internships, projects, and programs i&apos;ve done
         </p>
       </div>

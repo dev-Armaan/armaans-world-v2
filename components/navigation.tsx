@@ -39,12 +39,6 @@ export default function Navigation() {
             className="relative overflow-hidden gold-shine"
           >
             ARMAAN&apos;S WORLD
-            <motion.span
-              className="absolute bottom-0 left-0 w-full h-[2px] bg-gold"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 1, duration: 0.8 }}
-            />
           </motion.div>
         </Link>
 

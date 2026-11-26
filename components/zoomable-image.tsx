@@ -10,23 +10,41 @@ type ZoomableImageProps = {
   alt: string
   width: number
   height: number
+  /** how wide the image renders in the page, for picking a source size */
+  sizes?: string
+  /** animated files skip the optimizer so they keep their frames */
+  animated?: boolean
+  className?: string
 }
 
 // Click a write-up image to see it full screen; click anywhere or press Esc to close
-export default function ZoomableImage({ src, alt, width, height }: ZoomableImageProps) {
+export default function ZoomableImage({
+  src,
+  alt,
+  width,
+  height,
+  sizes = "(min-width: 768px) 768px, 100vw",
+  animated = false,
+  className = "",
+}: ZoomableImageProps) {
   const [open, setOpen] = useState(false)
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <button type="button" className="block w-full cursor-zoom-in rounded-lg" aria-label={`Enlarge image: ${alt}`}>
+        <button
+          type="button"
+          className={`block w-full cursor-zoom-in overflow-hidden rounded-lg border border-white/10 ${className}`}
+          aria-label={`Enlarge image: ${alt}`}
+        >
           <Image
             src={src}
             alt={alt}
             width={width}
             height={height}
-            sizes="(min-width: 768px) 768px, 100vw"
-            className="rounded-lg w-full h-auto"
+            sizes={sizes}
+            unoptimized={animated}
+            className="w-full h-auto"
           />
         </button>
       </Dialog.Trigger>
@@ -44,6 +62,7 @@ export default function ZoomableImage({ src, alt, width, height }: ZoomableImage
             width={width}
             height={height}
             sizes="100vw"
+            unoptimized={animated}
             className="max-h-full w-auto max-w-full object-contain rounded-md"
           />
           <Dialog.Close
